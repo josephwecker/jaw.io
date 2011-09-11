@@ -1,0 +1,190 @@
+//====| Settings |=============================================================
+$main-background:   white
+$main-text:         #3e3b3a
+$golden:            1.6180339887
+$unit:              29px    !default
+$columns:           6       !default
+$base-line-height:  $golden !default
+$units-per-column:  10      !default
+$rows-per-group:    8       !default
+$base-font-size:    round($unit / $base-line-height)
+$h-unit:            $base-font-size
+$body-side-padding: $h-unit !default
+$body-top-padding:  $h-unit !default
+$page-margin:       29px
+$row-height:        29
+$row-height-px: $row-height + 0px
+//$base-size:                    19px
+
+
+//====| Reset |================================================================
+ | Modified from: http://meyerweb.com/eric/tools/css/reset/ v2.0b1 | 201101 
+ | License: Public Domain
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,
+ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i,
+center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption,
+tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption,
+figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio,
+video
+  margin:          0
+  padding:         0
+  border:          0
+  outline:         0
+  font-size:       100%
+  font:            inherit
+  vertical-align:  baseline
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav,
+section
+  display:         block
+body
+  line-height:     1
+ol, ul
+  list-style:      none
+blockquote, q
+  quotes:          none
+  &:before, &:after
+    content:       ''
+    content:       none
+ins
+  text-decoration: none
+del
+  text-decoration: line-through
+table
+  border-collapse: collapse
+  border-spacing:  0
+
+//====| Typography |===========================================================
+//$h-unit:            round($base-font-size / 3.0 * 2.0 * 1.618) // roughly the x-height * Golden ratio
+$gutter-size:       $h-unit
+
+//---- Basic constant(s)
+$ie-font-ratio:     16px / 100%
+$column-width:      $h-unit * $units-per-column
+$body-width:        ($column-width * $columns) + ($gutter-size * ($columns - 1))
+
+html
+  overflow: auto
+  background-color: $main-background
+  color:            $main-text
+
+body
+  font-size:        ($unit / $base-line-height) / $ie-font-ratio
+  padding:          $body-top-padding $body-side-padding
+  -webkit-text-size-adjust: 100%
+  //width:            $body-width
+  text-rendering:   optimizeLegibility
+  -webkit-font-smoothing: antialiased
+  background-color: $main-background
+  color:            $main-text
+  overflow-y:       scroll
+  overflow-x:       auto
+  position:         absolute
+  padding-right:    $page-margin
+  top:              $page-margin
+  left:             $page-margin
+  right:            6px
+  //right:            $page-margin
+  bottom:           0
+
+html>body
+  padding:          $body-top-padding $body-side-padding
+
+
+@font-face
+  font-family:     'GruppoRegular'
+  src:             url('/fonts/gruppo-wf.eot')
+  src:             url('/fonts/gruppo-wf.eot?#iefix') format('embedded-opentype'), url('/fonts/gruppo-wf.woff') format('woff'), url('/fonts/gruppo-wf.ttf') format('truetype'), url('/fonts/gruppo-wf.svg#GruppoRegular') format('svg')
+  font-weight:     normal
+  font-style:      normal
+
+::-webkit-scrollbar
+  width:                       6px
+  height:                      6px
+  &-button
+    &:start:decrement, &:end:increment
+      display:                 block
+      height:                  0
+    &:vertical:increment
+      background-color:        $main-background
+  &-track-piece
+    background-color:          $main-background - #111
+    -webkit-border-radius:     3px
+  &-thumb
+    &:vertical, &:horizontal
+      height:                  50px
+      background-color:        $main-background - #333
+      -webkit-border-radius:   3px
+
+=aligned($rows)
+  $asize: 0
+  $atop:  0
+  @if $rows > 1
+    $asize: ((3.0 / 2.0 * $rows * $row-height) - $row-height)
+    $atop: ceil($row-height / 3.0 * (3.0 - $rows) / 2.0 + (5 - ($rows*1.6666666)))
+  @else
+    $asize: $row-height
+    $atop: $row-height / 6.0
+  font-size: $asize + 0px
+  line-height: $asize + 0px
+  top:          $atop + 0px
+  text-align:   left
+  //background-color: #3e3b3a
+  float: left
+  width: 60%
+  //margin-bottom: 0
+  //margin-top: 0
+  margin-bottom: ($asize % $row-height) + $row-height + 0px
+  hyphenate:                   auto
+  hyphenate-lines:             3
+  font-family:     Gruppo, "GruppoRegular", sans-serif
+  clear: both
+
+  //border-top: #{$rows * 1px} solid #ccc
+  //margin-top: $row-height + 0px
+  //border-bottom: 1px solid blue
+  //border-top: 1px solid red
+
+h1
+  +aligned(3)
+  color: $main-text + #111
+  //color: $main-text - #222
+
+h2
+  +aligned(2)
+  color: $main-text - #111
+
+h3
+  +aligned(1)
+
+h4
+  +aligned(1)
+  //font-weight: bold
+  color: #060
+
+h5
+  +aligned(1)
+
+h6
+  +aligned(1)
+  font-style: italic
+
+p
+  font-size: $base-font-size
+  line-height: $base-line-height
+  margin-top: $row-height + 0px
+  margin-bottom: $row-height + 0px
+  font-family: "Didact Gothic", sans-serif
+  width: 60%
+  padding-left: $page-margin
+  margin-left: $page-margin
+  margin-right: $page-margin
+  border-left: 1px solid #ddd
+  float: right
+
+p.describe
+  line-height: $row-height * 2px
+  top: 0 - ($row-height-px * 1.3333333)
+  color: #777
+
