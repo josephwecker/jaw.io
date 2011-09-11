@@ -30,6 +30,8 @@ SOURCES = [
   ['_src/pages',   '.haml', '.',        '.html', HAML_CMD]
 ]
 
+task :default => [:build, :server]
+
 desc "Convert sass/haml into css/html"
 task :build
 
@@ -44,7 +46,7 @@ SOURCES.each do |src_root, src_ext, dst_dir, dst_ext, cmd|
 end
 
 desc 'Start server for rapid iteration'
-task :server => [:default] do sh 'jekyll --server --safe --auto' end
+task :server do sh 'jekyll --server --safe --auto' end
 
 desc 'Server to automatically regenerate css if sass changes'
 task :css_iterate do sh 'sass -t compressed --watch _src/styles:css' end
