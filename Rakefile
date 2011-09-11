@@ -27,7 +27,7 @@ SOURCES = [
   ['_src/styles',  '.scss', 'css',      '.css',  SASS_CMD],
   ['_src/styles',  '.sass', 'css',      '.css',  SASS_CMD],
   ['_src/layouts', '.haml', '_layouts', '.html', HAML_CMD],
-  ['_src/pages',   '.haml', '_layouts', '.html', HAML_CMD]
+  ['_src/pages',   '.haml', '.',        '.html', HAML_CMD]
 ]
 
 desc "Convert sass/haml into css/html"
