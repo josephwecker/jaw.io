@@ -2,7 +2,13 @@
 %html(lang="en")
   %head
     %meta(charset="utf-8")
-    %link(rel="shortcut icon" href="favicon.png")
+    %meta(http-equiv="content-type" content="text/html; charset=utf-8")
     %meta(content="IE=edge,chrome=1" http-equiv="X-UA-Compatible")
-    -#/[if lt IE 9]
-    -#  = javascript_include_tag "http://html5shim.googlecode.com/svn/trunk/html5.js"
+    %title {{page.title}}
+    %link(rel="stylesheet" type="text/css" href="/css/a.css")
+    %link(rel="shortcut icon" href="favicon.png")
+    /[if lt IE 9]
+      %script(type="text/javascript" src="http://html5shim.googlecode.com/svn/trunk/html5.js")
+    %script(type="text/javascript" src="/js/foutbgone.js")
+  %body
+    {{content}}
