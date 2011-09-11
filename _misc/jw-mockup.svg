@@ -14,7 +14,7 @@
    id="svg2890"
    version="1.1"
    inkscape:version="0.47 r22583"
-   sodipodi:docname="New document 4">
+   sodipodi:docname="jw-mockup.svg">
   <defs
      id="defs2892">
     <inkscape:perspective
@@ -30,19 +30,19 @@
      pagecolor="#ffffff"
      bordercolor="#000000"
      borderopacity="1"
-     inkscape:pageopacity="0.0"
+     inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:zoom="1"
-     inkscape:cx="615"
-     inkscape:cy="1320"
+     inkscape:cx="387.68795"
+     inkscape:cy="1334.8814"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
-     showgrid="true"
+     showgrid="false"
      inkscape:window-width="1280"
      inkscape:window-height="752"
-     inkscape:window-x="0"
+     inkscape:window-x="17"
      inkscape:window-y="0"
-     inkscape:window-maximized="0"
+     inkscape:window-maximized="1"
      objecttolerance="4"
      guidetolerance="5">
     <inkscape:grid
@@ -118,17 +118,140 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(0,-500.7244)">
+    <rect
+       y="520.72443"
+       x="18"
+       height="986.00012"
+       width="1170"
+       id="rect3632"
+       style="fill:#e1e0df;fill-opacity:1;stroke:none" />
     <text
        xml:space="preserve"
        style="font-size:53.87492371px;font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#847673;fill-opacity:1;stroke:none;font-family:Raleway;-inkscape-font-specification:Raleway Light"
-       x="811.40326"
-       y="576.2309"
+       x="-554.95972"
+       y="517.33295"
        id="text5981"
        sodipodi:linespacing="100%"
        transform="scale(0.9982706,1.0017324)"><tspan
          sodipodi:role="line"
          id="tspan5983"
-         x="811.40326"
-         y="576.2309">Joseph Wecker</tspan></text>
+         x="-554.95972"
+         y="517.33295">Joseph Wecker</tspan></text>
+    <text
+       transform="scale(0.9982706,1.0017324)"
+       sodipodi:linespacing="100%"
+       id="text2836"
+       y="790.85913"
+       x="-630.08966"
+       style="font-size:53.87492371px;font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#847673;fill-opacity:1;stroke:none;font-family:Jura;-inkscape-font-specification:Jura Light"
+       xml:space="preserve"><tspan
+         y="790.85913"
+         x="-630.08966"
+         id="tspan2838"
+         sodipodi:role="line">Joseph Wecker</tspan></text>
+    <text
+       transform="scale(0.9982706,1.0017324)"
+       sodipodi:linespacing="100%"
+       id="text2844"
+       y="956.57208"
+       x="-630.08966"
+       style="font-size:53.87492371px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#847673;fill-opacity:1;stroke:none;font-family:Wire One;-inkscape-font-specification:Wire One"
+       xml:space="preserve"><tspan
+         y="956.57208"
+         x="-630.08966"
+         id="tspan2846"
+         sodipodi:role="line">Joseph Wecker</tspan></text>
+    <text
+       transform="scale(1.0016604,0.99834236)"
+       sodipodi:linespacing="100%"
+       id="text3626"
+       y="880.97888"
+       x="-599.4024"
+       style="font-size:55.81391524999999376px;font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#ac9082;fill-opacity:1;stroke:none;font-family:Terminal Dosis;-inkscape-font-specification:Terminal Dosis Light"
+       xml:space="preserve"><tspan
+         y="880.97888"
+         x="-599.4024"
+         id="tspan3628"
+         sodipodi:role="line">Joseph Wecker</tspan></text>
+    <text
+       transform="scale(0.9982706,1.0017324)"
+       sodipodi:linespacing="100%"
+       id="text2828"
+       y="623.64398"
+       x="-692.19708"
+       style="font-size:71.23448944px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#847673;fill-opacity:1;stroke:none;font-family:Comfortaa;-inkscape-font-specification:Comfortaa Bold"
+       xml:space="preserve"><tspan
+         y="623.64398"
+         x="-692.19708"
+         id="tspan2830"
+         sodipodi:role="line">Joseph Wecker</tspan></text>
+    <rect
+       style="fill:#3e3b3a;fill-opacity:1;stroke:none"
+       id="rect3630"
+       width="1170"
+       height="173.99997"
+       x="18"
+       y="520.72443" />
+    <text
+       xml:space="preserve"
+       style="font-size:53.8749236px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr;text-anchor:start;fill:#847673;fill-opacity:1;stroke:none;font-family:Gruppo;-inkscape-font-specification:Gruppo"
+       x="36.062366"
+       y="577.72357"
+       id="text2832"
+       sodipodi:linespacing="100%"
+       transform="scale(0.9982706,1.0017324)"><tspan
+         sodipodi:role="line"
+         id="tspan3634">Joseph A. Wecker</tspan></text>
+    <rect
+       style="fill:#ada3a1;fill-opacity:0;stroke:none"
+       id="rect3666"
+       width="16"
+       height="16"
+       x="302"
+       y="431.7244"
+       inkscape:export-filename="/Users/jwecker/gtd/projects/jw.ws/favicon.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <text
+       xml:space="preserve"
+       style="font-size:13.30504799px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#2f2a29;fill-opacity:1;stroke:#2f2a29;stroke-width:0.49687508;stroke-opacity:0.64315353;font-family:Gruppo;-inkscape-font-specification:Gruppo"
+       x="347.15128"
+       y="343.36926"
+       id="text3644"
+       sodipodi:linespacing="100%"
+       transform="scale(0.87122789,1.1478053)"><tspan
+         sodipodi:role="line"
+         id="tspan3650"
+         x="347.15128"
+         y="343.36926"
+         style="stroke-width:0.49687508">JW</tspan></text>
+    <text
+       transform="scale(0.92643478,1.0794068)"
+       sodipodi:linespacing="100%"
+       id="text3638"
+       y="412.75946"
+       x="329.59039"
+       style="font-size:21.25412369px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:#2f2a29;stroke-width:3.10922527;stroke-miterlimit:4;stroke-opacity:0.77178423;stroke-dasharray:none;font-family:Gruppo;-inkscape-font-specification:Gruppo Bold"
+       xml:space="preserve"
+       inkscape:export-filename="/Users/jwecker/gtd/projects/jw.ws/favicon.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan3642"
+         x="329.59039"
+         y="412.75946"
+         style="stroke-width:3.10922527">J</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:22.55822754px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr;text-anchor:start;fill:#2e2928;fill-opacity:1;stroke:none;stroke-width:3.29999995000000013;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.77178422999999985;stroke-dasharray:none;stroke-dashoffset:0;font-family:Didact Gothic;-inkscape-font-specification:Didact Gothic"
+       x="277"
+       y="233"
+       id="text3668"
+       sodipodi:linespacing="100%"
+       transform="translate(0,500.7244)"><tspan
+         sodipodi:role="line"
+         id="tspan3670"
+         x="277"
+         y="233">adsf</tspan></text>
   </g>
 </svg>
