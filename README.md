@@ -1,4 +1,4 @@
-# Data for http://jw.ws
+# Data for http://jaw.io
 
 This is the data for my personal site. Rake tasks convert haml/sass into
 layouts and styles, then jekyll finishes creating the static site when pushed
