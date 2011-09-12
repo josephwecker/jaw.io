@@ -1,10 +1,11 @@
 //====| Settings |=============================================================
 $main-background:   white
-$main-text:         #3e3b3a
+$main-text:         #2e2928
 $golden:            1.6180339887
 $unit:              29px    !default
 $columns:           6       !default
 $base-line-height:  $golden !default
+$base-line-height:  1.4
 $units-per-column:  10      !default
 $rows-per-group:    8       !default
 $base-font-size:    round($unit / $base-line-height)
@@ -78,15 +79,15 @@ body
   -webkit-font-smoothing: antialiased
   background-color: $main-background
   color:            $main-text
-  overflow-y:       scroll
+  //overflow-y:       scroll
   overflow-x:       auto
-  position:         absolute
-  padding-right:    $page-margin
-  top:              $page-margin
-  left:             $page-margin
+  //position:         absolute
   right:            6px
+  padding-right:    $page-margin
+//  top:              $page-margin
+//  left:             $page-margin
   //right:            $page-margin
-  bottom:           0
+//  bottom:           0
 
 html>body
   padding:          $body-top-padding $body-side-padding
@@ -126,19 +127,19 @@ html>body
   @else
     $asize: $row-height
     $atop: $row-height / 6.0
-  font-size: $asize + 0px
-  line-height: $asize + 0px
+  font-size:    $asize + 0px
+  line-height:  $asize + 0px
   top:          $atop + 0px
   text-align:   left
   //background-color: #3e3b3a
-  float: left
+  //float: left
   width: 60%
   //margin-bottom: 0
   //margin-top: 0
   margin-bottom: ($asize % $row-height) + $row-height + 0px
+  font-family:     Gruppo, "GruppoRegular", sans-serif
   hyphenate:                   auto
   hyphenate-lines:             3
-  font-family:     Gruppo, "GruppoRegular", sans-serif
   clear: both
 
   //border-top: #{$rows * 1px} solid #ccc
@@ -147,16 +148,23 @@ html>body
   //border-top: 1px solid red
 
 h1
-  +aligned(3)
+  +aligned(2)
   color: $main-text + #111
   //color: $main-text - #222
 
+header h1
+  color: #847673
+
 h2
-  +aligned(2)
-  color: $main-text - #111
+  +aligned(1.5)
+  color: #847673 - #222
+  //color: $main-text + #333
+  //float: left
 
 h3
   +aligned(1)
+  color: #847673 - #333
+  //float: left
 
 h4
   +aligned(1)
@@ -180,7 +188,7 @@ p
   padding-left: $page-margin
   margin-left: $page-margin
   margin-right: $page-margin
-  border-left: 1px solid #ddd
+  border-left: 1px solid #cfcccc
   float: right
 
 p.describe
@@ -188,3 +196,15 @@ p.describe
   top: 0 - ($row-height-px * 1.3333333)
   color: #777
 
+
+header
+  height: 138px
+  background-color: #3e3b3a
+  padding: $body-side-padding
+
+#main
+  background-color: #e1e0df
+  padding: $body-side-padding
+
+.clear
+  clear: both

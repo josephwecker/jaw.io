@@ -1,12 +1,8 @@
 ---
 layout: main
-title: Joseph A. Wecker
+title: / Joseph A. Wecker /
 
 ---
-# Joseph Wecker
-## (blog, etc...)
-### Under heavy construction, but I need to get the kids to bed
-
 Just working on getting all this stuff migrated over from what I was doing w/
 havocyte. Aenean condimentum odio vel erat accumsan non tempus libero aliquet.
 Sed nisl dolor, hendrerit quis semper at, placerat nec lacus. Morbi scelerisque
