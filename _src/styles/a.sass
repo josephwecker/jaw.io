@@ -153,17 +153,20 @@ h1
   //color: $main-text - #222
 
 header h1
-  color: #847673
+  color: #c4bdbb
 
 h2
   +aligned(1.5)
-  color: #847673 - #222
+  //color: #847673 - #222
+  color: #645a5a
   //color: $main-text + #333
   //float: left
 
 h3
+  color: #645a5a
   +aligned(1)
-  color: #847673 - #333
+  text-align: right
+  width: 100%
   //float: left
 
 h4
@@ -199,7 +202,7 @@ p.describe
 
 header
   height: 138px
-  background-color: #3e3b3a
+  background-color: #2b2928
   padding: $body-side-padding
 
 #main
@@ -208,3 +211,23 @@ header
 
 .clear
   clear: both
+
+.subtitle
+  +aligned(1.5)
+  color: #847673 - #333
+
+nav
+  time
+    font-family: "Didact Gothic", sans-serif
+    font-size: $base-font-size * 0.6
+    line-height: $base-line-height
+    color: $main-text + #555
+  a
+    text-decoration: none
+    font-family: "Didact Gothic", sans-serif
+    line-height: $base-line-height
+    font-size: $base-font-size
+    color: $main-text + #025
+    &:hover
+      text-decoration: underline
+      color: #007de9

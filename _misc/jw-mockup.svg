@@ -33,8 +33,8 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:zoom="1"
-     inkscape:cx="362.68795"
-     inkscape:cy="1294.8814"
+     inkscape:cx="410.68795"
+     inkscape:cy="1302.8814"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -42,7 +42,7 @@
      inkscape:window-height="752"
      inkscape:window-x="0"
      inkscape:window-y="0"
-     inkscape:window-maximized="0"
+     inkscape:window-maximized="1"
      objecttolerance="4"
      guidetolerance="5">
     <inkscape:grid
@@ -186,7 +186,7 @@
          id="tspan2830"
          sodipodi:role="line">Joseph Wecker</tspan></text>
     <rect
-       style="fill:#3e3b3a;fill-opacity:1;stroke:none"
+       style="fill:#2b2928;fill-opacity:1;stroke:none"
        id="rect3630"
        width="1170"
        height="173.99997"
@@ -194,14 +194,14 @@
        y="520.72443" />
     <text
        xml:space="preserve"
-       style="font-size:53.8749236px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr;text-anchor:start;fill:#847673;fill-opacity:1;stroke:none;font-family:Gruppo;-inkscape-font-specification:Gruppo"
+       style="font-size:53.8749236px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr;text-anchor:start;fill:#c4bdbb;fill-opacity:1;stroke:none;font-family:Gruppo;-inkscape-font-specification:Gruppo"
        x="36.062366"
        y="577.72357"
        id="text2832"
        sodipodi:linespacing="100%"
        transform="scale(0.9982706,1.0017324)"><tspan
          sodipodi:role="line"
-         id="tspan3634">Joseph A. Wecker</tspan></text>
+         id="tspan3715">Joseph Wecker</tspan></text>
     <rect
        style="fill:#ada3a1;fill-opacity:0;stroke:none"
        id="rect3666"
@@ -260,5 +260,15 @@
        width="1"
        id="rect4791"
        style="fill:#cfcccc;fill-opacity:1;stroke:none" />
+    <text
+       transform="scale(0.9982706,1.0017324)"
+       sodipodi:linespacing="100%"
+       id="text2935"
+       y="636.47711"
+       x="36.216263"
+       style="font-size:42.61844245999999714px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr;text-anchor:start;fill:#645a5a;fill-opacity:1;stroke:none;font-family:Gruppo;-inkscape-font-specification:Gruppo"
+       xml:space="preserve"><tspan
+         sodipodi:role="line"
+         id="tspan2939">(input / output)</tspan></text>
   </g>
 </svg>
