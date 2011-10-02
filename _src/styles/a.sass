@@ -66,59 +66,6 @@ table
   border-collapse: collapse
   border-spacing:  0
 
-
-.block
-  width: 12px
-  height: 12px
-  margin: 2px
-  float: left
-  margin-bottom: $unit / 2
-  margin-top: - ($unit / 2)
-.block2
-  width: 12px
-  height: 12px
-  margin: 2px
-  float: left
-
-
-//
-  .c1
-    background-color: neut($dark-bg)
-  .c2
-    background-color: neut($dark-bg-emph)
-  .c3
-    background-color: neut($dark-minor)
-  .c4
-    background-color: neut($dark-content)
-  .c5
-    background-color: neut($dark-content-emph)
-  .c6
-    background-color: neut($light-bg)
-  .c7
-    background-color: neut($light-bg-emph)
-  .c8
-    background-color: neut($light-minor)
-  .c9
-    background-color: neut($light-content)
-  .c10
-    background-color: neut($light-content-emph)
-
-@for $i from 1 through 15
-  .c#{$i}
-    background-color: lch2(75,90,$i - 1)
-    color: black
-    font-size: 7.5px
-
-.c1
-  margin-left: $h-unit
-
-
-@for $i from 1 through 15
-  .d#{$i}
-    background-color: lch2(65,100,$i - 1)
-    color: black
-    font-size: 7.5px
-
 //====| Misc |================================================================
 ::-webkit-scrollbar
   width:                       6px
