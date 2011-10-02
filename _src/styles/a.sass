@@ -147,9 +147,18 @@ header
     border-bottom: 1px solid neut($dark-bg-emph)
   h2
     color: neut($dark-content)
+    +fsize(1)
+    border: 0
+    margin-left: 0
+    padding-left: 0
 
 h2
-  +fsize(1)
+  +fsize(2)
+  border-top: 1px solid neut($light-bg-emph)
+  border-bottom: 1px solid neut($light-bg-emph)
+  margin-left: (- round(1/$golden*100%))
+  padding-left: $unit
+
 
 h3
   +fsize(1)
@@ -162,8 +171,9 @@ p
   +fsize(1)
   font-family: "Didact Gothic", sans-serif
   border-left: 1px solid neut($light-bg-emph)
-  padding-left: 6px
-  margin-right: 6px + $h-unit
+  padding-left: $h-unit
+  margin-right: 6px + $unit
+  padding-bottom: $unit
 
 #main
   +fsize(1)
@@ -177,6 +187,15 @@ p
 .subtitle
   color: neut($dark-bg-emph)
   +fsize(1)
+
+p
+  a
+    text-decoration: none
+    font: inherit
+    color: inherit
+    &:hover
+      color: neut($light-minor)
+      text-decoration: underline
 
 nav
   time
