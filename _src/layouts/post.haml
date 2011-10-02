@@ -17,8 +17,13 @@
       %hgroup
         %h1
           Joseph A. Wecker
-          %span.subtitle .input/output
+          %span.subtitle I/O
+        %h2.page-title {{page.title}}
+      - (1..19).each do |i|
+        .block(class="c#{i}")= (i - 1)
     %section#main
+      - (1..19).each do |i|
+        .block2(class="d#{i}")= (i - 1)
       {{content}}
       .clear
     .clear
