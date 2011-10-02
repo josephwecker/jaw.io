@@ -1,2 +1,2 @@
 pygments: true
-exclude: .gitignore, _misc, Rakefile, Gemfile, Gemfile.lock, index.haml, _src, README.md
+exclude: .gitignore, _misc, Rakefile, Gemfile, Gemfile.lock, _src, README.md
