@@ -1,5 +1,20 @@
 //====| Settings |=============================================================
-$main-background:   white
+
+$dark-bg:            15
+$dark-bg-emph:       $dark-bg       + 20
+$dark-minor:         $dark-bg-emph  + 20
+$dark-content:       $dark-minor    + 20
+$dark-content-emph:  $dark-content  + 20
+
+$light-bg:           95
+$light-bg-emph:      $light-bg      - 20
+$light-minor:        $light-bg-emph - 20
+$light-content:      $light-minor   - 20
+$light-content-emph: $light-content - 20
+
+@function neut($lightness)
+  @return lch($lightness, 7, 0.154)
+
 $main-text:         #2e2928
 $golden:            1.6180339887
 $unit:              29px    !default
@@ -56,50 +71,60 @@ table
   border-collapse: collapse
   border-spacing:  0
 
-//====| Typography |===========================================================
-//$h-unit:            round($base-font-size / 3.0 * 2.0 * 1.618) // roughly the x-height * Golden ratio
-$gutter-size:       $h-unit
 
-//---- Basic constant(s)
-$ie-font-ratio:     16px / 100%
-$column-width:      $h-unit * $units-per-column
-$body-width:        ($column-width * $columns) + ($gutter-size * ($columns - 1))
-
-html
-  overflow: auto
-  background-color: $main-background
-  color:            $main-text
-
-body
-  font-size:        ($unit / $base-line-height) / $ie-font-ratio
-  padding:          $body-top-padding $body-side-padding
-  -webkit-text-size-adjust: 100%
-  //width:            $body-width
-  text-rendering:   optimizeLegibility
-  -webkit-font-smoothing: antialiased
-  background-color: $main-background
-  color:            $main-text
-  //overflow-y:       scroll
-  overflow-x:       auto
-  //position:         absolute
-  right:            6px
-  padding-right:    $page-margin
-//  top:              $page-margin
-//  left:             $page-margin
-  //right:            $page-margin
-//  bottom:           0
-
-html>body
-  padding:          $body-top-padding $body-side-padding
+.block
+  width: 12px
+  height: 12px
+  margin: 2px
+  float: left
+  margin-bottom: $unit / 2
+  margin-top: - ($unit / 2)
+.block2
+  width: 12px
+  height: 12px
+  margin: 2px
+  float: left
 
 
-@font-face
-  font-family:     'GruppoRegular'
-  src:             url('/fonts/gruppo-wf.eot')
-  src:             url('/fonts/gruppo-wf.eot?#iefix') format('embedded-opentype'), url('/fonts/gruppo-wf.woff') format('woff'), url('/fonts/gruppo-wf.ttf') format('truetype'), url('/fonts/gruppo-wf.svg#GruppoRegular') format('svg')
-  font-weight:     normal
-  font-style:      normal
+//
+  .c1
+    background-color: neut($dark-bg)
+  .c2
+    background-color: neut($dark-bg-emph)
+  .c3
+    background-color: neut($dark-minor)
+  .c4
+    background-color: neut($dark-content)
+  .c5
+    background-color: neut($dark-content-emph)
+  .c6
+    background-color: neut($light-bg)
+  .c7
+    background-color: neut($light-bg-emph)
+  .c8
+    background-color: neut($light-minor)
+  .c9
+    background-color: neut($light-content)
+  .c10
+    background-color: neut($light-content-emph)
 
+@for $i from 1 through 15
+  .c#{$i}
+    background-color: lch2(75,90,$i - 1)
+    color: black
+    font-size: 7.5px
+
+.c1
+  margin-left: $h-unit
+
+
+@for $i from 1 through 15
+  .d#{$i}
+    background-color: lch2(65,100,$i - 1)
+    color: black
+    font-size: 7.5px
+
+//====| Misc |================================================================
 ::-webkit-scrollbar
   width:                       6px
   height:                      6px
@@ -108,14 +133,14 @@ html>body
       display:                 block
       height:                  0
     &:vertical:increment
-      background-color:        $main-background
+      background-color:        neut($light-bg)
   &-track-piece
-    background-color:          $main-background - #111
+    background-color:          neut($light-bg-emph)
     -webkit-border-radius:     3px
   &-thumb
     &:vertical, &:horizontal
       height:                  50px
-      background-color:        $main-background - #333
+      background-color:        neut($light-minor)
       -webkit-border-radius:   3px
 
 =aligned($rows)
@@ -221,13 +246,13 @@ nav
     font-family: "Didact Gothic", sans-serif
     font-size: $base-font-size * 0.6
     line-height: $base-line-height
-    color: $main-text + #555
+    color: neut($light-minor)
   a
     text-decoration: none
     font-family: "Didact Gothic", sans-serif
     line-height: $base-line-height
     font-size: $base-font-size
-    color: $main-text + #025
+    color: lch($light-content-emph, 70, 0.0)
     &:hover
       text-decoration: underline
-      color: #007de9
+      color: lch($light-content-emph + 10, 90, 0.0)
