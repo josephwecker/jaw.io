@@ -13,12 +13,19 @@
     %script(type="text/javascript" src="/js/jquery-1.6.4.min.js")
     %script(type="text/javascript" src="/js/auto_align.js")
   %body
+    /#overlay &nbsp;
     %header
       %hgroup
         %h1
-          Joseph A. Wecker
+          JAW
           %span.subtitle I/O
-        %h2.page-title {{page.title}}
-    %section#main
+        %h3 Joseph A. Wecker: blog, etc.
+
+    %article
+      %header
+        %h1.page-title {{page.title}}
+        %time.atxt(datetime="{{page.date}}" pubdate="pubdate") {{page.date}}
+        .atxt.author Joseph A. Wecker
       {{content}}
+      %footer
     %footer

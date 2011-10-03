@@ -1,17 +1,32 @@
 ---
 
 layout: post
-title: "Disturbing: Modern Syntax Highlighting"
+title: "Depricate Syntax Highlighting"
 tags: [programming, productivity, design]
-published: false
+published: true
 
 ---
 
-(- ## The Problem)
-I've had a vaguely uncomfortable feeling for several years now with syntax
-highlighting that I've decided to get to the bottom of finally. 
-Modern syntax highlighting is, at best, ad-hoc and uninspired. The state of the
-art has been small iterations on 
+I've had a vaguely uncomfortable feeling for several years now about syntax
+highlighting and recently felt like finally getting to the bottom of it. I've
+designed a [few](https://github.com/josephwecker/neutron.vim)
+[colorschemes](https://github.com/josephwecker/murphytango.vim) and
+[syntax](https://github.com/josephwecker/udon/blob/master/misc/udon.vim)
+[files](https://github.com/josephwecker/zml/blob/master/misc/zml_textmate_osx.zip)
+for vim and textmate and have looked into it for several other syntax
+highlighters (pygments, etc.) and have come to the conclusion that modern
+syntax highlighting is, at best, ad-hoc and uninspired. The state of the art
+for more than a decade now has involved only minor iterations on a theme that
+wasn't fully thought through to begin with. I'm sure there are historic reasons
+for this but I'd like to take a moment to summarize current approaches and
+outline some ways in which we can possibly take syntax highlighting to the next
+level.
+
+## The Purposes For Syntax Highlighting
+
+
+
+
 Aenean felis magna, lacinia non ultrices vitae, feugiat nec purus. Proin non orci ac magna dapibus dapibus id eu diam. Sed turpis nisi, sollicitudin et lobortis sed, scelerisque vitae tortor. Aenean in eros tortor, ut imperdiet nisl. Etiam neque nibh, bibendum eget molestie a, auctor sed orci. Quisque metus mauris, tempor at egestas in, egestas id ante. Vestibulum elementum varius commodo. Donec faucibus, quam eget luctus ullamcorper, urna sapien accumsan velit, at bibendum dui nibh non velit. Sed suscipit lectus id elit luctus mattis. Vestibulum eu leo ligula, ac semper risus. Nam in rutrum elit. Pellentesque rhoncus sollicitudin placerat. Proin rhoncus rutrum dolor, nec aliquam nunc laoreet et. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce ornare tortor in nisl sagittis ultrices.
 
 ## And more about this

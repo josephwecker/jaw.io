@@ -15,18 +15,25 @@
 <script src="/js/auto_align.js" type="text/javascript"></script>
 </head>
 <body>
+<!-- #overlay &nbsp; -->
 <header>
 <hgroup>
 <h1>
-Joseph A. Wecker
+JAW
 <span class="subtitle">I/O</span>
 </h1>
-<h2 class="page-title">{{page.title}}</h2>
+<h3>Joseph A. Wecker: blog, etc.</h3>
 </hgroup>
 </header>
-<section id="main">
+<article>
+<header>
+<h1 class="page-title">{{page.title}}</h1>
+<time class="atxt" datetime="{{page.date}}" pubdate="pubdate">{{page.date}}</time>
+<div class="atxt author">Joseph A. Wecker</div>
+</header>
 {{content}}
-</section>
+<footer></footer>
+</article>
 <footer></footer>
 </body>
 </html>
