@@ -5,6 +5,7 @@ $ ->
     append('<img src="'+gifdat+'" style="'+style+'" class="__autoalign__"/>').
       css('opacity',0)
 
+
 $(window).load ->
   $('.__autoalign__').each ->
     $parent = $(this).parent()

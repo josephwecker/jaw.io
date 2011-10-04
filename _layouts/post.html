@@ -28,8 +28,13 @@ JAW
 <article>
 <header>
 <h1 class="page-title">{{page.title}}</h1>
-<time class="atxt" datetime="{{page.date}}" pubdate="pubdate">{{page.date}}</time>
-<div class="atxt author">Joseph A. Wecker</div>
+<div class="atxt author">
+Joseph A. Wecker
+/
+<time class="atxt" datetime="{{page.date}}" pubdate="pubdate">{{page.date | date_to_long_string }}</time>
+/
+{{page.tags | array_to_sentence_string}}
+</div>
 </header>
 {{content}}
 <footer></footer>

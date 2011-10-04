@@ -24,8 +24,12 @@
     %article
       %header
         %h1.page-title {{page.title}}
-        %time.atxt(datetime="{{page.date}}" pubdate="pubdate") {{page.date}}
-        .atxt.author Joseph A. Wecker
+        .atxt.author
+          Joseph A. Wecker
+          \/
+          %time.atxt(datetime="{{page.date}}" pubdate="pubdate") {{page.date | date_to_long_string }}
+          \/
+          {{page.tags | array_to_sentence_string}}
       {{content}}
       %footer
     %footer
