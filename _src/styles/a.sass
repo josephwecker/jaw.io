@@ -150,6 +150,7 @@ body>header
   -moz-border-radius-bottomleft: $unit
   border-bottom-left-radius: $unit
   height: 5 * $unit
+  z-index: 1000
 
   hgroup
     padding: 0
@@ -188,22 +189,23 @@ article
     height: 5 * $unit
     width: 100%
     padding-left: $h-unit
-    color: neut($dark-minor)
+    color: neut($dark-bg) - #111
     h1
       padding-top: $unit
       +fsize(1,0.8)
-      color: neut($dark-bg) - #111
-      text-shadow: 2px 1px 20px neut($dark-minor)
+      //color: neut($dark-bg) - #111
+      color: neut($light-bg)
+      //text-shadow: 2px 1px 20px neut($dark-minor)
       //font-family:  "Didact Gothic", sans-serif
       //font-weight: bold
     time
       //display: block
-      +fsize(1,2.5)
+      +fsize(1,1.75)
       font-family:                 Gruppo, "GruppoRegular", sans-serif
-      color: neut($dark-content-emph)
+      color: neut($dark-minor)
     .author
       //padding-top: 5px
-      +fsize(1,2.5)
+      +fsize(1,1.75)
       font-family:                 Gruppo, "GruppoRegular", sans-serif
   h2
     +fsize(2)
