@@ -138,6 +138,8 @@ h1,h2,h3,h4,h5,h6
   font-family:                 Gruppo, "GruppoRegular", sans-serif
   
 body>header
+  //background-color:   lch2(25, 20, 0)
+
   background-color:   neut($dark-bg)
   position: fixed
   -moz-box-shadow: 0px 0px 17px neut($dark-bg)
@@ -158,11 +160,13 @@ body>header
     padding-left: $h-unit
   h1
     font-family:  "Didact Gothic", sans-serif
+    //color: lch2($dark-minor, 70, 1)
     color: neut($dark-bg-emph)
     font-weight: bold
     +fsize(2,0.7)
     border-bottom: 1px dashed (neut($dark-bg-emph) - #222)
-    text-shadow: 0px 0px 15px (neut($dark-bg) - #0a0a0a)
+    //text-shadow: 0px 0px 15px (neut($dark-bg) - #0a0a0a)
+    text-shadow: 0px 0px 15px (neut($dark-bg) - #222)
   .subtitle
     font-family:                 Gruppo, "GruppoRegular", sans-serif
     color: neut($dark-minor)
@@ -173,8 +177,9 @@ body>header
   h3
     +fsize(1)
     color: neut($dark-content)
-    padding-top: 5px
 
+h3
+  padding-top: 5px
 
 article
   +fsize(1)
@@ -203,10 +208,15 @@ article
       +fsize(1,1.75)
       font-family:                 Gruppo, "GruppoRegular", sans-serif
       color: neut($dark-minor)
-    .author
+    #article-meta
       //padding-top: 5px
       +fsize(1,1.75)
       font-family:                 Gruppo, "GruppoRegular", sans-serif
+    #section-title
+      +fsize(1,1.0)
+      color: neut($dark-content)
+      margin-left: 0
+      padding-left: 0
   h2
     +fsize(2)
     //border-top: 1px solid neut($light-bg-emph)
@@ -229,8 +239,8 @@ article
         color: neut($light-minor)
         text-decoration: underline
 
-article>header+p
-  padding-top: 6 * $unit
+article>header+h2+p
+  padding-top: 4 * $unit
 
 .clear
   clear: both

@@ -1,11 +1,12 @@
 ---
 
 layout: post
-title: "Depricate Syntax Highlighting"
+title: "State of the art: Syntax Highlighting"
 tags: [programming, productivity, design]
 published: true
 
 ---
+## Intro
 
 I've had a vaguely uncomfortable feeling for several years now about syntax
 highlighting and recently felt like finally getting to the bottom of it. I've
@@ -14,16 +15,27 @@ designed a [few](https://github.com/josephwecker/neutron.vim)
 [syntax](https://github.com/josephwecker/udon/blob/master/misc/udon.vim)
 [files](https://github.com/josephwecker/zml/blob/master/misc/zml_textmate_osx.zip)
 for vim and textmate and have looked into it for several other syntax
-highlighters (pygments, etc.) and have come to the conclusion that modern
-syntax highlighting is, at best, ad-hoc and uninspired. The state of the art
-for more than a decade now has involved only minor iterations on a theme that
-wasn't fully thought through to begin with. I'm sure there are historic reasons
-for this but I'd like to take a moment to summarize current approaches and
-outline some ways in which we can possibly take syntax highlighting to the next
-level.
+highlighters and IDEs (pygments, etc.). There have been some incremental
+innovations over the last decade or so, but not many. In the spirit of
+improving "inner-loop" developer productivity I have some thoughts on how the
+state of the art can be advanced. And I think I may even be able to share them
+without adding fuel to editor holy wars (that fuel will come in a later post).
 
-## The Purposes For Syntax Highlighting
+## Background and Context
+### Some purposes for Syntax Highlighting
+I'm not going to go into
 
+
+
+Syntax-definition -> Highlight Groups -> Colorscheme = Stylesheet
+
+Hypothesis: Good colorschemes are not just a matter of individual taste. There
+exist principles that make certain colorschemes objectively, qualitatively
+better than alternatives. I suggest that the "goodness" of a colorscheme can be
+determined by:
+1. Universal principles
+2. (applied to) Current physical context - lighting, screensize, eyesight
+3. (with some remaining latitude for) Mood and taste
 
 
 

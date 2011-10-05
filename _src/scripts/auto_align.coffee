@@ -1,9 +1,9 @@
 $ ->
   gifdat = 'data:image/gif;base64,R0lGODlhAQABAID/AP///wAAACwAAAAAAQABAAACAkQBADs='
   style = 'visibility: hidden;'
-  $('.atxt,p,h1,h2,h3,h4,h5,h6,span').
+  $('.atxt,p,h1,h2,h3,h4,h5,h6,span,li').
     append('<img src="'+gifdat+'" style="'+style+'" class="__autoalign__"/>').
-      css('opacity',0)
+      css('opacity',0.01)
 
 
 $(window).load ->
@@ -21,4 +21,4 @@ $(window).load ->
     if relap isnt 0
       $parent.css('margin-bottom',(_,v)-> parseFloat(v) - relap)
     $(this).remove()
-    $parent.animate({'opacity': 1}, 750, 'swing')
+    $parent.animate({'opacity': 1}, 550, 'swing')

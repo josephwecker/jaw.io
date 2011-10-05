@@ -12,6 +12,7 @@
     %script(type="text/javascript" src="/js/foutbgone.js")
     %script(type="text/javascript" src="/js/jquery-1.6.4.min.js")
     %script(type="text/javascript" src="/js/auto_align.js")
+    %script(type="text/javascript" src="/js/heading-fader.js")
   %body
     /#overlay &nbsp;
     %header
@@ -24,12 +25,13 @@
     %article
       %header
         %h1.page-title {{page.title}}
-        .atxt.author
+        .atxt#article-meta
           Joseph A. Wecker
           \/
           %time.atxt(datetime="{{page.date}}" pubdate="pubdate") {{page.date | date_to_long_string }}
           \/
           {{page.tags | array_to_sentence_string}}
+        %h2#section-title
       {{content}}
       %footer
     %footer
