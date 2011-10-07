@@ -26,11 +26,11 @@
         %hgroup
           %h1.page-title {{page.title}}
           .atxt#article-meta
+            {{page.tags | array_to_sentence_string}}
+            \/
             Joseph A. Wecker
             \/
             %time.atxt(datetime="{{page.date}}" pubdate="pubdate") {{page.date | date_to_long_string }}
-            \/
-            {{page.tags | array_to_sentence_string}}
           %h2#section-title hm
       %section
         {{content}}

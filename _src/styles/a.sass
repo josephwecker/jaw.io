@@ -18,8 +18,7 @@ $light-content-emph: $light-content - 20
 $main-text:         neut($light-content)
 $golden:            1.6180339887
 $unit:              29px    !default
-//$base-line-height:  1.25    !default
-$base-line-height:  $golden    !default
+$base-line-height:  1.25    !default
 $base-font-size:    round($unit / $base-line-height)
 $h-unit:            $base-font-size
 
@@ -107,7 +106,7 @@ body
   -webkit-text-size-adjust:    100%
   text-rendering:              optimizeLegibility
   font-family:                 "Didact Gothic", sans-serif
-  //-webkit-font-smoothing:      antialiased
+  -webkit-font-smoothing:      antialiased
   background-color:            neut($light-bg)
   color:                       neut($light-content)
 
@@ -116,7 +115,7 @@ body
   top: 0
   left: 0
   width: 100%
-  height: 100%
+  height: 5000px
   $b-h-unit: 23
   $b-unit: 29
   background-image: unquote('url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22#{ $b-h-unit }%22%20height%3D%22#{ $b-unit }%22%20version%3D%221.0%22%3E%3Crect%20x%3D%220%22%20y%3D%22#{ $b-unit - 1 }%22%20width%3D%22#{ $b-h-unit }%22%20height%3D%221px%22%20style%3D%22fill%3A%23FF0000%22%20opacity%3D%220.6%22%2F%3E%3Crect%20x%3D%22#{ $b-h-unit - 1 }%22%20y%3D%220%22%20width%3D%221px%22%20height%3D%22#{ $b-unit }%22%20style%3D%22fill%3A%23FF0000%22%20opacity%3D%220.5%22%2F%3E%3C%2Fsvg%3E)')
@@ -141,23 +140,15 @@ h1,h2,h3,h4,h5,h6
   font-family:                 Gruppo, "GruppoRegular", sans-serif
   
 body>header
-  //background-color:   lch2(25, 20, 0)
-
   background-color:   neut($dark-bg)
   position: fixed
   -moz-box-shadow: -9px 2px 14px -5px neut($dark-bg-emph)
   -webkit-box-shadow: -9px 2px 14px -5px neut($dark-bg-emph)
   box-shadow: -9px 2px 14px -5px neut($dark-bg-emph)
-  //-moz-box-shadow: 0px 0px 17px neut($dark-bg)
-  //-webkit-box-shadow: 0px 0px 17px neut($dark-bg)
-  //box-shadow: 0px 0px 17px neut($dark-bg)
   width: $left-width
   padding: 0
   margin-bottom: -1px
   border-bottom: 1px solid neut($dark-content)
-  //width: (100% - round(1/$golden*100))
-  //-moz-border-radius-bottomleft: $unit
-  //border-bottom-left-radius: $unit
   height: 5 * $unit
   z-index: 1000
 
@@ -167,14 +158,11 @@ body>header
     padding-left: $h-unit
   h1
     font-family:  "Didact Gothic", sans-serif
-    //color: lch2($dark-minor, 70, 1)
     color: neut($dark-bg-emph)
-    //font-weight: bold
     +fsize(4)
     padding-top: 0
     width: $left-width - (2 * $h-unit)
     text-align: center
-    //padding-top: $unit
     font-family:                 Gruppo, "GruppoRegular", sans-serif
     //font-family: "Handwriting - Dakota"
     //font-family: "Optima"
@@ -183,18 +171,12 @@ body>header
     //font-family: "Trajan Pro"
     //font-family: "Univers Condensed"
     //font-family: "TradeGothic CondEighteen", sans-serif
-    //border-bottom: 1px dashed (neut($dark-bg-emph) - #222)
-    //text-shadow: 0px 0px 15px (neut($dark-bg) - #0a0a0a)
-    //text-shadow: 0px 0px 15px (neut($dark-bg) - #222)
   .subtitle
-    //margin-left: 0px - $unit
     margin-top: 5px
     width: $left-width - (2 * $h-unit)
     text-align: center
-    //margin-right: 3 * $h-unit
     font-family:                 Gruppo, "GruppoRegular", sans-serif
     color: neut($dark-minor)
-    //text-shadow: (neut($dark-bg) - #111) 0 0 20px
     font-weight: normal
     +fsize(1, 1.75)
 
@@ -204,7 +186,10 @@ body>header
 
 h3
   padding-top: 5px
-
+  margin-bottom: 10px
+  +fsize(1,$golden)
+  color: neut($light-minor)
+  text-align: right
 article
   +fsize(1)
   background-color: neut($light-bg)
@@ -213,13 +198,12 @@ article
     -moz-box-shadow: -20px 2px 14px -5px neut($dark-bg-emph)
     -webkit-box-shadow: -20px 2px 14px -5px neut($dark-bg-emph)
     box-shadow: -20px 2px 14px -5px neut($dark-bg-emph)
-    //-moz-box-shadow: 0px 0px 17px neut($dark-bg-emph)
-      -webkit-box-shadow: 0px 0px 17px neut($dark-bg-emph)
-      box-shadow: 0px 0px 17px neut($dark-bg-emph)
     position: fixed
     background-color: neut($dark-bg-emph)
     height: 5 * $unit
     width: 100%
+    margin-bottom: -1px
+    border-bottom: 1px solid neut($dark-content)
     padding-left: $h-unit
     color: (neut($dark-bg) + #111)
     hgroup
@@ -231,42 +215,31 @@ article
       border-bottom: 1px solid (neut($dark-minor) - #272727)
       text-align: right
     #article-meta
-      +fsize(1,1.75)
+      +fsize(1,$golden)
       font-family:                 Gruppo, "GruppoRegular", sans-serif
       text-align: right
     time
-      +fsize(1,1.9)
+      +fsize(1,$golden)
       font-family:                 Gruppo, "GruppoRegular", sans-serif
-      color: neut($dark-bg)
-      //color: neut($dark-bg) - #111
-      //text-decoration: underline
-      font-family: Georgia, Gruppo, "GruppoRegular", sans-serif
+      font-weight: bold
     #section-title
       +fsize(1)
       color: neut($dark-minor) + #070707
-      //color: neut($dark-minor)
       margin-left: 0
       margin-right: 0
-      //margin-right: 22 * $h-unit
       padding-left: 0
       text-align: right
       border: 0
-      //border-top: 1px solid neut($dark-minor)
   h2
-    margin-left: - $left-width
-    margin-right: $left-width
-    //margin-right: 7 * $h-unit
     text-align: right
     border-bottom: 1px solid neut($light-bg-emph)
     margin-bottom: $unit
-    //padding-left: $h-unit
     +fsize(1)
 
   p
-    border-left: 1px solid neut($light-bg-emph)
+    +fsize(1,$golden)
     padding-left: $h-unit
-    margin-right: 6px + $left-width
-    //padding-bottom: $unit
+    max-width: 22 * $h-unit
     margin-bottom: $unit
     a
       text-decoration: none
@@ -276,10 +249,24 @@ article
         color: neut($light-minor)
         text-decoration: underline
 
-ul, ol
+ul
   margin-bottom: $unit
+  list-style: outside
+
+ol
+  margin-left: 3 * $h-unit
+  margin-bottom: $unit
+  list-style: outside
+  li
+    list-style: decimal
+    +fsize(1,$golden)
+  
+
+
 
 article section
+  border-left: 1px solid (neut($light-bg-emph) + #222)
+  margin-right: 6px + $left-width
   h2:first-child
     visibility: hidden
     &+p

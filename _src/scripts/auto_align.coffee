@@ -1,7 +1,7 @@
 $ ->
   gifdat = 'data:image/gif;base64,R0lGODlhAQABAID/AP///wAAACwAAAAAAQABAAACAkQBADs='
   style = 'visibility: hidden;'
-  $('.atxt,p,h1,h2,h3,h4,h5,h6,span,li').
+  $('.atxt,p,h1,h2,h3,h4,h5,h6,span,ol,ul').
     append('<img src="'+gifdat+'" style="'+style+'" class="__autoalign__"/>').
       css('opacity',0.01)
 
