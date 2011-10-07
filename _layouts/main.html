@@ -11,18 +11,28 @@
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
 <![endif]-->
 <script src="/js/foutbgone.js" type="text/javascript"></script>
+<script src="/js/jquery-1.6.4.min.js" type="text/javascript"></script>
+<script src="/js/auto_align.js" type="text/javascript"></script>
+<script src="/js/heading-fader.js" type="text/javascript"></script>
 </head>
 <body>
 <header>
 <hgroup>
 <h1>
-Joseph A. Wecker
+JAW
 <span class="subtitle">I/O</span>
 </h1>
 </hgroup>
-<div class="clear"></div>
 </header>
-<section id="main">
+<article>
+<header>
+<hgroup>
+<h1 class="page-title">{{page.title}}</h1>
+</hgroup>
+</header>
+<footer></footer>
+</article>
+<section id="non-article">
 {{content}}
 <div class="clear"></div>
 </section>

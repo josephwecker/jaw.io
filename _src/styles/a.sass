@@ -22,6 +22,8 @@ $base-line-height:  1.25    !default
 $base-font-size:    round($unit / $base-line-height)
 $h-unit:            $base-font-size
 
+$left-width:        10 * $h-unit
+
 =fsize($rows, $lh: $base-line-height)
   $new-unit:                   $rows * $unit
   font-size:                   round($new-unit / $lh)
@@ -142,15 +144,16 @@ body>header
 
   background-color:   neut($dark-bg)
   position: fixed
-  -moz-box-shadow: 0px 0px 17px neut($dark-bg)
-  -webkit-box-shadow: 0px 0px 17px neut($dark-bg)
-  box-shadow: 0px 0px 17px neut($dark-bg)
-  width: 14 * $h-unit
+  //-moz-box-shadow: 0px 0px 17px neut($dark-bg)
+  //-webkit-box-shadow: 0px 0px 17px neut($dark-bg)
+  //box-shadow: 0px 0px 17px neut($dark-bg)
+  width: $left-width
   padding: 0
-  margin: 0
+  margin-bottom: -1px
+  border-bottom: 1px solid neut($dark-content)
   //width: (100% - round(1/$golden*100))
-  -moz-border-radius-bottomleft: $unit
-  border-bottom-left-radius: $unit
+  //-moz-border-radius-bottomleft: $unit
+  //border-bottom-left-radius: $unit
   height: 5 * $unit
   z-index: 1000
 
@@ -162,17 +165,34 @@ body>header
     font-family:  "Didact Gothic", sans-serif
     //color: lch2($dark-minor, 70, 1)
     color: neut($dark-bg-emph)
-    font-weight: bold
-    +fsize(2,0.7)
-    border-bottom: 1px dashed (neut($dark-bg-emph) - #222)
+    //font-weight: bold
+    +fsize(4)
+    padding-top: 0
+    width: $left-width - (2 * $h-unit)
+    text-align: center
+    //padding-top: $unit
+    font-family:                 Gruppo, "GruppoRegular", sans-serif
+    //font-family: "Handwriting - Dakota"
+    //font-family: "Optima"
+    //font-family: 
+    //font-family: "TradeGothic CondEighteen"
+    //font-family: "Trajan Pro"
+    //font-family: "Univers Condensed"
+    //font-family: "TradeGothic CondEighteen", sans-serif
+    //border-bottom: 1px dashed (neut($dark-bg-emph) - #222)
     //text-shadow: 0px 0px 15px (neut($dark-bg) - #0a0a0a)
-    text-shadow: 0px 0px 15px (neut($dark-bg) - #222)
+    //text-shadow: 0px 0px 15px (neut($dark-bg) - #222)
   .subtitle
+    //margin-left: 0px - $unit
+    margin-top: 5px
+    width: $left-width - (2 * $h-unit)
+    text-align: center
+    //margin-right: 3 * $h-unit
     font-family:                 Gruppo, "GruppoRegular", sans-serif
     color: neut($dark-minor)
-    text-shadow: (neut($dark-bg) - #111) 0 0 20px
+    //text-shadow: (neut($dark-bg) - #111) 0 0 20px
     font-weight: normal
-    +fsize(1)
+    +fsize(1, 1.75)
 
   h3
     +fsize(1)
@@ -184,7 +204,7 @@ h3
 article
   +fsize(1)
   background-color: neut($light-bg)
-  margin-left: 14 * $h-unit
+  margin-left: $left-width
   header
     -moz-box-shadow: 0px 0px 17px neut($dark-bg-emph)
     -webkit-box-shadow: 0px 0px 17px neut($dark-bg-emph)
@@ -194,43 +214,53 @@ article
     height: 5 * $unit
     width: 100%
     padding-left: $h-unit
-    color: neut($dark-bg) - #111
+    color: (neut($dark-bg) + #111)
+    hgroup
+      margin-right: $left-width * 2 + $h-unit
     h1
       padding-top: $unit
-      +fsize(1,0.8)
-      //color: neut($dark-bg) - #111
-      color: neut($light-bg)
-      //text-shadow: 2px 1px 20px neut($dark-minor)
-      //font-family:  "Didact Gothic", sans-serif
-      //font-weight: bold
-    time
-      //display: block
-      +fsize(1,1.75)
-      font-family:                 Gruppo, "GruppoRegular", sans-serif
-      color: neut($dark-minor)
-    #article-meta
-      //padding-top: 5px
-      +fsize(1,1.75)
-      font-family:                 Gruppo, "GruppoRegular", sans-serif
-    #section-title
-      +fsize(1,1.0)
+      +fsize(1)
       color: neut($dark-content)
+      border-bottom: 1px solid (neut($dark-minor) - #272727)
+      text-align: right
+    #article-meta
+      +fsize(1,1.75)
+      font-family:                 Gruppo, "GruppoRegular", sans-serif
+      text-align: right
+    time
+      +fsize(1,1.9)
+      font-family:                 Gruppo, "GruppoRegular", sans-serif
+      color: neut($dark-bg)
+      //color: neut($dark-bg) - #111
+      //text-decoration: underline
+      font-family: Georgia, Gruppo, "GruppoRegular", sans-serif
+    #section-title
+      +fsize(1)
+      color: neut($dark-content)
+      //color: neut($dark-minor)
       margin-left: 0
+      margin-right: 0
+      //margin-right: 22 * $h-unit
       padding-left: 0
+      text-align: right
+      border: 0
+      //border-top: 1px solid neut($dark-minor)
   h2
-    +fsize(2)
-    //border-top: 1px solid neut($light-bg-emph)
-    //border-bottom: 1px solid neut($light-bg-emph)
-
-    //margin-left: (- round(1/$golden*100%))
-    margin-left: -14 * $h-unit
-    padding-left: $h-unit
+    margin-left: - $left-width
+    margin-right: $left-width
+    //margin-right: 7 * $h-unit
+    text-align: right
+    border-bottom: 1px solid neut($light-bg-emph)
+    margin-bottom: $unit
+    //padding-left: $h-unit
+    +fsize(1)
 
   p
     border-left: 1px solid neut($light-bg-emph)
     padding-left: $h-unit
-    margin-right: 6px + (5 * $unit)
-    padding-bottom: $unit
+    margin-right: 6px + $left-width
+    //padding-bottom: $unit
+    margin-bottom: $unit
     a
       text-decoration: none
       font: inherit
@@ -239,13 +269,21 @@ article
         color: neut($light-minor)
         text-decoration: underline
 
-article>header+h2+p
-  padding-top: 4 * $unit
+ul, ol
+  margin-bottom: $unit
+
+article section
+  h2:first-child
+    visibility: hidden
+    &+p
+      padding-top: 4 * $unit
 
 .clear
   clear: both
 
 nav
+  padding: $h-unit
+  padding-top: 6 * $unit
   time
     font-family: "Didact Gothic", sans-serif
     font-size: $base-font-size * 0.6

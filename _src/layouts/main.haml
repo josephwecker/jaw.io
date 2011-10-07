@@ -10,14 +10,21 @@
     /[if lt IE 9]
       %script(type="text/javascript" src="http://html5shim.googlecode.com/svn/trunk/html5.js")
     %script(type="text/javascript" src="/js/foutbgone.js")
+    %script(type="text/javascript" src="/js/jquery-1.6.4.min.js")
+    %script(type="text/javascript" src="/js/auto_align.js")
+    %script(type="text/javascript" src="/js/heading-fader.js")
   %body
     %header
       %hgroup
         %h1
-          Joseph A. Wecker
+          JAW
           %span.subtitle I/O
-      .clear
-    %section#main
+    %article
+      %header
+        %hgroup
+          %h1.page-title {{page.title}}
+      %footer
+    %section#non-article
       {{content}}
       .clear
     %footer

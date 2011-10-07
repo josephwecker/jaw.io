@@ -23,7 +23,7 @@ without adding fuel to editor holy wars (that fuel will come in a later post).
 
 ## Background and Context
 ### Some purposes for Syntax Highlighting
-I'm not going to go into
+A quick brainstorm identifies 
 
 
 
@@ -33,6 +33,7 @@ Hypothesis: Good colorschemes are not just a matter of individual taste. There
 exist principles that make certain colorschemes objectively, qualitatively
 better than alternatives. I suggest that the "goodness" of a colorscheme can be
 determined by:
+
 1. Universal principles
 2. (applied to) Current physical context - lighting, screensize, eyesight
 3. (with some remaining latitude for) Mood and taste

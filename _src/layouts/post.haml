@@ -19,19 +19,20 @@
       %hgroup
         %h1
           JAW
-          %span.subtitle I/O
-        %h3 Joseph A. Wecker: blog, etc.
+        %p.subtitle input / output
 
     %article
       %header
-        %h1.page-title {{page.title}}
-        .atxt#article-meta
-          Joseph A. Wecker
-          \/
-          %time.atxt(datetime="{{page.date}}" pubdate="pubdate") {{page.date | date_to_long_string }}
-          \/
-          {{page.tags | array_to_sentence_string}}
-        %h2#section-title
-      {{content}}
+        %hgroup
+          %h1.page-title {{page.title}}
+          .atxt#article-meta
+            Joseph A. Wecker
+            \/
+            %time.atxt(datetime="{{page.date}}" pubdate="pubdate") {{page.date | date_to_long_string }}
+            \/
+            {{page.tags | array_to_sentence_string}}
+          %h2#section-title hm
+      %section
+        {{content}}
       %footer
     %footer
