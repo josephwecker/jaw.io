@@ -18,7 +18,8 @@ $light-content-emph: $light-content - 20
 $main-text:         neut($light-content)
 $golden:            1.6180339887
 $unit:              29px    !default
-$base-line-height:  1.25    !default
+//$base-line-height:  1.25    !default
+$base-line-height:  $golden    !default
 $base-font-size:    round($unit / $base-line-height)
 $h-unit:            $base-font-size
 
@@ -144,6 +145,9 @@ body>header
 
   background-color:   neut($dark-bg)
   position: fixed
+  -moz-box-shadow: -9px 2px 14px -5px neut($dark-bg-emph)
+  -webkit-box-shadow: -9px 2px 14px -5px neut($dark-bg-emph)
+  box-shadow: -9px 2px 14px -5px neut($dark-bg-emph)
   //-moz-box-shadow: 0px 0px 17px neut($dark-bg)
   //-webkit-box-shadow: 0px 0px 17px neut($dark-bg)
   //box-shadow: 0px 0px 17px neut($dark-bg)
@@ -206,9 +210,12 @@ article
   background-color: neut($light-bg)
   margin-left: $left-width
   header
-    -moz-box-shadow: 0px 0px 17px neut($dark-bg-emph)
-    -webkit-box-shadow: 0px 0px 17px neut($dark-bg-emph)
-    box-shadow: 0px 0px 17px neut($dark-bg-emph)
+    -moz-box-shadow: -20px 2px 14px -5px neut($dark-bg-emph)
+    -webkit-box-shadow: -20px 2px 14px -5px neut($dark-bg-emph)
+    box-shadow: -20px 2px 14px -5px neut($dark-bg-emph)
+    //-moz-box-shadow: 0px 0px 17px neut($dark-bg-emph)
+      -webkit-box-shadow: 0px 0px 17px neut($dark-bg-emph)
+      box-shadow: 0px 0px 17px neut($dark-bg-emph)
     position: fixed
     background-color: neut($dark-bg-emph)
     height: 5 * $unit
@@ -220,7 +227,7 @@ article
     h1
       padding-top: $unit
       +fsize(1)
-      color: neut($dark-content)
+      color: neut($dark-minor) + #070707
       border-bottom: 1px solid (neut($dark-minor) - #272727)
       text-align: right
     #article-meta
@@ -236,7 +243,7 @@ article
       font-family: Georgia, Gruppo, "GruppoRegular", sans-serif
     #section-title
       +fsize(1)
-      color: neut($dark-content)
+      color: neut($dark-minor) + #070707
       //color: neut($dark-minor)
       margin-left: 0
       margin-right: 0

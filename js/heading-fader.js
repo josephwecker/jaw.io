@@ -16,8 +16,9 @@
       }
       $('header').height(new_height).css('margin-top', -negmargin);
       step = Math.min.apply(this, [condense / 90.0, 1.0]);
-      $('body>header').css('background-color', 'rgb(' + Math.floor(Math.max(30.0, 30.0 + ((238.0 - 30.0) * step))) + ',' + Math.floor(Math.max(39.0, 39.0 + ((230.0 - 39.0) * step))) + ',' + Math.floor(Math.max(41.0, 41.0 + ((229.0 - 41.0) * step))) + ')');
-      $('article header').css('background-color', 'rgb(' + Math.floor(Math.max(78.0, 78.0 + ((238.0 - 78.0) * step))) + ',' + Math.floor(Math.max(83.0, 83.0 + ((230.0 - 83.0) * step))) + ',' + Math.floor(Math.max(84.0, 84.0 + ((229.0 - 84.0) * step))) + ')');
+      $('body>header').css('background-color', 'rgb(' + Math.floor(Math.max(30.0, 30.0 + ((220.0 - 30.0) * step))) + ',' + Math.floor(Math.max(39.0, 39.0 + ((213.0 - 39.0) * step))) + ',' + Math.floor(Math.max(41.0, 41.0 + ((212.0 - 41.0) * step))) + ')');
+      $('body>header h1').css('color', 'rgb(' + Math.floor(Math.max(78.0, 78.0 + ((187.0 - 78.0) * step))) + ',' + Math.floor(Math.max(83.0, 83.0 + ((184.0 - 83.0) * step))) + ',' + Math.floor(Math.max(84.0, 84.0 + ((184.0 - 84.0) * step))) + ')');
+      $('article header').css('background-color', 'rgb(' + Math.floor(Math.max(78.0, 78.0 + ((220.0 - 78.0) * step))) + ',' + Math.floor(Math.max(83.0, 83.0 + ((213.0 - 83.0) * step))) + ',' + Math.floor(Math.max(84.0, 84.0 + ((212.0 - 84.0) * step))) + ')');
       return $('article h2').each(function() {
         var $t, d;
         $t = $(this);
