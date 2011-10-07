@@ -51,4 +51,4 @@ desc 'Start server for rapid iteration'
 task :server do sh 'jekyll --server --safe --auto' end
 
 desc 'Server to automatically regenerate css if sass changes'
-task :css_iterate do sh 'sass -t compressed --watch _src/styles:css' end
+task :css_iterate do sh 'sass -r ./_src/lib/sass_addons.rb -t compressed --watch _src/styles:css' end
