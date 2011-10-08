@@ -16,7 +16,9 @@ $light-content-emph: $light-content - 20
   @return lch($lightness, 7, 0.154)
 
 $main-text:         neut($light-content)
-$golden:            1.6180339887
+//$golden:            1.6180339887
+//$golden:            1.3819660113
+$golden:            1.5
 $unit:              29px    !default
 $base-line-height:  1.25    !default
 $base-font-size:    round($unit / $base-line-height)
@@ -239,7 +241,7 @@ article
   p
     +fsize(1,$golden)
     padding-left: $h-unit
-    max-width: 22 * $h-unit
+    max-width: (70.0 / $golden / 1.8181) * $h-unit + 0px
     margin-bottom: $unit
     a
       text-decoration: none

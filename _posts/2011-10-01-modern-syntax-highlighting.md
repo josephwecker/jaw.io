@@ -3,7 +3,7 @@
 layout: post
 title: "State of the art: Syntax Highlighting"
 tags: [programming, productivity, design]
-published: false
+published: true
 
 ---
 ## Intro
