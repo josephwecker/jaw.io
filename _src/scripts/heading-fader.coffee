@@ -4,7 +4,7 @@ $(window).load ->
   $(window).scroll ()->
     scr = $(window).scrollTop()
     condense = scr - 29
-    height_min = 145 - 25
+    height_min = 145 - 39
     new_height = Math.max.apply @,[height_min, 145 - (condense / 2)]
     negmargin = Math.min.apply @,[condense / 2, 29]
     negmargin = 0 if negmargin < 0

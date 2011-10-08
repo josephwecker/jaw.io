@@ -5,7 +5,7 @@
       var condense, height_min, negmargin, new_height, scr, step;
       scr = $(window).scrollTop();
       condense = scr - 29;
-      height_min = 145 - 25;
+      height_min = 145 - 39;
       new_height = Math.max.apply(this, [height_min, 145 - (condense / 2)]);
       negmargin = Math.min.apply(this, [condense / 2, 29]);
       if (negmargin < 0) {
