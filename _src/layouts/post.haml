@@ -35,12 +35,11 @@
       %section
         {{content}}
       %footer
-        %h2 (Comments / Feedback)
         #disqus_thread
         :javascript
           var disqus_shortname = 'jawio';
-          var disqus_identifier = "{{post.title}}";
-          var disqus_url = "http://jaw.io{{post.url}}";
+          var disqus_identifier = "{{page.url}}";
+          var disqus_url = "http://jaw.io{{page.url}}";
           (function() {
               var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
                 dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
@@ -48,13 +47,13 @@
             })();
         %noscript
           Please enable JavaScript to view the
-          %a(href="http://disqus.com/?ref_noscript") comments powered by Disqus.
-        //<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+          %a(href="http://disqus.com/?ref_noscript") comments powered by Disqus
+          \.
     %footer
       %p
         %img(src="/images/cc.png" alt="(Creative Commons)")
         %img(src="/images/cc-by.png" alt="Attribution")
         %img(src="/images/cc-sa.png" alt="Share-Alike")
         Joseph A. Wecker. Except where otherwise noted, content on this site is licensed under a
-        %a(href="http://creativecommons.org/licenses/by-sa/3.0/legalcode") Creative Commons Attribution-ShareAlike 3.0
+        %a(href="http://creativecommons.org/licenses/by-sa/3.0/legalcode") Creative Commons BY-SA 3.0
         license.

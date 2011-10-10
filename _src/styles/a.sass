@@ -33,7 +33,7 @@ $inner-cont-width:  (70.0 / $golden / 1.8181) * $h-unit + 0px
   line-height:                 round($rows * $unit)
 
 //====| Reset |================================================================
- | Modified from: http://meyerweb.com/eric/tools/css/reset/ v2.0b1 | 201101 
+ | Modified from: http://meyerweb.com/eric/tools/css/reset/ v2.0b1 | 201101
  | License: Public Domain
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
@@ -50,7 +50,7 @@ video
   font-size:       100%
   font:            inherit
   vertical-align:  baseline
-  +fsize(1)
+  +fsize(1,$golden)
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav,
 section
@@ -108,7 +108,7 @@ table
   font-style:                  normal
 
 
-$hfont:                        Gruppo, "GruppoRegular", sans-serif
+$hfont:                        "GruppoRegular", Gruppo, sans-serif
 $bfont:                        "DidactGothic", "Didact Gothic", sans-serif
 
 html
@@ -116,7 +116,7 @@ html
   color:                       neut($light-content)
 
 body
-  font-size:                   $base-font-size
+  +fsize(1,$golden)
   padding:                     0
   -webkit-text-size-adjust:    100%
   text-rendering:              optimizeLegibility
@@ -146,14 +146,14 @@ h1,h2,h3,h4,h5,h6,p,span
   hyphenate-lines:             3
   text-align:                  left
 
-p,span
-  +fsize(1)
+p
+  +fsize(1,$golden)
   font-family:                 $bfont
   color:                       neut($light-content)
 
 h1,h2,h3,h4,h5,h6
   font-family:                 $hfont
-  
+
 body>header
   background-color:   neut($dark-bg)
   position: fixed
@@ -165,7 +165,7 @@ body>header
   margin-bottom: -1px
   border-bottom: 1px solid neut($dark-content)
   height: 5 * $unit
-  z-index: 999999999
+  z-index: 2
 
   hgroup
     padding: 0
@@ -198,10 +198,11 @@ h3
   color: neut($light-minor)
   text-align: right
 article
-  +fsize(1)
+  +fsize(1,$golden)
   background-color: neut($light-bg)
   margin-left: $left-width
   header
+    z-index: 1
     -moz-box-shadow: -20px 2px 14px -5px neut($dark-bg-emph)
     -webkit-box-shadow: -20px 2px 14px -5px neut($dark-bg-emph)
     box-shadow: -20px 2px 14px -5px neut($dark-bg-emph)
@@ -251,6 +252,7 @@ article
     max-width: $inner-cont-width
     margin-bottom: $unit
   a
+    +fsize(1,$golden)
     text-decoration: none
     font: inherit
     color: inherit
@@ -258,10 +260,63 @@ article
       color: neut($light-minor)
       text-decoration: underline
   footer
-    z-index: -999999
+    z-index: 0
+    background-color: neut($light-bg-emph) + #171717
+    padding: $h-unit
     margin-right: $left-width
     +fsize(1,$golden)
-    color: neut($light-minor)
+    color: neut($light-content)
+    margin-top: 2 * $unit
+    +fsize(1,2.0)
+    border: 1px solid neut($light-bg-emph)
+    box-shadow: 2px 2px 7px neut($light-bg-emph)
+    -moz-box-shadow: 2px 2px 7px neut($light-bg-emph)
+    -webkit-box-shadow: 2px 2px 7px neut($light-bg-emph)
+    h1,h2,h3,h4,h5,h6
+      text-align: left
+      color: neut($light-content-emph)
+    h3
+      +fsize(1)
+    .dsq-trackback-url input
+      background-color: neut($light-bg) - #111
+    #dsq-footer
+      margin: 0 !important
+      margin-top: $h-unit !important
+      padding-top: $h-unit !important
+      border-top: 1px solid neut($light-bg-emph)
+    #dsq-reply
+      margin-top: 0 !important
+    #dsq-global-toolbar
+      margin-bottom: 0 !important
+      margin-top: 0 !important
+    .dsq-commenter-name
+      color: neut($light-minor)
+    #dsq-content
+      h3
+        margin: 0 !important
+        margin-bottom: $h-unit !important
+        border-bottom: 1px solid neut($light-bg-emph)
+      .dsq-comment-actions li
+        margin: 0 !important
+      .dsq-comment
+        margin: 0 !important
+    .dsq-textarea-reply
+      margin-bottom: $h-unit !important
+    #dsq-comments
+      box-shadow: inset 2px 2px 7px neut($light-bg-emph)
+      -moz-box-shadow: inset 2px 2px 7px neut($light-bg-emph)
+      -webkit-box-shadow: inset 2px 2px 7px neut($light-bg-emph)
+      background-color: neut($light-bg)
+      max-width: inherit
+      border: 1px solid neut($light-bg-emph)
+      padding: $h-unit
+      #dsq-comments
+        box-shadow: none
+        -moz-box-shadow: none
+        -webkit-box-shadow: none
+        margin: 0
+        padding: 0
+        border: 0
 
 sup
   +fsize(0.5,$golden)
@@ -347,14 +402,14 @@ nav
       padding-bottom: 0
   time
     font-family: $bfont
-    font-size: $base-font-size * 0.6
+    +fsize(1,1.6)
     line-height: $unit
     color: neut($light-minor)
   a
     text-decoration: none
     font-family: $bfont
     line-height: $unit
-    font-size: $base-font-size
+    +fsize(1,$golden)
     color: lch2($light-content-emph, 70, 15)
     &:hover
       text-decoration: underline
