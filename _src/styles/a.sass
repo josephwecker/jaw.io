@@ -368,14 +368,23 @@ hr
     padding-left: 0
 
 body>footer
-  padding-left: $left-width
+  padding-left: $left-width / 2
+  padding-right: $left-width / 2
   border-top: 1px solid neut($light-bg-emph)
   background-color: #dcd5d4
   margin-top: 3 * $unit
+  //padding-top: $h-unit
   +fsize(0.5,1.9)
   p
-    +fsize(1.0,1.9)
+    display: block
+    margin-top: 0
+    padding-top: 0
+    text-align: center
+    +fsize(1,2.25)
     color: neut($light-minor)
+    img
+      padding: 0
+      margin: 0
   a
     +fsize(1,2.5)
     color: neut($light-minor)
