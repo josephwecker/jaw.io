@@ -165,7 +165,7 @@ body>header
   margin-bottom: -1px
   border-bottom: 1px solid neut($dark-content)
   height: 5 * $unit
-  z-index: 1000
+  z-index: 999999999
 
   hgroup
     padding: 0
@@ -257,6 +257,11 @@ article
     &:hover
       color: neut($light-minor)
       text-decoration: underline
+  footer
+    z-index: -999999
+    margin-right: $left-width
+    +fsize(1,$golden)
+    color: neut($light-minor)
 
 sup
   +fsize(0.5,$golden)

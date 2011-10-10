@@ -1,7 +1,7 @@
 ## Now
 - [D] Get Didact Gothic loading correctly
 - [D] Overall footer
-- [ ] Post footer
+- [~] Post footer
 - [ ] "About" paragraph in index
 
 ## Future
