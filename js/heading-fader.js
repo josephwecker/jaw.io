@@ -24,6 +24,11 @@
       $('article header').css('color', 'rgb(' + Math.floor(Math.max(47.0, 47.0 + ((220.0 - 47.0) * step))) + ',' + Math.floor(Math.max(56.0, 56.0 + ((213.0 - 56.0) * step))) + ',' + Math.floor(Math.max(58.0, 58.0 + ((212.0 - 58.0) * step))) + ')');
       $('article header h1').css('color', 'rgb(' + Math.floor(Math.min(137.0, 137.0 + ((98.0 - 137.0) * step))) + ',' + Math.floor(Math.min(139.0, 139.0 + ((103.0 - 139.0) * step))) + ',' + Math.floor(Math.min(139.0, 139.0 + ((104.0 - 139.0) * step))) + ')');
       $('article header h1').css('border-bottom', '1px solid ' + 'rgb(' + Math.floor(Math.max(91.0, 91.0 + ((220.0 - 91.0) * step))) + ',' + Math.floor(Math.max(93.0, 93.0 + ((213.0 - 93.0) * step))) + ',' + Math.floor(Math.max(93.0, 93.0 + ((212.0 - 93.0) * step))) + ')');
+      if (step >= 0.5) {
+        $('.subtitle').css('visibility', 'hidden');
+      } else {
+        $('.subtitle').css('visibility', 'visible');
+      }
       return $('article h2').each(function() {
         var $t, d;
         $t = $(this);

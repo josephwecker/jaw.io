@@ -40,6 +40,10 @@ $(window).load ->
       'rgb('+ Math.floor(Math.max(91.0, 91.0 + ((220.0 - 91.0) * step))) + ',' +
               Math.floor(Math.max(93.0, 93.0 + ((213.0 - 93.0) * step))) + ',' +
               Math.floor(Math.max(93.0, 93.0 + ((212.0 - 93.0) * step))) + ')')
+    if step >= 0.5
+      $('.subtitle').css('visibility', 'hidden')
+    else
+      $('.subtitle').css('visibility', 'visible')
 
     $('article h2').each ->
       $t = $(this)
