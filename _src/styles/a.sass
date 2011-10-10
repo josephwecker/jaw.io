@@ -98,6 +98,18 @@ table
   font-weight:                 normal
   font-style:                  normal
 
+
+@font-face
+  font-family:                 'DidactGothic'
+  src:                         url('/fonts/didactgothic-wf.eot')
+  src:                         url('/fonts/didactgothic-wf.eot?#iefix') format('embedded-opentype'), url('/fonts/didactgothic-wf.woff') format('woff'), url('/fonts/didactgothic-wf.ttf') format('truetype'), url('/fonts/didactgothic-wf.svg#DidactGothicRegular') format('svg')
+  font-weight:                 normal
+  font-style:                  normal
+
+
+$hfont:                        Gruppo, "GruppoRegular", sans-serif
+$bfont:                        "DidactGothic", "Didact Gothic", sans-serif
+
 html
   background-color:            neut($light-bg)
   color:                       neut($light-content)
@@ -107,7 +119,7 @@ body
   padding:                     0
   -webkit-text-size-adjust:    100%
   text-rendering:              optimizeLegibility
-  font-family:                 "Didact Gothic", sans-serif
+  font-family:                 $bfont
   -webkit-font-smoothing:      antialiased
   background-color:            neut($light-bg)
   color:                       neut($light-content)
@@ -135,11 +147,11 @@ h1,h2,h3,h4,h5,h6,p,span
 
 p,span
   +fsize(1)
-  font-family:                 "Didact Gothic", sans-serif
+  font-family:                 $bfont
   color:                       neut($light-content)
 
 h1,h2,h3,h4,h5,h6
-  font-family:                 Gruppo, "GruppoRegular", sans-serif
+  font-family:                 $hfont
   
 body>header
   background-color:   neut($dark-bg)
@@ -159,13 +171,12 @@ body>header
     margin: 0
     padding-left: $h-unit
   h1
-    font-family:  "Didact Gothic", sans-serif
     color: neut($dark-bg-emph)
     +fsize(4)
     padding-top: 0
     width: $left-width - (2 * $h-unit)
     text-align: center
-    font-family:                 Gruppo, "GruppoRegular", sans-serif
+    font-family:                 $hfont
     //font-family: "Handwriting - Dakota"
     //font-family: "Optima"
     //font-family: 
@@ -177,7 +188,7 @@ body>header
     margin-top: 5px
     width: $left-width - (2 * $h-unit)
     text-align: center
-    font-family:                 Gruppo, "GruppoRegular", sans-serif
+    font-family:                 $hfont
     color: neut($dark-minor)
     font-weight: normal
     +fsize(1, 1.75)
@@ -218,11 +229,11 @@ article
       text-align: right
     #article-meta
       +fsize(1,$golden)
-      font-family:                 Gruppo, "GruppoRegular", sans-serif
+      font-family:                 $hfont
       text-align: right
     time
       +fsize(1,$golden)
-      font-family:                 Gruppo, "GruppoRegular", sans-serif
+      font-family:                 $hfont
       font-weight: bold
     #section-title
       +fsize(1)
@@ -281,13 +292,13 @@ nav
   padding: $h-unit
   padding-top: 6 * $unit
   time
-    font-family: "Didact Gothic", sans-serif
+    font-family: $bfont
     font-size: $base-font-size * 0.6
     line-height: $unit
     color: neut($light-minor)
   a
     text-decoration: none
-    font-family: "Didact Gothic", sans-serif
+    font-family: $bfont
     line-height: $unit
     font-size: $base-font-size
     color: lch($light-content-emph, 70, 0.0)
