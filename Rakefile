@@ -20,7 +20,7 @@ CLOBBER.include('_site')
 CLOBBER.include('css')
 CLOBBER.include('_layouts')
 
-HAML_CMD = ["haml -t ugly -q -f html5 -E utf-8", ' ']
+HAML_CMD = ["haml -t ugly -q -f html5 ", ' ']
 SASS_CMD = ["sass -r ./_src/lib/sass_addons.rb -t compressed", ' ']
 COFFEE_CMD = ["coffee -cp", ' > ']
 
