@@ -25,6 +25,7 @@ $base-font-size:    round($unit / $base-line-height)
 $h-unit:            $base-font-size
 
 $left-width:        10 * $h-unit
+$inner-cont-width:  (70.0 / $golden / 1.8181) * $h-unit + 0px
 
 =fsize($rows, $lh: $base-line-height)
   $new-unit:                   $rows * $unit
@@ -177,13 +178,6 @@ body>header
     width: $left-width - (2 * $h-unit)
     text-align: center
     font-family:                 $hfont
-    //font-family: "Handwriting - Dakota"
-    //font-family: "Optima"
-    //font-family: 
-    //font-family: "TradeGothic CondEighteen"
-    //font-family: "Trajan Pro"
-    //font-family: "Univers Condensed"
-    //font-family: "TradeGothic CondEighteen", sans-serif
   .subtitle
     margin-top: 5px
     width: $left-width - (2 * $h-unit)
@@ -228,6 +222,7 @@ article
       border-bottom: 1px solid (neut($dark-minor) - #272727)
       text-align: right
     #article-meta
+      padding-top: 5px
       +fsize(1,$golden)
       font-family:                 $hfont
       text-align: right
@@ -243,6 +238,7 @@ article
       padding-left: 0
       text-align: right
       border: 0
+      padding-top: 4px
   h2
     text-align: right
     border-bottom: 1px solid neut($light-bg-emph)
@@ -252,30 +248,77 @@ article
   p
     +fsize(1,$golden)
     padding-left: $h-unit
-    max-width: (70.0 / $golden / 1.8181) * $h-unit + 0px
+    max-width: $inner-cont-width
     margin-bottom: $unit
-    a
-      text-decoration: none
-      font: inherit
-      color: inherit
-      &:hover
-        color: neut($light-minor)
-        text-decoration: underline
+  a
+    text-decoration: none
+    font: inherit
+    color: inherit
+    &:hover
+      color: neut($light-minor)
+      text-decoration: underline
 
-ul
+sup
+  +fsize(0.5,$golden)
+  vertical-align: super
+
+em
+  +fsize(1,$golden)
+  font-weight: bold
+ul, ol
   margin-bottom: $unit
   list-style: outside
-
-ol
+  max-width: $inner-cont-width - (4 * $h-unit)
   margin-left: 3 * $h-unit
-  margin-bottom: $unit
-  list-style: outside
   li
-    list-style: decimal
     +fsize(1,$golden)
-  
+    padding-bottom: $unit
 
 
+ol li
+  list-style: decimal
+  +fsize(1,$golden)
+
+hr
+  border: 0
+  border-bottom: 1px solid neut($light-bg-emph)
+
+.footnotes
+  &:before
+    content: "Footnotes"
+    +fsize(1,$golden)
+    color: neut($light-minor)
+    display: block
+    text-align: right
+    width: 100%
+    margin-bottom: 0
+    font-family:                 $hfont
+
+  ol
+    max-width: $inner-cont-width
+    li
+      +fsize(1,1.9)
+      padding-bottom: 0
+      border-bottom: 1px dashed neut($light-bg-emph)
+  p
+    display: inline
+    +fsize(1,1.9)
+    margin-bottom: 0
+    padding-bottom: 0
+    padding-left: 0
+
+body>footer
+  padding-left: $left-width
+  border-top: 1px solid neut($light-bg-emph)
+  background-color: #dcd5d4
+  margin-top: 3 * $unit
+  +fsize(0.5,1.9)
+  p
+    +fsize(1.0,1.9)
+    color: neut($light-minor)
+  a
+    +fsize(1,2.5)
+    color: neut($light-minor)
 
 article section
   border-left: 1px solid (neut($light-bg-emph) + #222)
@@ -290,7 +333,13 @@ article section
 
 nav
   padding: $h-unit
-  padding-top: 6 * $unit
+  padding-top: 5 * $unit
+  ul
+    margin-left: 0
+    list-style: none
+    li
+      list-style: none
+      padding-bottom: 0
   time
     font-family: $bfont
     font-size: $base-font-size * 0.6
@@ -301,7 +350,7 @@ nav
     font-family: $bfont
     line-height: $unit
     font-size: $base-font-size
-    color: lch($light-content-emph, 70, 0.0)
+    color: lch2($light-content-emph, 70, 15)
     &:hover
       text-decoration: underline
-      color: lch($light-content-emph + 10, 90, 0.0)
+      color: lch2($light-content-emph + 10, 90, 15)
