@@ -15,8 +15,8 @@ with a smile and nod to myself- "yeah, that entry would be awesome." Anyway,
 you'll have to take my word for it- they _were_ awesome. Now though I'm going
 to start writing them[^logging], and to give myself some sense of momentum I'm
 going to publish this as my first entry. Just this single lonely paragraph.
-With some disclaimers. Without any real point to make except maybe "why have I
-been procrastinating this?"
+With some disclaimers. Without any real point to make except maybe "look- I'm
+not procrastinating my blog any longer."
 
 ## Disclaimers
 
