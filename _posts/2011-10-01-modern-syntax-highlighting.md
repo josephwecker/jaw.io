@@ -8,6 +8,8 @@ published: true
 ---
 ## Intro
 
+WARNING: VERY UNFINISHED ENTRY. Live for a moment so I can test some styling...
+
 I've had a vaguely uncomfortable feeling for several years now about syntax
 highlighting and recently felt like finally getting to the bottom of it. I've
 designed a [few](https://github.com/josephwecker/neutron.vim)
