@@ -6,7 +6,8 @@
     return $('.atxt,p,h1,h2,h3,h4,h5,h6,span,ol,ul').append('<img src="' + gifdat + '" style="' + style + '" class="__autoalign__"/>').css('opacity', 0.01);
   });
   $(window).load(function() {
-    return $('.__autoalign__').each(function() {
+    var disqus_identifier, disqus_shortname, disqus_url, dsq;
+    $('.__autoalign__').each(function() {
       var $parent, currt, offset, relap;
       $parent = $(this).parent();
       currt = $(this).offset().top + 1;
@@ -30,5 +31,13 @@
         'opacity': 1
       }, 550, 'swing');
     });
+    disqus_shortname = window.disqus_shortname;
+    disqus_identifier = window.disqus_identifier;
+    disqus_url = window.disqus_url;
+    dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    return (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   });
 }).call(this);

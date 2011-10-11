@@ -22,3 +22,11 @@ $(window).load ->
       $parent.css('margin-bottom',(_,v)-> parseFloat(v) - relap)
     $(this).remove()
     $parent.animate({'opacity': 1}, 550, 'swing')
+  disqus_shortname = window.disqus_shortname
+  disqus_identifier = window.disqus_identifier
+  disqus_url = window.disqus_url
+  dsq = document.createElement('script')
+  dsq.type = 'text/javascript'
+  dsq.async = true
+  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js'
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq)

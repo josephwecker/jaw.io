@@ -9,10 +9,15 @@
     %link(rel="shortcut icon" href="/favicon.png")
     /[if lt IE 9]
       %script(type="text/javascript" src="http://html5shim.googlecode.com/svn/trunk/html5.js")
+    :javascript
+      window.disqus_shortname = 'jawio';
+      window.disqus_identifier = "{{page.url}}";
+      window.disqus_url = "http://jaw.io{{page.url}}";
+        
     %script(type="text/javascript" src="/js/foutbgone.js")
     %script(type="text/javascript" src="/js/jquery-1.6.4.min.js")
-    %script(type="text/javascript" src="/js/auto_align.js")
     %script(type="text/javascript" src="/js/heading-fader.js")
+    %script(type="text/javascript" src="/js/auto_align.js")
   %body
     /#overlay &nbsp;
     %header
@@ -38,15 +43,6 @@
         {{content}}
       %footer
         #disqus_thread
-        :javascript
-          var disqus_shortname = 'jawio';
-          var disqus_identifier = "{{page.url}}";
-          var disqus_url = "http://jaw.io{{page.url}}";
-          (function() {
-              var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-            })();
         %noscript
           Please enable JavaScript to view the
           %a(href="http://disqus.com/?ref_noscript") comments powered by Disqus
@@ -59,3 +55,4 @@
         Joseph A. Wecker. Except where otherwise noted, content on this site is licensed under a
         %a(href="http://creativecommons.org/licenses/by-sa/3.0/legalcode") Creative Commons BY-SA 3.0
         license.
+
