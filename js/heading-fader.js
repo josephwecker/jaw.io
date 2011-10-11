@@ -29,6 +29,7 @@
       } else {
         $('.subtitle').css('visibility', 'visible');
       }
+      $('#syndicate').css('top', $('body>header').outerHeight() - $('#syndicate').innerHeight() - 2);
       return $('article h2').each(function() {
         var $t, d;
         $t = $(this);

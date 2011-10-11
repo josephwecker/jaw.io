@@ -44,7 +44,7 @@ $(window).load ->
       $('.subtitle').css('visibility', 'hidden')
     else
       $('.subtitle').css('visibility', 'visible')
-
+    $('#syndicate').css('top', $('body>header').outerHeight() - $('#syndicate').innerHeight() - 2)
     $('article h2').each ->
       $t = $(this)
       return if $t.attr('id') == 'section-title'
