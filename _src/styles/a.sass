@@ -291,15 +291,29 @@ article
       margin-top: 0 !important
     .dsq-commenter-name
       color: neut($light-minor)
+      font-weight: normal !important
+    .dsq-comment-header
+      padding: 3px !important
     #dsq-content
       h3
         margin: 0 !important
         margin-bottom: $h-unit !important
         border-bottom: 1px solid neut($light-bg-emph)
       .dsq-comment-actions li
+        font-size: 14px
         margin: 0 !important
+        margin-right: 4px !important
+        color: neut($light-minor) + #111
       .dsq-comment
         margin: 0 !important
+      .dsq-comment-meta li
+        color: neut($light-minor) + #111
+        font-size: 14px
+        padding-left: 3px !important
+        padding-right: 4px !important
+        margin: 0 !important
+        &:after
+          content: ' / '
     .dsq-textarea-reply
       margin-bottom: $h-unit !important
     #dsq-comments
@@ -317,7 +331,8 @@ article
         margin: 0
         padding: 0
         border: 0
-
+    .dsq-comment-text
+      font-size: 13px !important
 sup
   +fsize(0.5,$golden)
   vertical-align: super
