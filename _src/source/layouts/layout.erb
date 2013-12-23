@@ -11,7 +11,21 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <!--[if IE]><link rel="shortcut icon" href="favicon.ico"><![endif]-->
+        <link rel="icon" type="image/png"        href="favicon144.png" sizes="144x144" />
+        <link rel="icon" type="image/png"        href="favicon128.png" sizes="128x128" />
+        <link rel="icon" type="image/png"        href="favicon114.png" sizes="114x114" />
+        <link rel="icon" type="image/png"        href="favicon72.png"  sizes="72x72" />
+        <link rel="icon" type="image/png"        href="favicon64.png"  sizes="64x64" />
+        <link rel="icon" type="image/png"        href="favicon57.png"  sizes="57x57" />
+        <link rel="icon" type="image/png"        href="favicon48.png"  sizes="48x48" />
+        <link rel="icon" type="image/png"        href="favicon32.png"  sizes="32x32" />
+        <link rel="icon" type="image/png"        href="favicon16.png"  sizes="16x16" />
+        <link rel="apple-touch-icon-precomposed" href="favicon144.png" sizes="144x144" />
+        <link rel="apple-touch-icon-precomposed" href="favicon114.png" sizes="114x114"  />
+        <link rel="apple-touch-icon-precomposed" href="favicon72.png"  sizes="72x72"   />
+        <link rel="apple-touch-icon-precomposed" href="favicon60.png" />
+        <link rel="apple-touch-icon"             href="favicon60.png" />
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
@@ -19,7 +33,7 @@
     </head>
     <body>
         <!--[if lt IE 7]>
-            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+        <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
         <![endif]-->
 
         <%= yield %>
@@ -28,13 +42,5 @@
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.0.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
-        </script>
     </body>
 </html>
