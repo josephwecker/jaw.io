@@ -1,0 +1,9 @@
+#!/bin/bash
+set -e
+D=`ruby -e 'puts File.dirname(File.realpath(File.expand_path("'${BASH_SOURCE[0]}'")))'`
+pushd "${D}" >/dev/null
+bundle exec middleman build
+find .. -mindepth 1 -maxdepth 1 -regextype posix-extended -not -iregex '.*?/([\._][^/]*|CNAME)$' | xargs rm -rf
+mv bld/* ..
+rm -rf bld
+popd >/dev/null
