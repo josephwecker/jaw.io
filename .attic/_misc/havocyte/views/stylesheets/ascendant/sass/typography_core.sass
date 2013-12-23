@@ -1,0 +1,210 @@
+//
+// Integer series that are golden-ratio-proportioned
+//   -----+-----------------------------------
+//   Qual | Series
+//   -----+----+----+----+----+---+---+---+---
+//   **** | 34 | 21 | 13 |  8 | 5 | 3 | 2 | 1
+//   *    | 39 | 24 | 15 |  9 |(6)|(4)| 2 |(1)
+//   **   | 42 | 26 | 16 | 10 | 6 |(4)|(2)|(1)
+//   ***  | 47 | 29 | 18 | 11 | 7 | 4 |(3)|(2)
+//
+
+
+// TODO:
+//  - More aligned-text defaults and get them working correctly
+//  - Adaptability (ala Less Framework)
+
+// Helvetica Neue, Arial, FreeSans, Liberation Sans, sans-serif
+
+
+//--------------------------------------- Font Families
+
+
+// "Open Sans": > Helvetica, google-webfont
+// 
+
+
+// EMBEDDED
+// TODO:
+//   - Script for subsetting?
+//   - Option to deliver from google-webfont or typekit etc. if desired
+//   - Intelligent override local or not
+//   - No FOUT / font-pop - http://www.extensis.com/en/WebINK/fout-b-gone/
+//   - http://paulirish.com/2010/font-face-gotchas/
+//   - http://nicewebtype.com/notes/2009/10/30/how-to-use-css-font-face/
+//   - http://www.stevesouders.com/blog/2009/10/13/font-face-and-performance/ [lazy loading]
+//   - http://sixrevisions.com/css/font-face-guide/
+//
+//   - (for example of google-style) http://fonts.googleapis.com/css?family=Open+Sans:light,regular,600,bold
+//
+//   - OpenType features, even if the face doesn't support them- for future use
+//
+// HTML5/CSS3: http://paulirish.com/2011/the-history-of-the-html5-shiv/
+
+=embed-font($fname,$fpath)
+  @font-face
+    font-family: $fname
+    src: url('#{$fname}?') format('eot'), url('#{$fname}.woff') format('woff'), url('#{$fname}.ttf') format('truetype')
+
+
+
+//-ff-humanist-sans
+  
+
+
+// Philosophy:
+//  | exact font, nearest alternative, platform-wide alternative(s), universal (cross-platform) choice(s), generic
+//  | Windows fonts, Mac fonts, Linux fonts, universal, generic
+//
+
+=ff-times
+  font-family: Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif
+
+=ff-georgia
+  font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif," "Bitstream Vera Serif", "Liberation Serif", Georgia, serif
+
+=ff-garamond
+  font-family: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif
+
+=ff-helvetica
+  font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif
+
+=ff-verdana
+  font-family: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif
+
+=ff-trebuchet
+  font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif
+
+=ff-impact
+  font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif
+
+=ff-monospace
+  font-family: Consolas, Inconsolata, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace
+
+//--------------------------------------- Vertical Rhythm
+$golden:            1.6180339887
+//---- Main global parameters
+// 28 | 1.4 | 20
+$unit:              29px    !default
+$columns:           6       !default
+$base-line-height:  $golden !default
+$units-per-column:  10      !default
+$rows-per-group:    8       !default
+$show-grid:         false   !default
+$base-font-size:    round($unit / $base-line-height)
+$h-unit:            $base-font-size
+$body-side-padding: $h-unit !default
+$body-top-padding:  $h-unit !default
+//$h-unit:            round($base-font-size / 3.0 * 2.0 * 1.618) // roughly the x-height * Golden ratio
+$gutter-size:       $h-unit
+
+@if $show-grid
+  @debug "unit           | #{$unit}"
+  @debug "h-unit         | #{$h-unit}"
+  @debug "columns        | #{$columns}"
+  @debug "side-padding   | #{$body-side-padding}"
+  @debug "top-padding    | #{$body-top-padding}"
+  @debug "gutters        | #{$gutter-size}"
+  @debug "line-height    | #{$base-line-height}"
+  @debug "units-per-col  | #{$units-per-column}"
+  @debug "rows-per-group | #{$rows-per-group}"
+  @debug "base-font-size | #{$base-font-size}"
+
+
+//---- Basic constant(s)
+$ie-font-ratio:     16px / 100%
+$column-width:      $h-unit * $units-per-column
+$body-width:        ($column-width * $columns) + ($gutter-size * ($columns - 1))
+
+
+//@function row($major:1,$minor:1)
+  @return (($major - 1) * $gutter-size) + (($major - 1) * $rows-per-group * $unit) + (($minor - 1) * $unit) + $body-top-padding
+@function row($major:1,$minor:1)
+  @return (($major - 1) * $rows-per-group * $unit) + (($minor - 1) * $unit) + $body-top-padding
+@function col($major:1,$minor:1)
+  @return (($major - 1) * $gutter-size) + (($major - 1) * $units-per-column * $h-unit) + (($minor - 1) * $h-unit) + $body-side-padding
+@function vgutter($pos:1)
+  @return ($pos * $units-per-column * $h-unit) + (($pos - 1) * $gutter-size) + $body-side-padding
+
+//=col($colnum)
+  position:         absolute
+  left:             $body-side-padding + ($column-width * $colnum) + ($gutter-size * ($colnum - 1))
+
+=aligned-text($rheight:1, $tpad:0, $bpad:0, $bordpx:0px, $lspace: $base-line-height, $adj:0)
+  $font-size:     $unit / $lspace
+  //$descend:       ($font-size / 3.66666666)// + 1.25
+  // f / 10.0  --> Impact, Tahoma, Verdana
+  // f / 9.0   --> Futura, Open Sans
+  // f / 8.5   --> DIN
+  // f / 8.0   --> BonvenoCS, Geneva, Serlio LH, Helvetica Neue, Ubuntu
+  // f / 7.5   --> Cambria, Lane - Narrow
+  // f / 7.0   --> Frutiger, Timeless, Play
+  // f / 6.666 --> Justus, AlexandriaFLF, Helvetica, Arial, Muli
+  // f / 6.5   --> Calibri, Corbel
+  // f / 6.333 --> Univers Condensed, Times New Roman
+  // f / 6.0   --> [none]
+  // f / 5.75  --> Times(chrome), sans(chrome), serif(chrome), Inconsolata
+  // f / 5.25  --> Aaargh, Quattrocento
+  // f / 5.125 --> Garamond, Rondalo
+  // f / 5.0   --> Herculanum, Gentium Basic
+  // f / 4.75  --> Quattrocento Sans
+  // f / 4.5   --> Skia, Bank Gothic
+  // f / 4.444 --> Palatino
+  // f / 4.333 --> Frutiger Linotype
+  // f / 4.125 --> Sansation
+  // f / 4.0   --> PF Encore Sans, Raleway, Josefin Sans, Tangerine, Times(FF), sans(FF), serif(FF)
+  // f / 3.875 --> Consolas
+  // f / 3.75  --> Philosopher
+  // f / 3.666 --> Portland LDO
+  // f / 3.075 --> Papyrus
+
+  @if $show-grid
+    @debug "Font-size: #{($rheight * $font-size)}"
+    //@debug "unit: #{$unit}"
+    //@debug "bpad: #{$bpad}"
+  $descend:       $font-size / (16.0 / 3.0)
+  //$descend:       $font-size / 6.0
+  $text-adjust:   (($unit - $font-size) / 2.0) + $descend
+  //$text-adjust:   ceil(($unit - $font-size) / 2.0) + ($font-size / 6.0)
+  //$text-adjust:   (($unit - $font-size) / 2.0) + ($font-size * $golden * 0.1)
+  //$text-adjust:   0
+  text-rendering: optimizeLegibility
+  padding-top:    round(($rheight * $text-adjust) - $bordpx + $adj)
+  margin-top:     round($unit * $tpad)
+  margin-bottom:  round( - ($rheight * $text-adjust + $adj))
+  padding-bottom: round($unit * $bpad)
+  font-size:      ($rheight * $font-size)
+  line-height:    ($rheight * $unit)
+  -webkit-font-smoothing: antialiased
+
+body
+  font-size:        ($unit / $base-line-height) / $ie-font-ratio
+  padding:          $body-top-padding $body-side-padding
+  -webkit-text-size-adjust: 100%
+  width:            $body-width
+
+html>body
+  @include aligned-text
+  padding:          $body-top-padding $body-side-padding
+
+li
+  height: $unit
+
+@function pixel($col:0,$opac:1,$w:1,$h:1)
+  @if $opac == 1
+    @return unquote('url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22#{$w}%22%20height%3D%22#{$h}%22%3E%3Crect%20width%3D%22#{$w}%22%20height%3D%22#{$h}%22%20style%3D%22fill%3A#{$col}%22%2F%3E%3C%2Fsvg%3E)')
+  @else
+    @return unquote('url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22#{$w}%22%20height%3D%22#{$h}%22%3E%3Crect%20width%3D%22#{$w}%22%20height%3D%22#{$h}%22%20style%3D%22fill%3A#{$col}%22%20opacity%3D%22#{$opac}%22%2F%3E%3C%2Fsvg%3E)')
+
+
+@if $show-grid
+  // URL decode these to see that they're just very simple svg files
+  body
+    outline: 1px solid red
+    background-image: unquote('url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221px%22%20height%3D%22#{ $unit }%22%20version%3D%221.0%22%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221px%22%20height%3D%221px%22%20style%3D%22fill%3A%23FF0000%22%20opacity%3D%220.9%22%2F%3E%3C%2Fsvg%3E)')
+    background-position: $body-top-padding $body-side-padding
+
+    //, url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22#{ $column-width + $unit }%22%20height%3D%221px%22%20version%3D%221.0%22%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221px%22%20height%3D%221px%22%20style%3D%22fill%3A%230077FF%22%20opacity%3D%220.4%22%2F%3E%3Crect%20x%3D%22#{ $column-width + 1px }%22%20y%3D%220%22%20width%3D%22#{ $h-unit }%22%20height%3D%221px%22%20style%3D%22fill%3A%23777777%22%20opacity%3D%220.15%22%2F%3E%3C%2Fsvg%3E), url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221px%22%20height%3D%22#{ $unit * ($rows-per-group + 1) }%22%20version%3D%221.0%22%3E%3Crect%20x%3D%220%22%20y%3D%22#{ $unit * $rows-per-group + 1 }%22%20width%3D%221px%22%20height%3D%22#{ $unit }%22%20style%3D%22fill%3A%23777777%22%20opacity%3D%220.15%22%2F%3E%3C%2Fsvg%3E)')
+    //background-origin: padding-box, padding-box, pad
+    //background-clip: padding-box, padding-box
+

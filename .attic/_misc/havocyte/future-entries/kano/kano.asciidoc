@@ -1,0 +1,100 @@
+= Using the Kano model at Justin.tv =
+
+==== Audience ====
+While this applies to anyone involved in product design and management (so,
+just about anyone who creates anything for computers) I'm going to specifically
+address this to startups, where there the resources are few and the tension
+between bugs, new-exciting-awesome features, and performance issues are high.
+
+At Justin.tv we've used the Kano model to put defects, missing features,
+performance, and experimental new features all on an equal footing.
+
+
+== Introducing the Kano Model ==
+(If you haven't already been introduced).
+
+A founder one morning is faced with a prioritization issue. There are
+complaints coming in about a page on the site that's broken - only a few
+complaints, but they seem pretty upset. A cofounder is anxious to make some
+serious headway on Awesomeness(tm), your new awesome feature that will blow
+everyone's mind and slingshot you ahead of the establishment (or, with some
+probability, will be a huge timesink with zero payoff). On top of it all, the
+site is slow, and you know that just a day or two could increase page load
+speed by 40%. Oh, and you're not sure you've really achieved Minimum Viable
+Product yet (? or have you? it's just not clear...)
+
+What do you work on next? (choose your own adventure)
+(a) Do a cost-benefit analysis of each option.
+(b) All of it!
+(c) Go with your gut.
+
+Here's what your answer says about you:
+(a) You use mad skillz to analyze the negative-buzz-factor of the complaints by
+early-adopters and weigh that against the upside and downside potential (after
+careful analysis) of Awesomeness(tm) and the latest research about conversion
+rates and page-load-speed correlations... Please turn in your entrepreneuer
+badge and report for work at Oracle or Microsoft.
+
+(b) Good thinking (avoidance). You're a pivoting agile madman. However,
+throughout the day you add to your list of three parallel items the other 10
+items that come up and your startup begins to resemble the a blurry smear of
+unfinished initiatives and sleep deprivation.
+
+(c) You may not have all the answers, but you have leadership. Assuming you
+have a good intrinsic sense of business, a solid vision, and a degree of luck,
+you succeed! You are the balance between flexible responsiveness and
+decisive-execution-against-all-odds; the balance between chaos and order; a
+monk of the startup order.
+
+Believe it or not, the Kano model is _not_ a tool for doing (a) as you might
+assume from a quality model out of the 80's used by Six Sigma blackbelts in
+fortune 100 companies. It is actually a mental model that allows you to better
+accomplish (c). Ideally it will give you a more well-informed gut.
+
+
+
+"Kano believed that not all attributes of product or service performance are
+equal in the eyes of the customer, and that some attributes create higher
+levels of customer loyalty than others." -- [wikipedia|http://en.wikipedia.org/wiki/Noriaki_Kano#Contributions_to_quality]
+
+
+
+Noriako Kano introduced his Customer Satisfaction model 
+
+There are two primary purposes for the Kano Model:
+1. Model for prioritizing "bugs," new features, and improvements to existing
+   features.
+
+It's meant to be a mental model of your product, not a mathematical model.
+Don't bother actually trying to map all your product features onto this except
+in a few isolated cases explained below.
+
+
+Instinctively you know that there is some kind of 
+
+A given feature or attribute goes from completely absent to fully implemented.
+
+
+=== Scratch ===
+
+MVP ==> Not necessarily Threshold/Basic values - could be an exciter with just
+enough threshold values - in any case, can call it a successful MVP if you feel
+the customer satisfaction will be neutral or better.
+
+Mike Cohn's article on actually figuring out what category something is in if
+you don't know. (but we'll safely assume that you can pretty much intuit it).
+
+
+Duds vs. Exciters (find out in advance?)
+ - why experimental features are often killed too early- indistinguishable from
+   duds at first.
+ - way to differentiate? ASK first (Mike Cohn's article)
+
+
+
+
+http://www.pragmaticmarketing.com/publications/magazine/4/3/0605ss
+
+
+http://poorbuthappy.com/ease/archives/2011/06/12/4875/more-features-competitive-advantage-for-a-startup
+

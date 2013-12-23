@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+require File.dirname(__FILE__) + '/markd'
+
+TR = [[/<div class="paragraph">(<p>.*?<\/p>)<\/div>/m,'\1'],
+      [/<li>\s*<p>(.*?)<\/p>\s*<\/li>/m, '<li>\1</li>'],
+      [/<div class="ulist">\s*(<ul>.*?<\/ul>)\s*<\/div>/m, '\1']
+]
+
+converge do |txt|
+  txt.apply_transforms TR
+end

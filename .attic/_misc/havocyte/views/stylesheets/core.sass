@@ -1,0 +1,119 @@
+//====| Core |===============================================================//
+ | Styles for general objects. General for all pages on the site.
+
+@import typography_core
+@import settings
+
+//====| Scroll bar |====//
+/* http://almaer.com/scrollbar/debug.html */
+::-webkit-scrollbar
+  width:                       6px
+  height:                      6px
+  &-button
+    &:start:decrement, &:end:increment
+      display:                 block
+      height:                  0
+    &:vertical:increment
+      background-color:        $main-background
+  &-track-piece
+    background-color:          $main-background - #111
+    -webkit-border-radius:     3px
+  &-thumb
+    &:vertical, &:horizontal
+      height:                  50px
+      background-color:        $main-background - #333
+      -webkit-border-radius:   3px
+
+//====| Main |====//
+html
+  overflow: auto
+  background-color:            $main-background
+  //background-color: #444
+  color:                       $main-text
+
+body
+  background-color:            $main-background
+  color:                       $main-text
+  overflow-y:                  scroll
+  overflow-x:                  auto
+  position:                    absolute
+  padding-right:               $page-margin
+  top:                         $page-margin
+  left:                        $page-margin
+  right:                       $page-margin
+  bottom:                      0
+  //width: 1100px
+
+//====| Headers |====//
+
+=aligned($rows)
+  $asize: 0
+  $atop:  0
+  @if $rows > 1
+    $asize: ((3.0 / 2.0 * $rows * $row-height) - $row-height)
+    $atop: ceil($row-height / 3.0 * (3.0 - $rows) / 2.0 + (5 - ($rows*1.6666666)))
+  @else
+    $asize: $row-height
+    $atop: $row-height / 6.0
+  font-size: $asize + 0px
+  line-height: $asize + 0px
+  top: $atop + 0px
+  text-align: right
+  float: left
+  width: 30%
+  //margin-bottom: 0
+  //margin-top: 0
+  margin-bottom: ($asize % $row-height) + $row-height + 0px
+  hyphenate:                   auto
+  hyphenate-lines:             3
+  +ff-special-optima
+  //font-family: Futura
+  clear: both
+  //border-top: #{$rows * 1px} solid #ccc
+  //margin-top: $row-height + 0px
+  //border-bottom: 1px solid blue
+  //border-top: 1px solid red
+
+h1
+  +aligned(3)
+  color: $main-text - #222
+  color: #c00
+
+h2
+  +aligned(2)
+  color: $main-text - #111
+
+h3
+  +aligned(1)
+
+h4
+  +aligned(1)
+  //font-weight: bold
+  color: #060
+
+h5
+  +aligned(1)
+
+h6
+  +aligned(1)
+  font-style: italic
+
+p
+  margin-top: $row-height + 0px
+  margin-bottom: $row-height + 0px
+  //+ff-body-helvetica
+  //font-family: Arial
+  //left: 30%
+  font-family: Baskerville
+  width: 60%
+  padding-left: $page-margin
+  margin-left: $page-margin
+  margin-right: $page-margin
+  border-left: 1px solid #ddd
+  float: right
+
+p.describe
+  line-height: $row-height * 2px
+  top: 0 - ($row-height-px * 1.3333333)
+  //font-size: $row-height-px
+  color: #777

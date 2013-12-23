@@ -1,0 +1,16 @@
+- content_for :head do
+  = stylesheet_link_tag 'unscroll'
+  
+  :javascript
+    $(window).scroll(function() {
+      $('#log').append('<span>' + $(window).scrollTop() + ' | </span>');
+      $('#over').css({'left':'-' + $(window).scrollTop()+'px'});
+    });
+
+#downer
+  This will be invisible
+
+#over-cont
+  #over
+    This one will scroll and scroll
+    #log This is the log

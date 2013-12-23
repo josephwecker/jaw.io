@@ -1,0 +1,77 @@
+
+[ ] - Basic Nav
+[ ] - Figure out margin issue...
+[ ] - Page: About
+[ ] - Resizing / other media types
+[ ] - Page: Entries / Index
+[ ] - Protected "in-progress" entry rendering/routes
+[ ] - Comments system (Disqus? link to hn?)
+
+[ ] - Working at JTV entry
+[ ] - Kano chart entry
+
+
+
+
+
+
+
+
+
+
+Phase 1:
+=========
+ - Quick header
+ - Small about
+ - Small entries list
+
+
+
+
+
+
+
+
+--------------------
+Base:
+ - About
+ - Special Disclaimer
+
+ [per article]
+ - Intended audience and purpose (convince entrepreneuers that ... ...)
+ - Finish-level (will-continue-to-polish, etc.)
+ - Comments (disqus? auto-over to hacker-news?)
+ - TOC
+
+Resources:
+- http://www.awayback.com/
+- http://typekit.com/
+- squirrelfonts
+- http://baselinecss.com/
+
+- http://lessframework.com/
+- http://staticmatic.rubyforge.org/how_to_use.html
+
+
+
+quasi-double-column?
+
+[Section]
+| ---content---  | assides |
+|                |         |
+|                |         |
+[Section]
+| assides | ---content---  |
+|         |                |
+|         |                |
+|         |                |
+[Section]
+...
+
+collapse to one column if screen not wide enough
+
+
+- Section header persists in assides column and then fades out as new one takes
+  its place : http://www.distractedbysquirrels.com/blog/one-page-layout-with-fixed-navigation-and-jquery/
+- TOC in the "assides" column, looking good
+- 

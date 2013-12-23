@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="245.53046"
+   height="293.87955"
+   id="svg2706"
+   sodipodi:version="0.32"
+   inkscape:version="0.47 r22583"
+   sodipodi:docname="Wolf_Head_Howl_clip_art.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape"
+   version="1.0">
+  <defs
+     id="defs2708">
+    <linearGradient
+       id="linearGradient3549">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop3551" />
+      <stop
+         id="stop3561"
+         offset="1"
+         style="stop-color:#5b5b5b;stop-opacity:1;" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3549"
+       id="linearGradient4360"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(839.77039,-88.528633)"
+       x1="-460.42053"
+       y1="322.41324"
+       x2="-451.20007"
+       y2="985.13147" />
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       id="perspective2714" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     gridtolerance="10000"
+     guidetolerance="10"
+     objecttolerance="10"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1"
+     inkscape:cx="83.501178"
+     inkscape:cy="179.17035"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1280"
+     inkscape:window-height="752"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata2711">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:description>The head of a wolf howling</dc:description>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>animal</rdf:li>
+            <rdf:li>wolf</rdf:li>
+            <rdf:li>silhouette</rdf:li>
+            <rdf:li>howl</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title />
+          </cc:Agent>
+        </dc:rights>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Choochus</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:date>12/23/2008</dc:date>
+        <dc:title></dc:title>
+        <cc:license
+           rdf:resource="http://creativecommons.org/licenses/publicdomain/" />
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/licenses/publicdomain/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-269.73627,-382.05406)">
+    <g
+       id="g3614"
+       inkscape:export-filename="/Users/jwecker/wolfhead.png"
+       inkscape:export-xdpi="4.9000001"
+       inkscape:export-ydpi="4.9000001">
+      <path
+         id="path4349"
+         d="m 473.83795,382.07251 c -22.86865,9.95566 -29.40377,40.1569 -54.0782,47.3811 -13.47358,3.1858 -24.98496,11.41773 -32.01747,23.53608 -10.68749,17.86445 -22.96081,35.5509 -41.05959,46.43112 -7.65377,6.26342 -21.46015,11.15602 -24.14678,19.7834 7.41208,6.54655 25.76246,11.7147 12.49641,22.83902 -0.80954,15.96027 -11.46159,25.82531 -21.34414,35.94461 -6.78658,15.6902 -14.67772,31.34158 -28.75553,41.53636 -9.48276,5.36836 -16.81294,14.6941 -14.93295,26.07413 -0.0879,10.11176 -0.17588,20.22352 -0.26382,30.33528 56.66391,0 113.32781,0 169.99172,0 4.8238,-14.21336 28.6244,-18.14566 25.77071,-33.91558 -5.62789,-17.28353 -11.1058,-35.34181 -8.24214,-53.76329 -0.44024,-12.62969 4.81479,-21.78155 16.64902,-25.73151 3.663,-11.27421 0.54234,-25.13755 5.73401,-37.01237 4.82646,-15.88952 4.11093,-33.35412 12.89218,-47.96826 4.46468,-10.98613 14.74979,-18.18411 19.65076,-28.48921 3.93589,-13.41332 -10.99942,-18.23808 -19.03551,-9.31042 -18.88362,1.25755 -2.82399,-22.1264 -7.19676,-32.77558 -1.02675,-7.95072 -3.20701,-22.34097 -12.11192,-24.89488 z"
+         style="fill:#000000;fill-opacity:1;stroke:none;display:inline" />
+      <path
+         sodipodi:end="0.66801227"
+         sodipodi:start="0"
+         transform="matrix(1.0006398,-1.3267718,1.0251858,0.21343579,165.99087,614.38998)"
+         d="m 150.18438,102.49257 c 0,0.93688 -1.29658,1.84645 -3.68055,2.58196 l -13.44261,-2.58196 z"
+         sodipodi:ry="4.1683035"
+         sodipodi:rx="17.123159"
+         sodipodi:cy="102.49257"
+         sodipodi:cx="133.06122"
+         id="path2840"
+         style="fill:#ffffff;fill-opacity:1;stroke:none"
+         sodipodi:type="arc" />
+    </g>
+  </g>
+</svg>

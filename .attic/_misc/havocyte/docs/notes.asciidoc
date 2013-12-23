@@ -1,0 +1,24 @@
+
+
+Reading column ideal width::
+  Aller Light 18px (pt?)
+  ~ 66 characters
+  575px
+
+
+
+
+.Main Features
+ - [D] Vertical Rhythm
+ - [D] (Real) Baseline aligned
+ - [I] Adaptive to size
+ - [I] Havoc scrolling
+
+.Misc detailed features
+ - -webkit-text-size-adjust: 100%; /* Stops Mobile Safari from auto-adjusting font-sizes */
+ - body: font-size: 100% (etc., for IE)
+ - Selection colors (don't forget)
+
+.Todo
+ - Figure out good line-height for specific fonts (possibly pre-determined by
+   what I need for baseline calculations)

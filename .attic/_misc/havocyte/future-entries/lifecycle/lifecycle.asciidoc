@@ -1,0 +1,47 @@
+
+
+
+1. To Realize
+  - Realize / have revealed
+  - Envision
+2. Describe
+3. Make
+  - Try / proof of concept
+  - Build
+  - Iterate, evolve
+4. Stop
+  - Be done
+  - Finish
+5. Maintain
+6. Refine
+
+(2 - 6 == EXECUTION)
+
+.Culled
+ 1. Realize
+ 2. (Describe)
+ 3. Make
+ 4. Stop
+ 5. Maintain and/or Refine
+
+Involve the "public" the whole time, so no separate "release"
+
+Most things won't have and can't have a definition of completeness or
+perfection.
+
+Balance of the items determined by::
+  Personal goals + what's appropriate for the project
+
+=== Enemies
+ - Like the sound of your own voice
+ - Lack of experience finishing
+ - Not being able to differentiate between the core being done vs all possible
+   aspects being perfected or even done.
+ - Perfectionism at any of steps
+ - Overemphasis on one of the steps
+
+=== Payoffs
+ - Each level has its own payoffs although the least fulfilling is to endlessly
+   repeat one phase across many projects.
+ - Doing all the phases == more fulfilling
+ 

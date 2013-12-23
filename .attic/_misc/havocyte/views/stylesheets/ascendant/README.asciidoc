@@ -1,0 +1,4 @@
+== Ascendant CSS Framework
+Inspired by http://baselinecss.com/ and
+http://compass-style.org/reference/compass/typography/vertical_rhythm/ as well
+as more general principles from http://webtypography.net/

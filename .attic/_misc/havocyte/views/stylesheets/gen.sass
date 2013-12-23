@@ -1,0 +1,68 @@
+@import 'ascendant/sass/reset.sass'
+
+$show-grid: true
+@import 'ascendant/sass/typography_core.sass'
+@for $i from 1 through 4
+  $border-height:   $i * 2px
+  h#{5 - $i}
+    //@include aligned-text($rheight: $i, $tpad: 1, $bordpx: $border-height, $lspace:0.825, $bpad: 0)
+    @include aligned-text($rheight: $i, $tpad: 1, $bpad: 1, $bordpx: $border-height, $lspace:0.9, $adj:$i*1.5)
+    //@include aligned-text($rheight: $i, $tpad: 0, $bpad: 1, $bordpx: $border-height, $lspace:0.9, $adj:$i*1.5)
+  
+    font-family:    "Frutiger Linotype"
+    //@include aligned-text($rheight: $i)
+    //@include aligned-text($rheight: $i, $tpad: 0, $bpad: 0, $lspace:(0.533*1.618))
+    //@include aligned-text($rheight: $i, $tpad: 0, $bpad: 0, $lspace:(0.533*1.618), $bordpx: 1px)
+    //@include aligned-text($rheight: $i, $tpad: 0, $bpad: 0, $lspace:1.301)
+    //@include aligned-text($rheight: $i, $tpad: 1, $bpad: 1, $bordpx: $border-height, $lspace:0.9, $adj:$i*1.5)
+    border-top:     #{$border-height} solid #555
+    color:          #444
+    margin-left:    col(3) - $h-unit
+    &:first-child
+      margin-top: 0
+
+p
+  @include aligned-text($bpad: 1)
+  font-family: Muli
+  color: #555
+  padding-left: col(3)
+  max-width: $h-unit * 32
+
+body
+  background-image: url(/images/bgr.png), pixel(0,0.1), pixel(0,0.1), pixel(0,0.1,1,$unit*14), pixel(0,0.1,1,$unit*14)
+  background-repeat: no-repeat,           repeat-y,     repeat-y,    no-repeat,                no-repeat
+  background-position: #{$body-width - 379px + $h-unit} $body-top-padding, vgutter(2) $body-top-padding, col(3) $body-top-padding, vgutter(4) $body-top-padding, col(5) $body-top-padding
+
+
+#logo
+  position: absolute
+  width: $body-width
+  margin-top: ($unit*9) - 49px - $h-unit - 2
+  background-image: pixel(0,0.1), pixel(0,0.05,1,$h-unit)
+  background-repeat: repeat-x, repeat-x
+  background-position: 0px #{49px - 8px}, left bottom
+  margin-bottom: $h-unit
+
+#havocyte
+  margin-bottom: -49px + 32px + $h-unit
+
+a
+  font-family: Muli
+  text-decoration: none
+  color: #a5c5d8
+  &:hover
+    color: #2baeff
+ul
+  @include aligned-text()
+li
+
+header
+  height: 14 * $unit
+
+nav
+  position: absolute
+  text-align: right
+  width: col(4,10)
+  top: row(1,10)
+  //margin-top: 12 * $unit
+  //margin-bottom: $unit

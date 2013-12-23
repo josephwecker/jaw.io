@@ -1,0 +1,162 @@
+//====| Typography Core |====================================================//
+ | Lots of mixins and defaults for getting typography off on a good foot.
+ | License: Copyright 2011 Joseph Wecker, All Rights Reserved
+
+@import settings
+
+//====| Embedded Font Specifications |====//
+@font-face
+  font-family: 'InconsolataMedium'
+  src: url('/type/inconsolata-wf.eot')
+  src: local('☺'), url('/type/inconsolata-wf.eot?#iefix') format('embedded-opentype'), url('/type/inconsolata-wf.woff') format('woff'), url('/type/inconsolata-wf.ttf') format('truetype'), url('/type/inconsolata-wf.svgz#InconsolataMedium') format('svg'), url('/type/inconsolata-wf.svg#InconsolataMedium') format('svg')
+  font-weight: normal
+  font-style: normal
+
+@font-face
+  font-family: 'OptimaRegular'
+  src: url('/type/optima-regular-wf.eot')
+  src: local('☺'), url('/type/optima-regular-wf.eot?#iefix') format('embedded-opentype'), url('/type/optima-regular-wf.woff') format('woff'), url('/type/optima-regular-wf.ttf') format('truetype'), url('/type/optima-regular-wf.svgz#OptimaRegular') format('svg'), url('/type/optima-regular-wf.svg#OptimaRegular') format('svg')
+  font-weight: normal
+  font-style: normal
+
+@font-face
+  font-family: 'DroidSansMonoRegular'
+  src: url('/type/droidsansmono-wf.eot')
+  src: local('☺'), url('/type/droidsansmono-wf.eot?#iefix') format('embedded-opentype'), url('/type/droidsansmono-wf.woff') format('woff'), url('/type/droidsansmono-wf.ttf') format('truetype'), url('/type/droidsansmono-wf.svgz#DroidSansMonoRegular') format('svg'), url('/type/droidsansmono-wf.svg#DroidSansMonoRegular') format('svg')
+  font-weight: normal
+  font-style: normal
+
+
+//====| Font Family Mixins |====//
+ | Philosophy:
+ |   Special-titles: Ideal, Imported, Alternative, Common, Generic
+ |   Titles:         Ideal, Alternative, Common, Generic
+ |   Paragraphs:     Ideal, Fit, Common, Generic
+ |   Mono/Code:      Specials, Imported, Common, Generic
+
+=ff-special-optima
+  font-family:                 Optima, OptimaRegular, Candara, "Trebuchet MS", sans-serif
+  font-weight:                 normal
+
+=ff-title-garamond
+  font-family:                 Garamond, "Hoefler Text", Palatino, "Palatino Linotype", serif
+=ff-title-helvetica
+  font-family:                 Helvetica, "Helvetica Neue", Arial, sans-serif
+=ff-title-gillsans
+  font-family:                 "Gill Sans", "Trebuchet MS", Calibri, sans-serif
+
+=ff-body-garamond
+  font-family:                 Garamond, "Hoefler Text", Times New Roman, Times, serif
+=ff-body-helvetica
+  font-family:                 "Helvetica Neue", Arial, Helvetica, sans-serif
+  //font-weight:                 lighter
+=ff-body-gillsans
+  font-family:                 "Gill Sans", Calibri, "Trebuchet MS", sans-serif
+  //font-weight:                 lighter
+
+=ff-mono
+  font-family:                 Inconsolata, InconsolataMedium, 'Droid Sans Mono', DroidSansMonoRegular, Consolas, "Lucida Console", Monaco, monospace
+
+//====| Presets |====//
+
+body
+  font-size: 75%
+  line-height: 1.5
+
+h1,h2,h3,h4,h5,h6
+  word-spacing: -0.125em
+  position: relative
+h1,h2
+  line-height: 36px
+  margin-bottom: $row-height-px
+h1,h2,h3,h4
+  margin-top: $row-height-px
+  //margin-top: 0
+h3,h4,h5,h6
+  line-height: $row-height-px
+h1
+  font-size: 36px
+  top: 5px
+h2
+  font-size: 28px
+  top: 9px
+h3
+  font-size: 22px
+  top: 1px
+h4
+  font-size: 18px
+  top: 2px
+h5
+  font-size: 15px
+  top: 4px
+h6
+  font-size:                  $base-size
+  top:                        $row-height-px - $base-size
+h1:first-child, h2:first-child, h3:first-child, h4:first-child
+  margin-top:                 0
+
+
+
+p
+  word-spacing:                0.125em
+  hyphenate:                   auto
+  hyphenate-lines:             3
+  widows:                      3
+  orphans:                     3
+  text-align:                  left
+p, pre, address
+  font-size:                   $base-size
+  line-height:                 $row-height-px
+  position:                    relative
+  top:                         $row-height-px - $base-size
+
+p+p
+  border-top:                  $inter-p-border-width dashed #eee
+  margin-top:                  $base-size
+  padding-top:                 $row-height-px - $base-size - $inter-p-border-width
+small
+  font-size: 11px
+abbr, code, kbd, samp, small, var
+  line-height: 15px
+ul, ol, dl, dialog
+  font-size:                   $base-size
+  line-height:                 $row-height-px
+  position:                    relative
+  top:                         $row-height-px - $base-size
+  margin-top:                  $row-height-px
+  margin-bottom:               $row-height-px
+
+li ul, li ol, ul ul, ol ol
+  top:                         0
+  margin-top:                  0
+  margin-bottom:               0
+
+li h1, li h2, li h3, li h4, li h5, li h6, li p
+  top: 0
+form, legend, label
+  font-size:                   $base-size
+  line-height:                 $row-height-px
+legend
+  position: relative
+  top: 5px
+table
+  font-size:                   $base-size
+caption
+  font-size:                   $base-size
+  line-height:                 $row-height-px
+  position:                    relative
+hr
+  position: relative
+  height: 4px
+  margin: $row-height-px 0 14px 0
+
+#body
+  @if $grid
+    background-image: url(/images/baseline-column.png)
+    background-repeat: repeat
+    background-position: 0 1px
+    border-bottom: solid 1px #CEECF5
+    background-attachment: scroll !important
+
+br
+  height: $row-height-px

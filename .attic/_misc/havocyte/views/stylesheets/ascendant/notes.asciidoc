@@ -1,0 +1,86 @@
+== General
+http://webtypography.net/toc/
+
+Change actual grid parameters / line-height, etc., based on media queries. Some
+degree of flex before having to change actual content.
+
+Beautiful & functional at any size / orientation - verifiably so
+
+
+== Sizing
+- If possible: font-size:100% in body and font-sizes/line-heights in em
+
+  body {
+      font-size:100%;
+      line-height:1.125em; /* 16×1.125=18 */
+  }
+
+  .bodytext p {
+      font-size:0.875em;
+  }
+
+  .sidenote {
+      font-size:0.75em;
+  }
+
+
+
+== Hyphenation
+- Leave at least 2 characters behind and take at least three forward
+- Avoid more than three consecutive hyphenated lines
+- New algorithm for auto-adjusting lines?
+
+
+
+
+== Microtab
+- When whitespace works like a small tab- aligning to pixel.
+- Applies to tabs as well.
+- Would allow for the use of non-monospaced fonts for source code, etc.
+- Possibly apply to brackets. Maybe even make a property of words?
+
+   blah blah blah(one,     two,
+                  aligned, also aligned)
+
+- I mean, what needs to be vertically consistent in code these days anyway?
+
+
+
+== Numbers
+- Separate digits with a narrow space (~ 0.1em)
+- Text figures for numbers inside text (e.g., hoefler, georgia)
+- Title figures for digits that should be capitalized (like in all-caps
+  situations)
+- See http://www.graphic-design.com/DTG/bergsland/numbering_typography.html
+- http://www.w3.org/TR/css3-fonts/#font-variant-numeric-prop supported by
+  firefox 4 so far - as long as you have some good opentype fonts.
+
+
+== Print
+- Use best pt sizes for fonts
+- Full urls for links
+  @media print {
+       #main-content a[href]:after { " (" attr(href) ") "; }
+  }
+- http://www.alistapart.com/articles/goingtoprint/
+
+- Site sizes in pixels -> Monitor dpi (usually 96dpi) -> inches -> / 72 => #pt
+
+== Forms
+- To ensure that you can size them and have padding etc. not expand the
+  position:
+
+  textarea {
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+  }
+
+
+== Infinite length
+http://warpspire.com/experiments/history-api/
+
+
+== Other References
+http://thatcoolguy.github.com/gridless-boilerplate/
+normalize.css

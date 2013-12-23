@@ -1,0 +1,4 @@
+Take complex interleaved data like trading data or sunspots: what set of
+low/high frequencies can most simply describe the data. i.e., discover the
+combination of periods that when summed together best approximate the
+_statistical_ qualities of the actual data.

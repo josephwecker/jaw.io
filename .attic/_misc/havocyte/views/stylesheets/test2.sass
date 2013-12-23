@@ -1,0 +1,92 @@
+//------------- The vertical rhythm framework
+
+//$unit:            26px   // Line height / row-heights, gutters
+//$columns:         10
+$show-grid:       true
+@import 'ascendant/sass/typography_core.sass'
+
+//------------- Actual testing stuff
+
+
+.ff-test
+  //font-family: "Helvetica Neue"
+  //font-family: "Open Sans"
+  font-family: "Helvetica Neue"
+  font-family: Rondalo
+.ff-test2
+  font-family: "Frutiger Linotype"
+  font-family: "Open Sans"
+.ff-test3
+  font-family: Muli
+  font-family: "ヒラギノ角ゴ ProN"
+  //font-family: Helvetica
+  //font-family: Sansation
+  font-family: Muli
+  font-family: "PF Encore Sans Pro"
+  //font-family: "Open Sans"
+.ff-test4
+  font-family: "Garamond"
+  font-family: serif
+.ff-test5
+  font-family: Arial
+  font-family: "Times New Roman"
+
+.tiny
+  font-size: 10px
+
+#rule
+  position: relative
+
+p
+  @include aligned-text
+  //font-family: "Helvetica Neue"
+  //font-family: "Times New Roman"
+  //font-family: "Skia"
+  //font-family: BonvenoCF
+  //font-family: "Josefin Sans"
+  //font-family: "Quattrocento Sans"
+  //font-family: "Open Sans"
+  max-width: ($column-width * 2) + ($unit * 1)
+  color: #444
+  //font-weight: 400
+
+//.two
+  //@include ff-times
+  //font-family: "
+  font-family: "Helvetica Neue"
+  //font-family: "Times New Roman"
+  //font-family: "Skia"
+  //font-family: BonvenoCF
+  //font-family: "Josefin Sans"
+  //font-family: "Tangerine"
+  //font-family: "Open Sans"
+  font-weight: 400
+//.three
+  //font-family: "Philosopher"
+#square
+  margin-top: $unit
+  width: ($column-width * 3) + ($unit * 2)
+  height: $unit * 3
+  background-color: #777
+
+p + p
+  @include aligned-text($tpad:1)
+
+
+@for $i from 1 through 4
+  $border-height:   $i * 2px
+  h#{5 - $i}
+    @include aligned-text($rheight: $i, $tpad: 0, $bpad: 0, $lspace:0.825)
+
+    //font-family:    "Bank Gothic"
+    //@include aligned-text($rheight: $i)
+    //@include aligned-text($rheight: $i, $tpad: 0, $bpad: 0, $lspace:(0.533*1.618))
+    //@include aligned-text($rheight: $i, $tpad: 0, $bpad: 0, $lspace:(0.533*1.618), $bordpx: 1px)
+    //@include aligned-text($rheight: $i, $tpad: 0, $bpad: 0, $lspace:1.301)
+    //@include aligned-text($rheight: $i, $tpad: 1, $bpad: 1, $bordpx: $border-height, $lspace:0.9, $adj:$i*1.5)
+    //border-top:     #{$border-height} solid #555
+    //border-top: 1px solid #00f
+    color:          #444
+    &:first-child
+      margin-top: 0
+

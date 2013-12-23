@@ -1,0 +1,99 @@
+
+= Working at Justin.tv, Part 1
+
+Like 99% of you, I've always been meaning to get around to blogging
+footnote:[Not normal blogging; geek blogging. Glogging].  I've half written
+dozens of different entries in my head over the years, always with a smile and
+nod to myself- "yeah, that entry would be awesome." Anyway, you'll have to take
+my word for it- they _were_ awesome. Now though I'm going to start writing them
+footnote:["logging" them, as it were], and to give myself some degree of
+momentum, I'm starting out with a multi-part series on working at Justin.tv and
+in Silicon Valley in general.
+
+== Quick Background
+
+This really belongs in an "about" section for my new blog but I don't need yet
+another reason to not get an entry out. Some quick facts:
+ * I've been programming for at least 20 years. Started with assembly language
+   for the 8088 (with which I wrote a game that was like nethack except it
+   stunk).
+ * I've been involved with startups since I was about 5 footnote:[We tore toilet paper
+   into individual squares, stapled them together, and went door-to-door
+   throughout the neighborhood selling them as notebooks - name your own price.
+   I would say we were ramen profitable.].
+ * My most successful startup is one you've never hear of, but it is the
+   industry leader in volunteer and disaster management
+   software footnote:[samaritan.com].
+ * From my blurb on Justin.tv: "Joseph has been exiled to Siberia
+   footnote:[twice, to work with and train some developers at the Russian
+   Academy of Science in Novosibirsk], was voted sexiest geek in 2000 by a
+   Sweedish magazine [due to a certain
+   http://www.petermaass.com/articles/the_supercool_top-secret_dvd-decoder_song/[incident]
+   ], and has one sucessful startup under his belt."
+ * I have a beautiful wife and three awesome kids.
+
+[quote, Mark Litvack - M.P.A.A.'s anti-piracy devision, The Supercool
+Top-Secret DVD-Decoder Song]
+___
+We will not be suing this songwriter.
+___
+
+I've lived all over the world, but ever since the days of yore
+footnote:[when slashdot and kuro5hin were the bomb] I've dreamt of being a
+part of Silicon Valley- that magical place where you may just see flying
+electric cars and robots walking down the sidewalk, where the sidewalks
+themselves are made of software, or where that robot you saw walking down the
+sidewalk turns out to be Justin Kan with a camera bolted to his head.
+
+Alas, business and family had always taken me elsewhere. Then a couple of years
+ago I began to think to myself, "Computer sciencegineering is still in its
+infancy [relatively speaking], and so much of the important and exciting work
+is happening in the Bay area. In 100 years I may look back and seriously regret
+not having lived there and being a part of it."
+
+Somehow that thought set in motion a series of improbable events that led to
+Justin.tv flying me out for some interviews.
+
+== Trying to Impress JTV
+
+Awesome. Justin.tv. A canonical startup; a ycombinator fixture; a brilliant
+team; a brilliant location footnote:[sf and only a block away from the caltrain
+station!] . Exactly the kind of company that just may be appealing enough to
+justify dragging my family half way across the country.
+
+To be honest, I've never had better questions. They were very difficult, but
+they also gave me a chance to make up for any weaknesses by allowing me to
+explain and prove out some of my strengths. In all I believe I had 5
+interviews, including one with Emmett and the last one with Justin, over
+probably 4 or 5 hours (added to the time it took a while earlier to do the
+sample coding problem, of course). The office was awesome, of course; lunch was
+delicious; from what I could tell the people interviewing me were top notch
+hackers. Several of them I knew as early members of hacker news. If you're
+going to interview at Justin.tv, here are some pointers:
+ . Relax - enjoy the office, enjoy the food, make yourself at home. But be
+   prepared for it to take some time footnote:[I don't think we interview quite
+   that long anymore, though].
+ . Be brilliant footnote:[Very sharp will probably work too. Work on your
+   confidence.]. I mean, be ready to seriously code and give good solutions to
+   posed questions.
+ . Make sure the interviewers get to hear about your strengths- unique
+   experience, exciting projects, super-skills etc.
+ . Don't bother if your not genuinely passionate about startups or software
+   engineering.
+
+I was starting to get pretty excited about the idea of working there, but what
+really cinched the deal for me was my drive to the airport. You see, I had a
+rented car and thought I might as well fly out of San Jose so I can see some
+more of the area - kind of see Silicon Valley end-to-end. I decided to take
+I-280, looking forward to driving through the following places on the way to
+San Jose - running them through my mind:
+ - *Menlo Park*: Where Google was started; home to Oracle, Intuit, and tons of VC firms
+ - *Palo Alto*: Oh man, where to start- and get to pass right by Stanford..
+ - *Mountain View*: Although I realized the freeway was probably too far from
+   Google's campus for me to see it.
+ - *Cupertino*: w00t- I'd get to drive through Apple's little city.
+
+Anyone who has been on i280 is of course shaking their head knowingly at the
+old me at this point. It's true that I drove _through_ those places more or
+less, but I didn't _see_ any of them. All I saw was this:
+

@@ -1,0 +1,22 @@
+From http://the-witness.net/news/?p=1004 - Jonathan Blow:
+
+  * (As we know, premature optimization is usually wasted because it takes a
+    lot of time and is, because it's premature, often applied to parts of the
+    code that are not on the critical path).
+  * Data structures [and stores] are optimization. Don't prematurely optimize
+    them. Conv. over configuration - you simply know what the records are and
+    can guess the names and semantics.
+  * But things that often are optimizable:
+    - Seconds per program execution
+    - Bytes per program execution
+    - Years of my life per program implementation
+  * Generalized systems are [often] worse than specialized/hardcoded ones
+  * Adding new systems is bad. Deleting code much, much better than adding
+    code.
+  * A good programmer, then:
+    - Gets things done quickly
+    - Gets things done robustly
+    - Makes things simple
+    - Finishes what he writes (for real)
+    - Broad knowledge of advanced ideas and techniques (but only uses them when
+      genuinely helpful)

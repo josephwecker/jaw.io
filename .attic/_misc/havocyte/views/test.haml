@@ -1,0 +1,88 @@
+- content_for :head do
+  = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Josefin+Sans'
+  = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Ubuntu:light'
+  = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Quattrocento'
+  = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Quattrocento+Sans'
+  = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Play'
+  = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Tangerine'
+  = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Philosopher'
+  = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Open+Sans:light,regular,600,bold'
+  = stylesheet_link_tag :test2
+
+  = javascript_include_tag 'ascendant/scripts/auto_align'
+%p Hello this is a quick font test 1234567890
+%h1 Test H1 jagged
+%p Hello header jagged
+%h2 Test H1 jagged
+#square &nbsp;
+%p Hello header jagged
+%h3 Test H3 jagged
+%p Hello header jagged
+
+-# ['Papyrus'].each do |ff|
+- ['Skia', 'BonvenoCF', 'PF Encore Sans Pro', 'Sansation', 'Bank Gothic', 'Aaargh', 'AlexandriaFLF', 'Calibri', 'Cambria', 'Corbel', 'Consolas', 'Inconsolata', 'DIN', 'Frutiger', 'Herculanum', 'Geneva', 'Gentium Basic', 'Impact', 'Futura', 'Justus', 'Lane - Narrow', 'Raleway', 'Serlio LH', 'Tahoma', 'Timeless', 'Verdana', 'Univers Condensed', 'Palatino', 'Portland LDO', 'Papyrus', 'Josefin Sans', 'Ubuntu', 'Quattrocento', 'Quattrocento Sans', 'Play', 'Tangerine', 'Philosopher', 'Open Sans', 'Frutiger Linotype', 'Garamond', 'Arial', 'Helvetica', 'Helvetica Neue', 'sans-serif', 'serif', 'Times New Roman', 'Times', 'Muli', 'Rondalo'].each do |ff|
+  - txt = ff + ' 0123456789 MyazjA'
+  %h1.atxt(style="font-family: '#{ff}';")= txt
+  %p(style="font-family: '#{ff}';")= txt
+  %h2.atxt(style="font-family: '#{ff}';")= txt
+  %p(style="font-family: '#{ff}';")= txt
+  %h3.atxt(style="font-family: '#{ff}';")= txt
+  %p(style="font-family: '#{ff}';")= txt
+  %h4.atxt(style="font-family: '#{ff}';")= txt
+  %p(style="font-family: '#{ff}';")= txt
+
+%p.ff-test
+  There are complaints coming in about a page on the site that's broken - only
+  a few complaints, but they seem pretty upset. A cofounder is
+  anxious to make some serious headway on Awesomeness(tm), your new
+%p.ff-test
+  awesome feature that will blow everyone's mind and slingshot you
+  ahead of the establishment (or, with some probability, will be a
+  huge timesink with zero payoff).
+//%h3 The title of my stuff
+-#%p
+  On top of it all, the site is
+  slow, and you know that just a day or two could increase page load
+  speed by 40%. Oh, and you're not sure you've really achieved
+  Minimum Viable Product yet (? or have you? it's just not clear...)
+  What do you work on next? (choose your own adventure)
+
+-#%p
+  The quick brown fox jumps over they lazy dog 0123456789
+-#%h1.two MemEternal
+-#%h2.three MemEternal
+-#%h2.two memeternal
+-#%h2.two Memeternal
+-#%h2.two MEMETERNAL
+%p
+  THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG
+//%h2 OK, here we go
+
+%p.two
+  On top of it all, the site is
+  slow, and you know that just a day or two could increase page load
+  speed by 40%. Oh, and you're not sure you've really achieved
+  Minimum Viable Product yet (? or have you? it's just not clear...)
+  What do you work on next? (choose your own adventure)
+%p.two
+  The quick brown fox jumps over they lazy dog 0123456789
+%p.two
+  MemEternal memeternal Memeternal MEMETERNAL
+%p.two
+  THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG
+
+%p
+  (a) Do a cost-benefit analysis of each option.
+  (b) All of it!
+  (c) Go with your gut.
+
+%p
+  Here's what your answer says about you:
+  (a) You use mad skillz to analyze the negative-buzz-factor of the complaints by
+  early-adopters and weigh that against the upside and downside potential (after
+  careful analysis) of Awesomeness(tm) and the latest research about conversion
+  rates and page-load-speed correlations... Please turn in your entrepreneuer
+  badge and report for work at Oracle or Microsoft.
+
+-#:javascript
+  setTimeout("alert($('#rule').position().top)",1250);

@@ -1,0 +1,104 @@
+//------------- The vertical rhythm framework
+
+$unit:            27px   // Line height / row-heights, gutters
+$columns:         10
+
+$side-padding:    $unit * 2
+$top-padding:     $unit * 2
+$column-width:    $unit * 3
+$body-width:      ($column-width * $columns) + ($unit * ($columns - 1))
+
+=col($colnum)
+  position:       absolute
+  left:           $side_padding + (($colnum - 1) * ($column-width + $unit))
+
+=aligned-text($rheight:1, $tpad:0, $bpad:0, $bordpx:0px, $lspace:1.5, $adj:0)
+  $font-size:     $unit / $lspace
+  $text-adjust:   (($unit - $font-size) / 2) + ($font-size / 6)
+  padding-top:    round(($rheight * $text-adjust) - $bordpx)
+  margin-top:     $unit * $tpad
+  margin-bottom:  round( - ($rheight * $text-adjust))
+  padding-bottom: $unit * $bpad
+  font-size:      $rheight * $font-size
+  line-height:    $rheight * $unit
+
+
+
+//------------- Actual testing stuff
+
+body
+  width: $body-width
+  padding: $top-padding $side-padding
+  -webkit-text-size-adjust: 100%
+
+p
+  @include aligned-text()
+  font-family: "Helvetica Neue"
+  max-width: ($column-width * 5) + ($unit * 4)
+  color: #555
+  font-weight: 200
+
+#square
+  margin-top: $unit
+  width: ($column-width * 3) + ($unit * 2)
+  height: $unit * 3
+  background-color: #777
+
+p + p
+  @include aligned-text($tpad:1)
+
+
+@for $i from 1 through 4
+  $border-height:   $i * 2px
+  h#{5 - $i}
+    font-family:    Constantia
+    @include aligned-text($rheight: $i, $tpad: 1, $bpad: 1, $bordpx: $border-height, $lspace:0.9)
+    border-top:     #{$border-height} solid #555
+    color:          #333
+    &:first-child
+      margin-top: 0
+
+
+
+//------------- For testing
+$test: false
+@if $test
+  .bgg
+    position: absolute
+    outline: 1px solid rgba(230,230,255,0.5)
+    width: $column-width
+    margin-right: $unit
+    background-color: rgba(230,230,255,0.3)
+    top: $top-padding
+    height: 100%
+    z-index: -100
+    display: hidden
+    //visibility: hidden
+
+  .pg
+    position: absolute
+    top: $top-padding
+    left: $side-padding
+    width: $body-width
+    height: $body-width * 0.618
+    outline: 1px solid rgba(230,255,230,0.5)
+    background-color: rgba(230,255,230,0.3)
+
+  @for $i from 1 through $columns
+    #g#{$i}
+      @include col($i)
+      //visibility: visible
+      display: inline
+
+
+  .rg
+    position: absolute
+    left: $side-padding
+    height: 1px
+    border-top: 1px solid rgba(200,200,200,.5)
+    width: $body-width
+    z-index: -20
+
+  @for $i from 1 through 30
+    #r#{$i}
+      top: $top-padding + ($unit * $i)

@@ -1,0 +1,10 @@
+import os, fnmatch
+for entry in os.listdir('./entries/'):
+    for f in os.listdir('./entries/'+entry):
+        if fnmatch.fnmatch(f, '*.asciidoc'):
+            run("bash", "-c", ' | '.join(["cat './entries/" + entry + '/' + f + "'",
+                    "./gentools/pre_asciidoc",
+                    "asciidoc -s -f ./gentools/asciidoc.conf -",
+                    "./gentools/post_asciidoc",
+                    "html2haml > ./views/entries/"+entry+".html.haml"]))
+

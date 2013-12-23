@@ -1,0 +1,22 @@
+.I 
+ - Am an inspiring, mind opening, soul expanding blogger.
+ - Am an effective, efficient, and talented designer & artist
+ - Release something to the public personally and through my employment every
+   week - and often multiple times in the week.
+
+.Expert on
+ - Productivity
+ - Product design / HCI
+ - Software / Computer Science
+   * Fundamentals & Algorithms
+   * Python + idioms + culture
+   * Ruby + idioms + culture
+   * Erlang + idioms + culture
+   * C + idioms + culture
+   * Golang + idioms + culture
+ - Business & Execution
+ - Startups & Entrepreneurship in particular
+ - Writing
+   * Building concensus
+   * Diffusing / peacemaking / diplomacy / empathy
+   * Persuasion
