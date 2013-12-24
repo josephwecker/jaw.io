@@ -1,3 +1,11 @@
+activate :blog do |blog|
+  #blog.prefix = "a"
+  #blog.sources = 'entries'
+  blog.sources = '{category}/{year}-{month}-{day}-{title}.html'
+  blog.permalink  = '{category}/{title}.html'
+end
+
+
 ###
 # Compass
 ###
@@ -36,7 +44,7 @@
 activate :automatic_image_sizes
 
 # Reload the browser automatically whenever files change
-# activate :livereload
+activate :livereload
 
 # Methods defined in the helpers block are available in templates
 # helpers do
@@ -51,6 +59,9 @@ set :images_dir, 'img'
 set :build_dir, 'bld'
 
 set :haml, {:ugly => true, :format => :html5}
+
+
+activate :directory_indexes
 
 # Build-specific configuration
 configure :build do
