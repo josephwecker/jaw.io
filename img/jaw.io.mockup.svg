@@ -15,7 +15,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="jaw.io.svg">
+   sodipodi:docname="jaw.io.mockup.svg">
   <defs
      id="defs4">
     <filter
@@ -26,22 +26,6 @@
          stdDeviation="5.766875"
          id="feGaussianBlur11278" />
     </filter>
-    <filter
-       inkscape:collect="always"
-       id="filter3813">
-      <feGaussianBlur
-         inkscape:collect="always"
-         stdDeviation="0.90052111"
-         id="feGaussianBlur3815" />
-    </filter>
-    <filter
-       inkscape:collect="always"
-       id="filter3794">
-      <feGaussianBlur
-         inkscape:collect="always"
-         stdDeviation="0.36020844"
-         id="feGaussianBlur3796" />
-    </filter>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -51,7 +35,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1"
-     inkscape:cx="305.50295"
+     inkscape:cx="128.00295"
      inkscape:cy="903.06219"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -69,7 +53,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -162,5 +146,38 @@
          id="tspan11290"
          x="-605.8667"
          y="210.84334">A Broad Interpretation of Responsibilities</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:22px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#aaaaaa;fill-opacity:1;stroke:none;font-family:AGaramond RegularSC;-inkscape-font-specification:AGaramond RegularSC"
+       x="199"
+       y="45.362183"
+       id="text4001"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4003"
+         x="199"
+         y="45.362183">Joseph A Wecker</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:17.70949745000000064px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#7297ce;fill-opacity:1;stroke:none;font-family:AGaramond RegularSC;-inkscape-font-specification:AGaramond RegularSC"
+       x="207.88896"
+       y="82.427124"
+       id="text4513"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4515"
+         x="207.88896"
+         y="82.427124">About * Blog</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text4537"
+       y="107.36218"
+       x="272"
+       style="font-size:22px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#b7c1cf;fill-opacity:1;stroke:none;font-family:AGaramond RegularSC;-inkscape-font-specification:AGaramond RegularSC"
+       xml:space="preserve"><tspan
+         y="107.36218"
+         x="272"
+         id="tspan4539"
+         sodipodi:role="line">About * Blog</tspan></text>
   </g>
 </svg>
