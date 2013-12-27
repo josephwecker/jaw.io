@@ -1,0 +1,18 @@
+---
+body_class: listing
+---
+%header
+  %a{:href=>'/'}
+    %img.jaw{:src=>'/img/jaw.svg'}
+  %h1 Technical Articles
+- blog.articles.each do |article|
+  %article.summary{:class => article.data.draft ? 'draft' : ''}
+    - if article.data.draft
+      %h4 [DRAFT]
+    %h1
+      %a{:href=>article.url}= article.title
+    %h2
+      %a{:href=>article.url}= article.data.subtitle
+    %time= article.date.strftime('%b %e %Y')
+    %p= article.summary
+    %a{:href=>article.url} Read more

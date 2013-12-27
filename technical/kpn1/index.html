@@ -1,48 +1,71 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <!-- Use title if it's in the page YAML frontmatter -->
-        <title>Beyond Erlang Actors: Kahn Process Networks, #1</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
+<!--[if lt IE 7]>
+<html class='no-js lt-ie9 lt-ie8 lt-ie7'></html>
+<![endif]-->
+<!--[if IE 7]>
+<html class='no-js lt-ie9 lt-ie8'></html>
+<![endif]-->
+<!--[if IE 8]>
+<html class='no-js lt-ie9'></html>
+<![endif]-->
+<!--[if gt IE 8]>  <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+<!-- Hello there -->
+<meta charset='utf-8'>
+<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+<title>Beyond Erlang Actors, Part 1</title>
+<meta content='' name='description'>
+<meta content='Joseph A Wecker' name='author'>
+<meta content='width=device-width; initial-scale=1.0; maximum-scale=1.0;' name='viewport'>
+<link href='/css/normalize.css' rel='stylesheet'>
+<link href='/css/main.css' rel='stylesheet'>
+<!--[if IE]>
+<link href='favicon.ico' rel='shortcut icon'>
+<![endif]-->
+<link href='/favicon144.png' rel='icon' sizes='144x144' type='image/png'>
+<link href='/favicon128.png' rel='icon' sizes='128x128' type='image/png'>
+<link href='/favicon114.png' rel='icon' sizes='114x114' type='image/png'>
+<link href='/favicon72.png' rel='icon' sizes='72x72' type='image/png'>
+<link href='/favicon64.png' rel='icon' sizes='64x64' type='image/png'>
+<link href='/favicon57.png' rel='icon' sizes='57x57' type='image/png'>
+<link href='/favicon48.png' rel='icon' sizes='48x48' type='image/png'>
+<link href='/favicon32.png' rel='icon' sizes='32x32' type='image/png'>
+<link href='/favicon16.png' rel='icon' sizes='16x16' type='image/png'>
+<link href='/favicon144.png' rel='apple-touch-icon-precomposed' sizes='144x144'>
+<link href='/favicon114.png' rel='apple-touch-icon-precomposed' sizes='114x114'>
+<link href='/favicon72.png' rel='apple-touch-icon-precomposed' sizes='72x72'>
+<link href='/favicon60.png' rel='apple-touch-icon-precomposed'>
+<link href='/favicon60.png' rel='apple-touch-icon'>
+<script src='/javascripts/modernizr-2.6.1.min.js'></script>
+</head>
+<body class='article'>
+<header class='article'>
+<a href='/'>
+<img class='jaw' src='/img/jaw.svg'>
+</a>
+<h1>Beyond Erlang Actors, Part 1</h1>
+<h2>Kahn Process Networks</h2>
+</header>
+<div id='info'>
+<time>23 Dec 2013</time>
+<p>Joseph A Wecker</p>
+<p>erlang, kahn-process-networks, parallel</p>
+</div>
+<article>
+<p>It&#8217;s one thing to have awesome Actors. It&#8217;s another thing to put together a well-behaved pipeline for processing data in
+parallel and even in a distributed environment.</p>
 
-        <!--[if IE]><link rel="shortcut icon" href="favicon.ico"><![endif]-->
-        <link rel="icon" type="image/png"        href="/favicon144.png" sizes="144x144" />
-        <link rel="icon" type="image/png"        href="/favicon128.png" sizes="128x128" />
-        <link rel="icon" type="image/png"        href="/favicon114.png" sizes="114x114" />
-        <link rel="icon" type="image/png"        href="/favicon72.png"  sizes="72x72" />
-        <link rel="icon" type="image/png"        href="/favicon64.png"  sizes="64x64" />
-        <link rel="icon" type="image/png"        href="/favicon57.png"  sizes="57x57" />
-        <link rel="icon" type="image/png"        href="/favicon48.png"  sizes="48x48" />
-        <link rel="icon" type="image/png"        href="/favicon32.png"  sizes="32x32" />
-        <link rel="icon" type="image/png"        href="/favicon16.png"  sizes="16x16" />
-        <link rel="apple-touch-icon-precomposed" href="/favicon144.png" sizes="144x144" />
-        <link rel="apple-touch-icon-precomposed" href="/favicon114.png" sizes="114x114"  />
-        <link rel="apple-touch-icon-precomposed" href="/favicon72.png"  sizes="72x72"   />
-        <link rel="apple-touch-icon-precomposed" href="/favicon60.png" />
-        <link rel="apple-touch-icon"             href="/favicon60.png" />
+<p></p>
 
-        <link rel="stylesheet" href="/css/normalize.css">
-        <link rel="stylesheet" href="/css/main.css">
-        <script src="/js/vendor/modernizr-2.6.1.min.js"></script>
-    </head>
-    <body class="standard">
-        <!--[if lt IE 7]>
-        <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
-        <![endif]-->
-
-        <p>The most obvious starting point for deciding when you want something like a Kahn network is any time you find yourself
+<p>The most obvious starting point for deciding when you want something like a Kahn network is any time you find yourself
 thinking in terms of a unix pipeline- data needing sequential processing, ideally with the additional ability to split
 down separate paths and join back up later. These sorts of problems come up often in signal processing, input/output
-transformations, complex event processing, "bit-shoveling," almost any problem that lends itself to distributed
+transformations, complex event processing, &#8220;bit-shoveling,&#8221; almost any problem that lends itself to distributed
 computing, etc. In fact, with apologies to Greenspun, many Erlang systems end up as ad-hoc, informally-specified,
 bug-ridden implementations of Kahn Process Networks.</p>
 
+<figure class="right"><img class="right" src="/kpn1/kahn.jpg" alt="Gilles Kahn, computer scientist" /><figcaption>Gilles Kahn, computer scientist</figcaption></figure>
 <p>A Kahn Network is best for any problem that makes the most sense as a data-flow model- as streams of data flowing
 through various stages (possibly in parallel). Like the unix pipeline, it allows you develop the stages (processes- or,
 in Erlang terminology, things you would normally supervise like gen_servers and gen_fsms) individually, in a very
@@ -50,7 +73,7 @@ functional way- optimizing abstraction, reuse, testability, and usually keeping 
 
 <p>I will be logging the development of the Erlang Kahn library here as I go because it illustrates many important aspects
 of the Erlang ecosystem and distributed computation. Because these are blog entries in the original sense of the word
-(web-log), everything is subject to change. If you're just interested in using the final product as it currently stands,
+(web-log), everything is subject to change. If you&#8217;re just interested in using the final product as it currently stands,
 head over to https://github.com/josephwecker/kahn for the simplified version of usage etc.</p>
 
 <h2 id="background-for-kahn-process-networks">Background for Kahn Process Networks</h2>
@@ -61,19 +84,18 @@ work and ideas that had been percolating mostly over at Bell Labs related to ope
 of pipelines, gave them a graph structure, a nice concise mathematical treatment, and showed that it had some very
 desirable behaviors for parallel systems.</p>
 
+<figure class="left"><img class="left" src="/kpn1/mcilroy.jpg" alt="Douglas McIlroy - (left) Original, (right) With simulated Dennis Ritchie beard more appropriate for an inventor of Unix." /><figcaption>Douglas McIlroy - (left) Original, (right) With simulated Dennis Ritchie beard more appropriate for an inventor of Unix.</figcaption></figure>
 <blockquote>
-  <p>Summary–what's most important.
+  <p>Summary&#8211;what&#8217;s most important.
 To put my strongest concerns into a nutshell:
-1. We should have some way of connecting programs like garden hose–screw in another segment when it becomes …
+1. We should have some way of connecting programs like garden hose&#8211;screw in another segment when it becomes &#8230;
 necessary to massage data in another way. This is the way of IO also.
-…
+&#8230;
   - M. D. McIlroy, Oct 11, 1964, As the Multics project was beginning.
   http://cm.bell-labs.com/cm/cs/who/dmr/mdmpipe.html</p>
 </blockquote>
 
-<p>[Douglas McIlroy - (left) Original, (right) With simulated proper Unix beard courtesy of Dennis Ritchie.]</p>
-
-<p>I bring some of this historical context up because it seems to be one of those topics that, since the early 60's, gets
+<p>I bring some of this historical context up because it seems to be one of those topics that, since the early 60&#8217;s, gets
 reinvented/rediscovered every several years and given a new name, new semantics, and sometimes slightly different
 analytical properties.</p>
 
@@ -105,10 +127,10 @@ analytical properties.</p>
   </li>
   <li>
     <p>All of the entries on state machines, petri nets, activity diagrams, workflow modeling, most articles on visual
-programming languages, etc. etc…</p>
+programming languages, etc. etc&#8230;</p>
   </li>
   <li>
-    <p>Processes are monotonic. They don't have to output at the same rate as incoming data, but their output must not
+    <p>Processes are monotonic. They don&#8217;t have to output at the same rate as incoming data, but their output must not
 re-order the flow.</p>
   </li>
   <li>
@@ -118,7 +140,7 @@ re-order the flow.</p>
     <p>Possibly data sinks that do not output anything</p>
   </li>
   <li>
-    <p>A system where the algorithms can all be continuous/online. That is, they can't access arbitrary past data or rely on
+    <p>A system where the algorithms can all be continuous/online. That is, they can&#8217;t access arbitrary past data or rely on
 having all the data in hand before outputting something. (For example, some of these:
 http://www.cs.ucr.edu/~marek/pubs/online.bib). </p>
   </li>
@@ -126,9 +148,9 @@ http://www.cs.ucr.edu/~marek/pubs/online.bib). </p>
     <p>If a process holds state- ideally it will be steady-state, bounded in size.</p>
   </li>
   <li>
-    <p>Processes are properly abstracted- they don't care who gives them input or who receives their output (implicitly at
-least, explicit cycles are fine if you know what you're doing)- just that they are of the correct type. Also, like any
-good Erlang program, these processes don't care about any sort of global state- their state (if any) is purely
+    <p>Processes are properly abstracted- they don&#8217;t care who gives them input or who receives their output (implicitly at
+least, explicit cycles are fine if you know what you&#8217;re doing)- just that they are of the correct type. Also, like any
+good Erlang program, these processes don&#8217;t care about any sort of global state- their state (if any) is purely
 determined by the tokens that it has consumed.</p>
   </li>
   <li>
@@ -137,16 +159,16 @@ assuming that writing outputs is always nonblocking but that reading inputs alwa
 certain analysis very tractable. We have two caveats:</p>
 
     <ul>
-      <li>Our Kahn network implementation basically uses Erlang's message-passing semantics, so token matching, blocking for a
+      <li>Our Kahn network implementation basically uses Erlang&#8217;s message-passing semantics, so token matching, blocking for a
 certain amount of time, waiting for certain data, etc.- are all possible if you really want. Even then most of then
-most of the time we'll still be deterministic, but in theory the Erlang VM could, on a second run using the exact
-same processes and tokens, timeslice the processes in such a way that a 'receive after …' statement gets triggered
-where on the earlier run it did not. In other words, as soon as you include 'after' (or, worse, look at the incoming
-message queue and detect a token without consuming it- usually frowned on anyway in Erlang) you're system is no
-longer technically deterministic (and no longer technically a Kahn Process Network). So far in practice though I've
+most of the time we&#8217;ll still be deterministic, but in theory the Erlang VM could, on a second run using the exact
+same processes and tokens, timeslice the processes in such a way that a &#8216;receive after &#8230;&#8217; statement gets triggered
+where on the earlier run it did not. In other words, as soon as you include &#8216;after&#8217; (or, worse, look at the incoming
+message queue and detect a token without consuming it- usually frowned on anyway in Erlang) you&#8217;re system is no
+longer technically deterministic (and no longer technically a Kahn Process Network). So far in practice though I&#8217;ve
 found this to be rarely needed and easily accounted for.</li>
-      <li>Erlang's message queues (equivalent to the channels or buffered fifo structures between processes) are bounded by
-available physical memory. To ensure things stay balanced and that no queue gets too big, we'll occasionally (with a
+      <li>Erlang&#8217;s message queues (equivalent to the channels or buffered fifo structures between processes) are bounded by
+available physical memory. To ensure things stay balanced and that no queue gets too big, we&#8217;ll occasionally (with a
 possible warning) block for a moment when sending the output from a process.</li>
     </ul>
   </li>
@@ -162,30 +184,30 @@ will be available.</p>
 
 <h3 id="processes">Processes</h3>
 
-<p>The first problem- what to name these data-flow processes- the nodes in the data-flow graph…</p>
+<p>The first problem- what to name these data-flow processes- the nodes in the data-flow graph&#8230;</p>
 
 <ul>
-  <li>"Process" - Nope, used. In Erlang it already refers to the primitive light-weight processes that are ubiquitous in Erlang-
-            our Kahn processes will often be Erlang processes but we can't call them the same thing.</li>
-  <li>"Node"    - Used. Also already used by Erlang to describe a separate Erlang VM, possibly running on a separate machine
+  <li>&#8220;Process&#8221; - Nope, used. In Erlang it already refers to the primitive light-weight processes that are ubiquitous in Erlang-
+            our Kahn processes will often be Erlang processes but we can&#8217;t call them the same thing.</li>
+  <li>&#8220;Node&#8221;    - Used. Also already used by Erlang to describe a separate Erlang VM, possibly running on a separate machine
             across a network.</li>
-  <li>"Module"  - Used.</li>
-  <li>"Vertex"  - Meh. It makes sense from a graph-theory point of view but is long and a bit too generic.</li>
-  <li>"Stage"   - Meh. Would work except that it implies the process always does some form of staging or transformation-
+  <li>&#8220;Module&#8221;  - Used.</li>
+  <li>&#8220;Vertex&#8221;  - Meh. It makes sense from a graph-theory point of view but is long and a bit too generic.</li>
+  <li>&#8220;Stage&#8221;   - Meh. Would work except that it implies the process always does some form of staging or transformation-
             not generic enough.</li>
-  <li>"Function/Fun/Fn/Lambda…" - Can't. As we'll see, they tend to be much more like state machines (or in some cases
+  <li>&#8220;Function/Fun/Fn/Lambda&#8230;&#8221; - Can&#8217;t. As we&#8217;ll see, they tend to be much more like state machines (or in some cases
             gen-servers) with several functions- which would make calling it something like a function, even though it
             will hopefully be composable like a function, a misnomer.</li>
 </ul>
 
-<p>To distinguish from Erlang processes and nodes, then, I'm simply going to call these data-flow processes 'nodum'
-(or usually the singular, 'nodus'); the root word for node; Latin for knot. There will be three primary ways to define
+<p>To distinguish from Erlang processes and nodes, then, I&#8217;m simply going to call these data-flow processes &#8216;nodum&#8217;
+(or usually the singular, &#8216;nodus&#8217;); the root word for node; Latin for knot. There will be three primary ways to define
 or implement a nodus:</p>
 
 <ol>
   <li>Using an Erlang function (either anonymous or by name) for nodum that are simple enough to be implemented in a simple
 loop (like multiplying two incoming values or other primitives).</li>
-  <li>Using an Erlang external port's input/output (if you want a more complicated port write a nodus module)- that is, a
+  <li>Using an Erlang external port&#8217;s input/output (if you want a more complicated port write a nodus module)- that is, a
 straightforward way to insert a system command into the flow just like a Unix pipeline.</li>
   <li>Using the <code>-behaviour(nodus)</code> directive in a module that implements the proper callbacks which can act basically as a
 state-machine or server, receiving messages and outputting responses as appropriate.</li>
@@ -193,14 +215,14 @@ state-machine or server, receiving messages and outputting responses as appropri
 
 <h3 id="ports">Ports</h3>
 
-<p>Not to be confused with Erlang Ports (basically external interfaces), we'll say that each Nodus has any number of input
+<p>Not to be confused with Erlang Ports (basically external interfaces), we&#8217;ll say that each Nodus has any number of input
 ports and any number of output ports- each named and with a type specification that determines what kind of token it
 accepts.</p>
 
 <h3 id="tokens">Tokens</h3>
 
 <p>Equivalent to Erlang messages in the following form: <code>{token, InPort, FromPID, Data}</code> where the InPort is an atom that
-corresponds to one of the recipient nodus' input-ports, the FromPID is an Erlang PID for the sending nodus and the
+corresponds to one of the recipient nodus&#8217; input-ports, the FromPID is an Erlang PID for the sending nodus and the
 Data is any term that matches the type for that input-port.</p>
 
 <p>With state</p>
@@ -208,10 +230,12 @@ Data is any term that matches the type for that input-port.</p>
 <h2 id="creating-a-new-erlang-behaviour">Creating a new Erlang behaviour</h2>
 
 
+</article>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.8.0.min.js"><\/script>')</script>
-        <script src="/js/plugins.js"></script>
-        <script src="/js/main.js"></script>
-    </body>
+<script src='//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js'></script>
+<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.8.0.min.js"><\/script>')</script>
+<script src='/js/plugins.js'></script>
+<script src='/js/main.js'></script>
+</body>
 </html>
+

@@ -1,0 +1,12 @@
+- wrap_layout :layout do
+  %header.article
+    %a{:href=>'/'}
+      %img.jaw{:src=>'/img/jaw.svg'}
+    %h1= current_page.data.title
+    %h2= current_page.data.subtitle || ''
+  #info
+    %time= current_page.date.strftime('%e %b %Y')
+    %p= current_page.data.author || 'Joseph A Wecker'
+    %p= current_page.data.tags
+  %article
+    =yield

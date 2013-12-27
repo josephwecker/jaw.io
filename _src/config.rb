@@ -1,8 +1,9 @@
 activate :blog do |blog|
   #blog.prefix = "a"
   #blog.sources = 'entries'
-  blog.sources = '{category}/{year}-{month}-{day}-{title}.html'
-  blog.permalink  = '{category}/{title}.html'
+  blog.sources   = '{category}/{year}-{month}-{day}-{title}.html'
+  blog.permalink = '{category}/{title}.html'
+  blog.layout    = 'article'
 end
 
 
@@ -47,11 +48,22 @@ activate :automatic_image_sizes
 activate :livereload
 
 # Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
+helpers do
+  def fig_right(url, caption)
+    figure(url, 'right', caption)
+  end
+
+  def fig_left(url, caption)
+    figure(url, 'left', caption)
+  end
+
+  def figure(url, classes, caption)
+    "<figure class=\"#{classes}\">" +
+      "<img class=\"#{classes}\" src=\"#{url}\" alt=\"#{caption}\"\>" +
+      "<figcaption>#{caption}</figcaption>" +
+    "</figure>".html_safe
+  end
+end
 
 set :css_dir, 'css'
 set :js_dir, 'js'
@@ -60,6 +72,12 @@ set :build_dir, 'bld'
 
 set :haml, {:ugly => true, :format => :html5}
 
+set :markdown_engine, :kramdown
+set :markdown, :layout_engine => :erb,
+               :tables => true,
+               :autolink => true,
+               :smartypants => true,
+               :escape_html => false
 
 activate :directory_indexes
 

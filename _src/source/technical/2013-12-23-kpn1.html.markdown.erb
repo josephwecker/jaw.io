@@ -1,7 +1,14 @@
 ---
-title: "Beyond Erlang Actors: Kahn Process Networks, #1"
+title: "Beyond Erlang Actors, Part 1"
+subtitle: "Kahn Process Networks"
+draft: true
 tags: erlang, kahn-process-networks, parallel
 ---
+
+It's one thing to have awesome Actors. It's another thing to put together a well-behaved pipeline for processing data in
+parallel and even in a distributed environment.
+
+READMORE
 
 The most obvious starting point for deciding when you want something like a Kahn network is any time you find yourself
 thinking in terms of a unix pipeline- data needing sequential processing, ideally with the additional ability to split
@@ -9,6 +16,8 @@ down separate paths and join back up later. These sorts of problems come up ofte
 transformations, complex event processing, "bit-shoveling," almost any problem that lends itself to distributed
 computing, etc. In fact, with apologies to Greenspun, many Erlang systems end up as ad-hoc, informally-specified,
 bug-ridden implementations of Kahn Process Networks.
+
+<%= fig_right('/kpn1/kahn.jpg', "Gilles Kahn, computer scientist") %>
 
 A Kahn Network is best for any problem that makes the most sense as a data-flow model- as streams of data flowing
 through various stages (possibly in parallel). Like the unix pipeline, it allows you develop the stages (processes- or,
@@ -28,6 +37,8 @@ work and ideas that had been percolating mostly over at Bell Labs related to ope
 of pipelines, gave them a graph structure, a nice concise mathematical treatment, and showed that it had some very
 desirable behaviors for parallel systems.
 
+<%= fig_left('/kpn1/mcilroy.jpg', "Douglas McIlroy - (left) Original, (right) With simulated Dennis Ritchie beard more appropriate for an inventor of Unix.") %>
+
 > Summary--what's most important.
 > To put my strongest concerns into a nutshell:
 > 1. We should have some way of connecting programs like garden hose--screw in another segment when it becomes ...
@@ -35,8 +46,6 @@ desirable behaviors for parallel systems.
 > ...
 >   - M. D. McIlroy, Oct 11, 1964, As the Multics project was beginning.
 >   http://cm.bell-labs.com/cm/cs/who/dmr/mdmpipe.html
-
-[Douglas McIlroy - (left) Original, (right) With simulated proper Unix beard courtesy of Dennis Ritchie.]
 
 I bring some of this historical context up because it seems to be one of those topics that, since the early 60's, gets
 reinvented/rediscovered every several years and given a new name, new semantics, and sometimes slightly different
