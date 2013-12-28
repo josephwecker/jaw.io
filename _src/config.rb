@@ -63,6 +63,10 @@ helpers do
       "<figcaption>#{caption}</figcaption>" +
     "</figure>".html_safe
   end
+
+  def cite_link(txt, url)
+    "<footer>&ndash; <cite><a href=\"#{url}\">#{txt}</a></cite></footer>".html_safe
+  end
 end
 
 set :css_dir, 'css'

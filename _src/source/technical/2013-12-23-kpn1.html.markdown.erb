@@ -17,7 +17,12 @@ transformations, complex event processing, "bit-shoveling," almost any problem t
 computing, etc. In fact, with apologies to Greenspun, many Erlang systems end up as ad-hoc, informally-specified,
 bug-ridden implementations of Kahn Process Networks.
 
-<%= fig_right('/kpn1/kahn.jpg', "Gilles Kahn, computer scientist") %>
+>
+> To put my strongest concerns into a nutshell... We should have some way of connecting programs like garden hose--
+> screw in another segment when it becomes... necessary to massage data in another way. This is the way of IO also...
+>
+> <%= cite_link('M. D. McIlroy,<br/> Oct 1964 as the Multics project was beginning.','http://cm.bell-labs.com/cm/cs/who/dmr/mdmpipe.html') %>
+>   
 
 A Kahn Network is best for any problem that makes the most sense as a data-flow model- as streams of data flowing
 through various stages (possibly in parallel). Like the unix pipeline, it allows you develop the stages (processes- or,
@@ -31,6 +36,8 @@ head over to https://github.com/josephwecker/kahn for the simplified version of 
 
 ## Background for Kahn Process Networks
 
+<%= fig_right('/kpn1/kahn.jpg', "Gilles Kahn, computer scientist") %>
+
 After several years of study and research at Stanford, Gilles Kahn returned to France and in 1974 published the paper
 introducing what came to be known as Kahn Process Networks (or KPNs). It is a rather straight-forward formalization of
 work and ideas that had been percolating mostly over at Bell Labs related to operating system design. It took the idea
@@ -40,44 +47,37 @@ desirable behaviors for parallel systems.
 <%= fig_left('/kpn1/mcilroy.jpg', "Douglas McIlroy - (left) Original, (right) With Dennis Ritchie's beard- more fitting for one of the fathers of Unix.") %>
 
 
-> Summary--what's most important.
-> To put my strongest concerns into a nutshell:
-> 1. We should have some way of connecting programs like garden hose--screw in another segment when it becomes ...
-> necessary to massage data in another way. This is the way of IO also.
-> ...
->   - M. D. McIlroy, Oct 11, 1964, As the Multics project was beginning.
->   http://cm.bell-labs.com/cm/cs/who/dmr/mdmpipe.html
-
 I bring some of this historical context up because it seems to be one of those topics that, since the early 60's, gets
 reinvented/rediscovered every several years and given a new name, new semantics, and sometimes slightly different
 analytical properties.
 
-- http://en.wikipedia.org/wiki/Flow-based_programming
-- http://en.wikipedia.org/wiki/Dataflow_programming
-- http://en.wikipedia.org/wiki/Data-driven_programming
-- http://en.wikipedia.org/wiki/Pipeline_programming
-- http://en.wikipedia.org/wiki/Reactive_programming
-- http://en.wikipedia.org/wiki/Functional_reactive_programming
-- http://en.wikipedia.org/wiki/Event-driven_programming
-- http://en.wikipedia.org/wiki/Stream_processing
-- http://en.wikipedia.org/wiki/Complex_event_processing
-- http://en.wikipedia.org/wiki/Event_Stream_Processing
-
-- http://en.wikipedia.org/wiki/Dataflow
-- http://en.wikipedia.org/wiki/Data_flow_diagram
-- http://en.wikipedia.org/wiki/Dataflow_architecture
-- http://en.wikipedia.org/wiki/Data-flow_analysis
-- http://en.wikipedia.org/wiki/Data_stream
-- http://en.wikipedia.org/wiki/Pipeline_(computing) 
-- http://en.wikipedia.org/wiki/Pipeline_(software)
-- http://en.wikipedia.org/wiki/Unix_pipeline
-- http://en.wikipedia.org/wiki/Hartmann_pipeline
-- http://en.wikipedia.org/wiki/Functional_flow_block_diagram
-- http://en.wikipedia.org/wiki/Streaming_algorithm
-
-- All of the entries on state machines, petri nets, activity diagrams, workflow modeling, most articles on visual
-  programming languages, etc. etc...
-
+> # Some Wikipedia Entries For Pipelines...
+> 
+> - [Kahn Process Networks](http://en.wikipedia.org/wiki/Kahn_process_networks)
+> - [Flow-Based Programming](http://en.wikipedia.org/wiki/Flow-based_programming)
+> - [Dataflow Programming](http://en.wikipedia.org/wiki/Dataflow_programming)
+> - [Data-Driven Programming](http://en.wikipedia.org/wiki/Data-driven_programming)
+> - [Pipeline Programming](http://en.wikipedia.org/wiki/Pipeline_programming)
+> - [Reactive Programming](http://en.wikipedia.org/wiki/Reactive_programming)
+> - [Functional Reactive Programming](http://en.wikipedia.org/wiki/Functional_reactive_programming)
+> - [Event Driven Programming](http://en.wikipedia.org/wiki/Event-driven_programming)
+> - [Stream Processing](http://en.wikipedia.org/wiki/Stream_processing)
+> - [Complex Event Processing](http://en.wikipedia.org/wiki/Complex_event_processing)
+> - [Event Stream Processing](http://en.wikipedia.org/wiki/Event_Stream_Processing)
+> - [Dataflow](http://en.wikipedia.org/wiki/Dataflow)
+> - [Data Flow Diagram](http://en.wikipedia.org/wiki/Data_flow_diagram)
+> - [Dataflow Architecture](http://en.wikipedia.org/wiki/Dataflow_architecture)
+> - [Data-Flow Analysis](http://en.wikipedia.org/wiki/Data-flow_analysis)
+> - [Data Stream](http://en.wikipedia.org/wiki/Data_stream)
+> - [Pipeline (Computing)](http://en.wikipedia.org/wiki/Pipeline_\(computing\))
+> - [Pipeline (Software)](http://en.wikipedia.org/wiki/Pipeline_\(software\))
+> - [Unix Pipeline](http://en.wikipedia.org/wiki/Unix_pipeline)
+> - [Hartmann Pipeline](http://en.wikipedia.org/wiki/Hartmann_pipeline)
+> - [Functional Flow Block Diagram](http://en.wikipedia.org/wiki/Functional_flow_block_diagram)
+> - [Streaming Algorithm](http://en.wikipedia.org/wiki/Streaming_algorithm)
+> - All of the entries on state machines, petri nets, activity diagrams, workflow modeling, most articles on visual
+>   programming languages, etc. etc...
+{: .desc}
 
 
 

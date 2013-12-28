@@ -6,8 +6,9 @@
     %h2= current_page.data.subtitle || ''
   -#hd &nbsp;
   %article
-    %h1.title-again= current_page.data.title
-    %h2.title-again= current_page.data.subtitle
+    %header.inner
+      %h1.title-again= current_page.data.title
+      %h2.title-again= current_page.data.subtitle
     #info
       %p= current_page.data.author || 'Joseph A Wecker'
       %time= current_page.date.strftime('%e %b %Y')
