@@ -4,9 +4,12 @@
       %img{:src=>'/img/jaw.svg'}
     %h1= current_page.data.title
     %h2= current_page.data.subtitle || ''
-  #info
-    %time= current_page.date.strftime('%e %b %Y')
-    %p= current_page.data.author || 'Joseph A Wecker'
-    %p= current_page.data.tags
+  -#hd &nbsp;
   %article
+    %h1.title-again= current_page.data.title
+    %h2.title-again= current_page.data.subtitle
+    #info
+      %p= current_page.data.author || 'Joseph A Wecker'
+      %time= current_page.date.strftime('%e %b %Y')
+      -#%p= current_page.data.tags
     =yield
