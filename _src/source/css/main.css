@@ -316,6 +316,10 @@ header h1 {
     display: inline-block;
 }
 
+header h1.draft {
+    color: red;
+}
+
 header h2 {
     /*font-family: agaramond_regularscregular;*/
     font-weight: normal;
