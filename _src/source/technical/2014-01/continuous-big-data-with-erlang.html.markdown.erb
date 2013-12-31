@@ -1,0 +1,200 @@
+---
+title: Continuous Big Data with Erlang
+subtitle: Part 1- Introducing Kahn Process Networks
+tags: pipeline, khan process network, kpn, parallel
+draft: true
+date: 2014/1/1
+---
+
+I've come to realize (with apologies to Greenspun) that many sufficiently large
+Erlang systems become ad-hoc, informally-specified, bug-ridden, slow
+implementations of Kahn Process Networks.
+
+READMORE
+
+
+> # Some Wikipedia Entries For Pipelines...
+> 
+> - [Kahn Process Networks](http://en.wikipedia.org/wiki/Kahn_process_networks)
+> - [Flow-Based Programming](http://en.wikipedia.org/wiki/Flow-based_programming)
+> - [Dataflow Programming](http://en.wikipedia.org/wiki/Dataflow_programming)
+> - [Data-Driven Programming](http://en.wikipedia.org/wiki/Data-driven_programming)
+> - [Pipeline Programming](http://en.wikipedia.org/wiki/Pipeline_programming)
+> - [Reactive Programming](http://en.wikipedia.org/wiki/Reactive_programming)
+> - [Functional Reactive Programming](http://en.wikipedia.org/wiki/Functional_reactive_programming)
+> - [Event Driven Programming](http://en.wikipedia.org/wiki/Event-driven_programming)
+> - [Stream Processing](http://en.wikipedia.org/wiki/Stream_processing)
+> - [Complex Event Processing](http://en.wikipedia.org/wiki/Complex_event_processing)
+> - [Event Stream Processing](http://en.wikipedia.org/wiki/Event_Stream_Processing)
+> - [Dataflow](http://en.wikipedia.org/wiki/Dataflow)
+> - [Data Flow Diagram](http://en.wikipedia.org/wiki/Data_flow_diagram)
+> - [Dataflow Architecture](http://en.wikipedia.org/wiki/Dataflow_architecture)
+> - [Data-Flow Analysis](http://en.wikipedia.org/wiki/Data-flow_analysis)
+> - [Data Stream](http://en.wikipedia.org/wiki/Data_stream)
+> - [Pipeline (Computing)](http://en.wikipedia.org/wiki/Pipeline_\(computing\))
+> - [Pipeline (Software)](http://en.wikipedia.org/wiki/Pipeline_\(software\))
+> - [Unix Pipeline](http://en.wikipedia.org/wiki/Unix_pipeline)
+> - [Hartmann Pipeline](http://en.wikipedia.org/wiki/Hartmann_pipeline)
+> - [Functional Flow Block Diagram](http://en.wikipedia.org/wiki/Functional_flow_block_diagram)
+> - [Streaming Algorithm](http://en.wikipedia.org/wiki/Streaming_algorithm)
+> - They can also be described in terms of petri nets- that's a whole other load
+>   of pages, plus activity diagrams, workflow modeling, most articles on visual
+>   programming languages, etc.
+>
+{: .desc}
+
+A Kahn Process Network, for those unfamiliar, is a formalization of what is
+more colloquially known as pipeline programming or flow-based programming. Or
+dataflow programming, or stream processing... In fact, it tends to get
+reinvented so often that it has accumulated a large list of names (see the
+relevant Wikipedia entries on the right), sometimes with a different emphasis
+but all describing essentially the same thing: Sequential (and often parallel)
+processing of streaming data.
+
+Many problems map very intuitively to the idea, from very low-level signal
+processing chips to unix commandline pipes to continuous business intelligence
+(drinking from the data firehose) or (in my case) soft-real-time algorithmic
+trading.
+
+In the case of big data, modeling problems as data-flows is often far simpler
+than comparable batch-oriented approaches such as using mapreduce or Hadoop- all
+while giving the benefit of continuous operation. Add Erlang and you get a
+distributed version as well as hot-code swapping for true continuous processing.
+
+<%= fig_left('/continuous-big-data-with-erlang/kahn.jpg', "Gilles Kahn, computer scientist") %>
+
+Anyway, the problem has come up often enough in my work over the years that I've
+decided to finally build out a proper pipeline library for Erlang to make them
+as easy and intuitive as possible. In this entry I'm mostly going to give
+background. Subsequent entries will dig into the actual design and
+implementation of [Kahn](https://github.com/josephwecker/kahn).
+
+## Brief History
+
+Because it has been (and will continue to be) reinvented so often, a very brief
+history is in order.  After several years of study and research at Stanford,
+Gilles Kahn returned to France and in 1974 published [the
+paper](http://www1.cs.columbia.edu/~sedwards/papers/kahn1974semantics.pdf)
+introducing what came to be known as Kahn Process Networks (or KPNs).
+
+>
+> To put my strongest concerns into a nutshell... We should have some way of connecting programs like garden hose--
+> screw in another segment when it becomes... necessary to massage data in another way. This is the way of IO also...
+>
+> <%= cite_link('M. D. McIlroy,<br/> Oct 1964 as the Multics project was beginning.','http://cm.bell-labs.com/cm/cs/who/dmr/mdmpipe.html') %>
+>
+
+It is a rather straight-forward formalization of work and ideas that had been
+percolating mostly over at Bell Labs (thanks, I understand, to McIlroy) related
+to operating system design. It took the idea of pipelines, gave them a graph
+structure, a nice concise mathematical treatment, and showed that it had some
+very desirable behaviors for parallel systems such as operating systems (and as
+an academic model of computation).
+
+Even to the team putting Unix together the idea wasn't new- Petri nets, for
+example, were purportedly invented by Carl Petri in 1939- at the age of 13. Even
+assembly lines from the industrial revolution could be argued to have
+represented an earlier physical equivalent... My point is not to try to assign
+credit or minimize later contributions- my point is that it's such an old and
+inuitive way to model progressive state changes that you can put it in the same
+category as, for example, functional programming; that is, it has historical
+gravitas- it's not going away any time soon and when you do it you should take
+the time to do it right.
+
+<%= fig_left('/continuous-big-data-with-erlang/mcilroy.jpg', "Douglas McIlroy - (left) Original, (right) With Dennis Ritchie's beard- more fitting for one of the fathers of Unix.") %>
+
+I'm going to depart in many ways from the Kahn Process Network as formalized in
+the original paper (because, well, this is a practical library and doesn't need
+to be restricted in order to prove computational properties) but I believe
+they're the perfect starting point if you want to do pipeline programming
+"right" and, in this case, for the purposes of sanity checking the architecture
+of a dataflow library.
+
+## Brief Description
+
+Despite its many names, we're dealing here primarily with problems that can be
+modeled with the following properties:
+
+* Data flows into a process sequentially, is transformed (probably), and flows back out.
+* The process doesn't care who it flows in from or out to. That is, each processes is composable and interchangeable.
+* Processes are monotonic. They don't have to output at the same rate as incoming data, but their output must not
+  re-order the flow. (Usually this is implemented as a buffered FIFO).
+* A system where the algorithms can all be continuous/online. That is, they can't access arbitrary past data or rely on
+  having all the data in hand before outputting something. (For example, some of these [papers](http://www.cs.ucr.edu/~marek/pubs/online.bib)). 
+* If a process holds state- ideally it will be steady-state, bounded in size.
+* Processes are properly abstracted- they don't care who gives them input or who receives their output (implicitly at
+  least, explicit cycles are fine if you know what you're doing)- just that they are of the correct type. Also, like any
+  good Erlang program, these processes don't care about any sort of global state- their state (if any) is purely
+  determined by the tokens that it has consumed.
+* In a proper Kahn Network the processes and therefore network are completely deterministic. This is accomplished by
+  assuming that writing outputs is always nonblocking but that reading inputs always blocks. This determinism makes
+  certain analysis very tractable. We have two caveats:
+  - Our Kahn network implementation basically uses Erlang's message-passing semantics, so token matching, blocking for a
+    certain amount of time, waiting for certain data, etc.- are all possible if you really want. Even then most of then
+    most of the time we'll still be deterministic, but in theory the Erlang VM could, on a second run using the exact
+    same processes and tokens, timeslice the processes in such a way that a 'receive after ...' statement gets triggered
+    where on the earlier run it did not. In other words, as soon as you include 'after' (or, worse, look at the incoming
+    message queue and detect a token without consuming it- usually frowned on anyway in Erlang) you're system is no
+    longer technically deterministic (and no longer technically a Kahn Process Network). So far in practice though I've
+    found this to be rarely needed and easily accounted for.
+  - Erlang's message queues (equivalent to the channels or buffered FIFO structures between processes) are bounded by
+    available physical memory. To ensure things stay balanced and that no queue gets too big, we'll occasionally (with a
+    possible warning) block for a moment when sending the output from a process.
+
+What Erlang adds to the mix: Natural semantic fit, supervisors and fault tolerance, easy scalability over multiple
+machines, easily integrated visualization and high-level graph analysis, type-checking, hot-code-swapping, & lots of
+other Erlang goodness. Also, because this is a practical endeavor and not an academic or theoretical endeavor, the
+ability to dynamically create and remove, connect and disconnect, update and restart individual processes on the fly
+will be available.
+
+## Some Terminology
+
+### Processes
+
+The first problem- what to name these data-flow processes- the nodes in the data-flow graph...
+
+- "Process" - Nope, used. In Erlang it already refers to the primitive light-weight processes that are ubiquitous in Erlang-
+              our Kahn processes will often be Erlang processes but we can't call them the same thing.
+- "Node"    - Used. Also already used by Erlang to describe a separate Erlang VM, possibly running on a separate machine
+              across a network.
+- "Module"  - Used.
+- "Vertex"  - Meh. It makes sense from a graph-theory point of view but is long and a bit too generic.
+- "Stage"   - Meh. Would work except that it implies the process always does some form of staging or transformation-
+              not generic enough.
+- "Function/Fun/Fn/Lambda..." - Can't. As we'll see, they tend to be much more like state machines (or in some cases
+              gen-servers) with several functions- which would make calling it something like a function, even though it
+              will hopefully be composable like a function, a misnomer.
+
+To distinguish from Erlang processes and nodes, then, I'm simply going to call these data-flow processes 'nodum'
+(or usually the singular, 'nodus'); the root word for node; Latin for knot. There will be three primary ways to define
+or implement a nodus:
+
+1. Using an Erlang function (either anonymous or by name) for nodum that are simple enough to be implemented in a simple
+   loop (like multiplying two incoming values or other primitives).
+2. Using an Erlang external port's input/output (if you want a more complicated port write a nodus module)- that is, a
+   straightforward way to insert a system command into the flow just like a Unix pipeline.
+3. Using the `-behaviour(nodus)` directive in a module that implements the proper callbacks which can act basically as a
+   state-machine or server, receiving messages and outputting responses as appropriate.
+
+
+### Ports
+
+Not to be confused with Erlang Ports (basically external interfaces), we'll say that each Nodus has any number of input
+ports and any number of output ports- each named and with a type specification that determines what kind of token it
+accepts.
+
+### Tokens
+
+Equivalent to Erlang messages in the following form: `{token, InPort, FromPID, Data}` where the InPort is an atom that
+corresponds to one of the recipient nodus' input-ports, the FromPID is an Erlang PID for the sending nodus and the
+Data is any term that matches the type for that input-port.
+
+
+With state
+
+
+
+
+## Creating a new Erlang behaviour
+
+

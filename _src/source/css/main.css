@@ -178,7 +178,7 @@ blockquote {
     width: 240px;
     right: -180px;
     margin-left: -160px;
-    clear: both;
+    /*clear: both;*/
     color: #888;
 }
 
@@ -219,6 +219,9 @@ blockquote cite {
 }
 
 blockquote.desc {
+    z-index: 2;
+    position: relative;
+    top: -1.5em;
     font-style: normal;
     font-size: 9pt;
 }
@@ -503,7 +506,7 @@ figure.left {
 
 img.right, img.left {
     padding: 5px;
-    clear: both;
+    /*clear: both;*/
     max-height: 15em;
     max-width:  400px;
 }
