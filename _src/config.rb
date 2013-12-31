@@ -2,7 +2,7 @@ activate :blog do |blog|
   #blog.prefix = "a"
   #blog.sources = 'entries'
   #blog.sources   = '{category}/{year}-{month}-{day}-{title}.html'
-  blog.sources   = '{category}/{title}.html'
+  blog.sources   = '{category}/{year}-{month}/{title}.html'
   blog.permalink = '{category}/{title}.html'
   blog.layout    = 'article'
 end
