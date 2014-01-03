@@ -2,7 +2,7 @@
 title: Continuous Big Data with Erlang
 subtitle: Part 1- Introducing Kahn Process Networks
 tags: pipeline, khan process network, kpn, parallel
-draft: true
+draft: false
 date: 2014/1/1
 ---
 
@@ -11,7 +11,6 @@ Erlang systems become ad-hoc, informally-specified, bug-ridden, slow
 implementations of Kahn Process Networks.
 
 READMORE
-
 
 > # Some Wikipedia Entries For Pipelines...
 > 
@@ -51,6 +50,8 @@ relevant Wikipedia entries on the right), sometimes with a different emphasis
 but all describing essentially the same thing: Sequential (and often parallel)
 processing of streaming data.
 
+<%= fig_left('sample_dfd.svg', "Slightly more complex than a pipeline- a partial example of some quantitative analysis for incoming price ticks.") %>
+
 Many problems map very intuitively to the idea, from very low-level signal
 processing chips to unix commandline pipes to continuous business intelligence
 (drinking from the data firehose) or (in my case) soft-real-time algorithmic
@@ -60,8 +61,6 @@ In the case of big data, modeling problems as data-flows is often far simpler
 than comparable batch-oriented approaches such as using mapreduce or Hadoop- all
 while giving the benefit of continuous operation. Add Erlang and you get a
 distributed version as well as hot-code swapping for true continuous processing.
-
-<%= fig_left('/continuous-big-data-with-erlang/kahn.jpg', "Gilles Kahn, computer scientist") %>
 
 Anyway, the problem has come up often enough in my work over the years that I've
 decided to finally build out a proper pipeline library for Erlang to make them
@@ -76,6 +75,8 @@ history is in order.  After several years of study and research at Stanford,
 Gilles Kahn returned to France and in 1974 published [the
 paper](http://www1.cs.columbia.edu/~sedwards/papers/kahn1974semantics.pdf)
 introducing what came to be known as Kahn Process Networks (or KPNs).
+
+<%= fig_left('kahn.jpg', "Gilles Kahn, computer scientist") %>
 
 >
 > To put my strongest concerns into a nutshell... We should have some way of connecting programs like garden hose--
@@ -101,7 +102,7 @@ category as, for example, functional programming; that is, it has historical
 gravitas- it's not going away any time soon and when you do it you should take
 the time to do it right.
 
-<%= fig_left('/continuous-big-data-with-erlang/mcilroy.jpg', "Douglas McIlroy - (left) Original, (right) With Dennis Ritchie's beard- more fitting for one of the fathers of Unix.") %>
+<%= fig_left('mcilroy.jpg', "Douglas McIlroy - (left) Original, (right) With Dennis Ritchie's beard- more fitting for one of the fathers of Unix.") %>
 
 I'm going to depart in many ways from the Kahn Process Network as formalized in
 the original paper (because, well, this is a practical library and doesn't need

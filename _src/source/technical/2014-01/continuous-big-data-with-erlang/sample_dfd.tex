@@ -1,0 +1,71 @@
+\documentclass{scrartcl}
+\usepackage[svgnames,table]{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes}
+\usepackage{amsmath,amssymb,amsfonts,mathtools}
+\usepackage[autosize]{dot2texi}
+
+\newcommand{\backdiff}[1]{\ensuremath{\nabla_h(#1)}}
+\newcommand{\mad}[1]{\ensuremath{\mathrm{MAD(#1)}}}
+\newcommand{\pnode}[1]{\ensuremath{\begin{matrix}\textcolor{Gray}{\mathrm{TP}\times} \\ \phat_W(#1)\end{matrix}}}
+\newcommand{\talpha}       {\protect\texorpdfstring{{\fontspec{TeX Gyre Pagella}α}}{α}}
+\newcommand{\tbeta}        {\protect\texorpdfstring{{\fontspec{TeX Gyre Pagella}β}}{β}}
+\newcommand{\preparedfor}  {\preparedforfn{} \preparedforln}
+\newcommand{\unfinished}[1]{\textcolor{DimGray}{\sffamily\scriptsize{}[\textbf{\uppercase{todo}} \textit{#1}]}}
+\newcommand{\term}[1]      {\ifmmode{\mathsf{#1}}\else{\textcolor{DarkSlateGray}{\textsf{#1}}}\fi}
+\newcommand{\e}[1]         {\ensuremath{\times 10^{#1}}}
+\newcommand{\iftrend}      {\term{iftrend}}
+\newcommand{\iftrends}     {\term{iftrends}}
+\newcommand{\ewmPMF}       {\term{\protect\ensuremath{\protect\hat{\rho}_{W}}}}
+\newcommand{\ewmCM}        {\term{\protect\ensuremath{\tilde{X}_{cW}}}}
+\newcommand{\ewmCQ}        {\term{\protect\ensuremath{Q_{cW}}}}
+\newcommand{\ewma}         {\term{\protect\ensuremath{\bar{X}_w}}}
+\newcommand{\spmf}         {\term{\protect\ensuremath{\protect\hat{\protect\rho}}}}
+\newcommand{\phat}         {\hat{\rho}}
+\newcommand{\spmfm}        {\hat{\rho}}
+\newcommand{\epmf}         {\hat{\rho}_{W}}
+\newcommand{\subsym}[1]    {\mathsf{#1}}
+\newcommand{\cpair}[2]     {{\small\textsc{\lowercase{#1}\slash\lowercase{#2}}}}
+
+\begin{document}
+\begin{dot2tex}[dot,options=--autosize -t raw,graphstyle={scale=0.9,transform shape,anchor=base}]
+digraph G {
+  node [style="fill=LightCyan",shape=circle]
+  Interbank [texlbl="$\begin{matrix}\mathrm{Interbank} \\ \mathrm{Ticks}\end{matrix}$"]
+  Retail [texlbl="$\begin{matrix}\mathrm{Retail} \\ \mathrm{Ticks}\end{matrix}$"]
+
+  node [style="rounded corners,fill=Beige", shape=box]
+
+  sanity_filter [label="Initial Sanity Filter (Spike / Kalman)"]
+  inter_retail_volcheck [texlbl="$\begin{matrix}\mathrm{Intrabank/Retail} \\ \mathrm{Volatility Check}\end{matrix}$"]
+
+  node [texlbl="\pnode{x}"]
+  epmf_1
+  epmf_2
+  epmf_3
+  epmf_4
+  epmf_5
+  epmf_6
+
+  Retail -> sanity_filter [label="bid"]
+  Retail -> sanity_filter [label="ask"]
+  Retail -> sanity_filter [label="$\Delta t$"]
+  Interbank -> sanity_filter [label="bid"]
+  Interbank -> sanity_filter [label="ask"]
+  Interbank -> sanity_filter [label="$\Delta t$"]
+  sanity_filter -> epmf_1 [label="Interbank $\Delta t$"]
+  sanity_filter -> epmf_2 [label="Interbank bid"]
+  sanity_filter -> epmf_3 [label="Interbank ask"]
+  sanity_filter -> epmf_4 [label="Retail $\Delta t$"]
+  sanity_filter -> epmf_5 [label="Retail bid"]
+  sanity_filter -> epmf_6 [label="Retail ask"]
+  epmf_1 -> inter_retail_volcheck
+  epmf_2 -> inter_retail_volcheck
+  epmf_3 -> inter_retail_volcheck
+  epmf_4 -> inter_retail_volcheck
+  epmf_5 -> inter_retail_volcheck
+  epmf_6 -> inter_retail_volcheck
+}
+\end{dot2tex}
+\end{document}
