@@ -1,0 +1,25 @@
+
+Features
+ * Title, date / age, updated
+ * Floating header in margin (ala http://stevelosh.com/blog/2010/09/coming-home-to-vim/ )
+ * Markdown with easy customization
+ * Easy and beautiful image inclusion
+ * Great syntax highlighting (via gvim probably)
+ * Flattr
+ * Like
+ * Links to discussion areas at bottom for discussions
+ * All permalinks
+ * Tags (?)
+ * RSS feed...
+ * Schedule
+
+ * Main nav
+   - To Index
+   - Popular
+   - Recent
+
+Template source
+Entry source
+Intelligent generator
+
+Blog, Projects, About, Feed
